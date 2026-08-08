@@ -3,805 +3,1568 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0F2942" />
-  <meta name="description" content="Stevey & daughter's Bangkok + Pattaya trip, Aug 21-24 2026" />
-  <title>Bangkok & Pattaya · Aug 21-24 2026</title>
+  <meta name="theme-color" "#202124" />
+  <meta name="description" content="Stevey & daughter's Bangkok & Pattaya field expedition — Aug 21-24, 2026" />
+  <title>Bangkok & Pattaya · A Father-Daughter Expedition · Aug 21-24 2026</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🐬</text></svg>" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🐬</text></svg>" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 900: '#0F2942', 800: '#163659', 700: '#1E4670' },
-            teal: { 50: '#F0FDFA', 100: '#CCFBF1', 500: '#14B8A6', 600: '#0D9488', 700: '#0F766E' },
-            ink: { 900: '#0F172A', 800: '#1E293B', 600: '#475569', 500: '#64748B', 400: '#94A3B8', 300: '#CBD5E1', 200: '#E2E8F0', 100: '#F1F5F9', 50: '#F8FAFC' }
-          },
-          fontFamily: { sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', 'Segoe UI', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23202124'/><rect x='6' y='6' width='88' height='88' fill='none' stroke='%23FFCC00' stroke-width='6'/><text x='50' y='68' text-anchor='middle' font-size='52' font-family='Georgia' font-weight='bold' fill='%23FFCC00'>N</text></svg>" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23202124'/><rect x='6' y='6' width='88' height='88' fill='none' stroke='%23FFCC00' stroke-width='6'/><text x='50' y='68' text-anchor='middle' font-size='52' font-family='Georgia' font-weight='bold' fill='%23FFCC00'>N</text></svg>" />
+
+  <!-- Typography: Google Sans (system fallback), EB Garamond for editorial serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif; background: #F8FAFC; }
-    .card { background: white; border: 1px solid #E2E8F0; border-radius: 16px; box-shadow: 0 1px 3px rgba(15, 41, 66, 0.04); }
-    .pill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
-    .timeline { position: relative; padding-left: 24px; }
-    .timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: #E2E8F0; }
-    .timeline-item { position: relative; padding-bottom: 16px; }
-    .timeline-item:last-child { padding-bottom: 0; }
-    .timeline-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: white; border: 3px solid #14B8A6; }
-    .timeline-item.major::before { background: #14B8A6; box-shadow: 0 0 0 3px white, 0 0 0 5px #14B8A6; }
-    .checklist-item input[type="checkbox"] { accent-color: #14B8A6; width: 20px; height: 20px; cursor: pointer; }
-    .checklist-item.done span { text-decoration: line-through; color: #94A3B8; }
-    details > summary { list-style: none; cursor: pointer; }
-    details > summary::-webkit-details-marker { display: none; }
+    /* ─── Tokens ─── */
+    :root {
+      /* Google Material You neutrals */
+      --surface: #FFFFFF;
+      --surface-1: #F8F9FA;
+      --surface-2: #F1F3F4;
+      --on-surface: #202124;
+      --on-surface-variant: #5F6368;
+      --outline: #DADCE0;
+      --outline-variant: #E8EAED;
+      --primary: #1A73E8;            /* Google Blue */
+      --on-primary: #FFFFFF;
+      --secondary: #34A853;          /* Google Green */
+      --tertiary: #EA4335;            /* Google Red */
+      /* National Geographic */
+      --natgeo-yellow: #FFCC00;
+      --natgeo-yellow-soft: #FFF3B0;
+      --natgeo-ink: #1A1A1A;
+      --natgeo-bone: #F5F1E8;
+      --natgeo-rust: #B5651D;
+      --natgeo-deep: #2C3E2D;
+      /* Type */
+      --font-sans: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+      --font-mono: 'Roboto Mono', ui-monospace, Menlo, monospace;
+      /* Elevation */
+      --elev-1: 0 1px 2px rgba(60,64,67,0.1), 0 1px 3px 1px rgba(60,64,67,0.06);
+      --elev-2: 0 1px 2px rgba(60,64,67,0.12), 0 2px 6px 2px rgba(60,64,67,0.08);
+      --elev-3: 0 4px 8px 3px rgba(60,64,67,0.12), 0 1px 3px rgba(60,64,67,0.08);
+      /* Radii — Material 4dp scale */
+      --r-xs: 4px;
+      --r-sm: 8px;
+      --r-md: 12px;
+      --r-lg: 16px;
+      --r-xl: 28px;
+    }
+
+    /* ─── Base ─── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--on-surface);
+      background: var(--surface-1);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      font-size: 15px;
+    }
+    h1, h2, h3, h4 { font-weight: 600; color: var(--on-surface); letter-spacing: -0.01em; margin: 0; }
+    p { margin: 0; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── Layout ─── */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+    /* ─── Material components ─── */
+    .card {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      box-shadow: var(--elev-1);
+      border: 1px solid var(--outline-variant);
+      overflow: hidden;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      height: 28px; padding: 0 12px;
+      border-radius: 8px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.02em;
+      background: var(--surface-2);
+      color: var(--on-surface-variant);
+      border: 1px solid var(--outline-variant);
+    }
+    .chip-yellow { background: var(--natgeo-yellow-soft); border-color: var(--natgeo-yellow); color: #6B5A00; }
+    .chip-blue { background: #E8F0FE; border-color: #D2E3FC; color: #1967D2; }
+    .chip-green { background: #E6F4EA; border-color: #CEEAD6; color: #137333; }
+    .chip-red { background: #FCE8E6; border-color: #FAD2CF; color: #C5221F; }
+    .chip-mono { font-family: var(--font-mono); font-size: 11px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      height: 44px; padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 500; font-size: 14px;
+      border: none; cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: var(--elev-1); }
+    .btn-primary:hover { background: #1765CC; box-shadow: var(--elev-2); text-decoration: none; }
+    .btn-tonal { background: #E8F0FE; color: #1967D2; }
+    .btn-tonal:hover { background: #D2E3FC; text-decoration: none; }
+    .btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--outline); }
+    .btn-outline:hover { background: var(--surface-2); text-decoration: none; }
+    .btn-fab {
+      width: 56px; height: 56px; border-radius: 16px;
+      background: var(--primary); color: white;
+      box-shadow: var(--elev-3);
+      border: none; cursor: pointer;
+    }
+
+    /* ─── Nat Geo frame ─── */
+    .natgeo-frame {
+      position: relative;
+      border: 3px solid var(--natgeo-ink);
+      box-shadow: inset 0 0 0 6px var(--natgeo-yellow), inset 0 0 0 9px var(--natgeo-ink);
+    }
+    .natgeo-edge {
+      background: linear-gradient(180deg, var(--natgeo-yellow) 0%, var(--natgeo-yellow) 8px, transparent 8px, transparent calc(100% - 8px), var(--natgeo-yellow) calc(100% - 8px));
+    }
+
+    /* ─── Header ─── */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .topbar-brand { display: flex; align-items: center; gap: 8px; }
+    .topbar-brand .badge {
+      width: 28px; height: 28px;
+      background: var(--natgeo-ink);
+      border: 2px solid var(--natgeo-yellow);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      color: var(--natgeo-yellow);
+      font-size: 16px;
+    }
+    .topbar-brand .label { font-weight: 500; font-size: 14px; color: var(--on-surface); }
+    .topbar-brand .sub { font-size: 11px; color: var(--on-surface-variant); font-weight: 400; }
+
+    .countdown {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown .num { font-size: 16px; font-weight: 600; color: var(--primary); line-height: 1; }
+    .countdown .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--on-surface-variant); font-weight: 500; margin-top: 2px; }
+
+    /* ─── Hero — Magazine cover ─── */
+    .hero {
+      position: relative;
+      min-height: 480px;
+      color: white;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0F1A2E 0%, #1A2D4D 100%);
+    }
+    .hero-photo {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.1) contrast(1.05);
+    }
+    .hero-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(15,26,46,0.45) 0%, rgba(15,26,46,0.15) 30%, rgba(15,26,46,0.85) 100%);
+    }
+    .hero-frame {
+      position: absolute; inset: 12px;
+      border: 2px solid rgba(255,204,0,0.6);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 56px 24px 32px;
+      height: 100%;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .hero-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .hero-issue {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .hero-issue strong { color: var(--natgeo-yellow); font-weight: 500; }
+    .hero-pre-title {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--natgeo-yellow);
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: white;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      margin-bottom: 12px;
+    }
+    .hero-subtitle {
+      font-size: 15px;
+      line-height: 1.4;
+      opacity: 0.92;
+      max-width: 380px;
+    }
+    .hero-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .hero-byline {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .hero-junior {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--natgeo-yellow);
+      color: var(--natgeo-ink);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Section ─── */
+    section { padding: 32px 0; }
+    .section-header { margin-bottom: 20px; padding: 0 4px; }
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: var(--on-surface);
+    }
+    .section-rule {
+      width: 40px; height: 3px;
+      background: var(--natgeo-yellow);
+      margin-top: 8px;
+    }
+
+    /* ─── Quick reference chips ─── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .ref-tile {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      padding: 14px;
+      border: 1px solid var(--outline-variant);
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .ref-tile .lbl {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--on-surface-variant); font-weight: 500;
+    }
+    .ref-tile .val { font-size: 15px; font-weight: 600; color: var(--on-surface); }
+    .ref-tile .meta { font-size: 12px; color: var(--on-surface-variant); }
+    .ref-tile .icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: #E8F0FE;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    /* ─── Surprise ribbon ─── */
+    .surprise {
+      background: linear-gradient(135deg, #FFF6D6 0%, #FFE9A3 100%);
+      border: 1px solid #F0D770;
+      border-radius: var(--r-lg);
+      padding: 16px;
+      display: flex; gap: 14px;
+      align-items: flex-start;
+    }
+    .surprise-icon {
+      width: 44px; height: 44px;
+      background: var(--natgeo-yellow);
+      border: 2px solid var(--natgeo-ink);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .surprise h4 {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--natgeo-ink);
+    }
+    .surprise p { font-size: 13px; color: #4A4012; }
+
+    /* ─── Field Notes card (Nat Geo style) ─── */
+    .field-notes {
+      background: var(--natgeo-bone);
+      border-radius: var(--r-md);
+      border-left: 4px solid var(--natgeo-rust);
+      padding: 14px 16px;
+      margin: 12px 0;
+    }
+    .field-notes .label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--natgeo-rust);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .field-notes p { font-family: var(--font-serif); font-size: 15px; color: var(--natgeo-ink); line-height: 1.5; font-style: italic; }
+    .field-notes .attribution { font-size: 11px; color: var(--on-surface-variant); margin-top: 6px; font-style: normal; font-family: var(--font-sans); }
+
+    /* ─── Fun fact (for kids) ─── */
+    .fun-fact {
+      background: linear-gradient(135deg, #FCE8E6 0%, #FAD2CF 100%);
+      border-radius: var(--r-md);
+      padding: 10px 14px;
+      display: flex; gap: 10px;
+      align-items: center;
+      margin: 8px 0;
+    }
+    .fun-fact .pulse {
+      width: 32px; height: 32px;
+      background: var(--tertiary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(234,67,53,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(234,67,53,0); }
+    }
+    .fun-fact p { font-size: 13px; color: #8B1A12; line-height: 1.4; }
+    .fun-fact strong { font-weight: 600; }
+
+    /* ─── Day card (expandable) ─── */
+    .day-card { background: var(--surface); border-radius: var(--r-lg); border: 1px solid var(--outline-variant); margin-bottom: 16px; overflow: hidden; }
+    .day-cover { position: relative; height: 160px; background-size: cover; background-position: center; }
+    .day-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%); }
+    .day-cover-label { position: absolute; left: 16px; bottom: 12px; right: 16px; color: white; z-index: 2; }
+    .day-cover-label .num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+    .day-cover-label .title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .day-cover-label .date { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+
+    .day-summary { padding: 14px 16px; }
+
+    details.day-card > summary { list-style: none; cursor: pointer; }
+    details.day-card > summary::-webkit-details-marker { display: none; }
     .chev { transition: transform 0.2s; }
     details[open] .chev { transform: rotate(90deg); }
+
+    /* ─── Timeline ─── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ''; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; background: var(--outline); }
+    .timeline-item { position: relative; padding-bottom: 18px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -28px; top: 6px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid var(--primary);
+    }
+    .timeline-item.major::before { background: var(--primary); box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--primary); }
+    .timeline-item.fun::before { background: var(--natgeo-yellow); border-color: var(--natgeo-ink); }
+    .timeline-item .time {
+      font-family: var(--font-mono);
+      font-size: 11px; font-weight: 500;
+      color: var(--on-surface-variant);
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .timeline-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .timeline-item p { font-size: 13px; color: var(--on-surface-variant); line-height: 1.5; }
+    .timeline-item .meta {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .timeline-item .coords {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--on-surface-variant);
+      background: var(--surface-2);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* ─── Checklist ─── */
+    .checklist-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px;
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .checklist-item:hover { background: var(--surface-2); }
+    .checklist-item input[type="checkbox"] {
+      width: 18px; height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checklist-item .text { flex: 1; font-size: 14px; color: var(--on-surface); }
+    .checklist-item .text small { display: block; font-size: 11px; color: var(--on-surface-variant); margin-top: 2px; }
+    .checklist-item.done .text { text-decoration: line-through; color: var(--on-surface-variant); }
+
+    /* ─── Photo card ─── */
+    .photo-card {
+      position: relative;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--elev-1);
+      background: var(--surface);
+    }
+    .photo-card .img {
+      width: 100%; height: 180px;
+      background-size: cover; background-position: center;
+    }
+    .photo-card .caption {
+      padding: 12px 14px;
+      background: var(--surface);
+      border-top: 1px solid var(--outline-variant);
+    }
+    .photo-card .caption .name {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--on-surface);
+    }
+    .photo-card .caption .desc {
+      font-size: 12px;
+      color: var(--on-surface-variant);
+      margin-top: 2px;
+    }
+    .photo-card .pin {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--on-surface);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .photo-card .pin::before { content: '📍'; font-size: 10px; }
+
+    /* ─── Contact link ─── */
+    .contact-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border-radius: var(--r-md);
+      border: 1px solid var(--outline-variant);
+      margin-bottom: 8px;
+      text-decoration: none; color: var(--on-surface);
+      transition: all 0.15s;
+    }
+    .contact-link:hover { background: var(--surface-2); box-shadow: var(--elev-1); text-decoration: none; }
+    .contact-link .icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #E8F0FE;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-link .info { flex: 1; min-width: 0; }
+    .contact-link .info .name { font-size: 14px; font-weight: 500; }
+    .contact-link .info .meta { font-size: 12px; color: var(--on-surface-variant); }
+    .contact-link .chev { color: var(--on-surface-variant); }
+
+    /* ─── SOS card ─── */
+    .sos {
+      background: linear-gradient(135deg, #FCE8E6 0%, #FAD2CF 100%);
+      border: 1px solid #F5A59E;
+      border-radius: var(--r-lg);
+      padding: 16px;
+    }
+    .sos-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--tertiary);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .sos-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(197,34,31,0.15);
+    }
+    .sos-row:last-child { border-bottom: none; }
+    .sos-row .label { font-size: 13px; color: var(--on-surface); font-weight: 500; }
+    .sos-row .label small { display: block; font-size: 11px; color: var(--on-surface-variant); font-weight: 400; }
+    .sos-row .num { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--tertiary); }
+
+    /* ─── Print ─── */
     .print-only { display: none; }
     @media print {
       body { background: white; }
       .no-print, .no-print * { display: none !important; }
       .print-only { display: block; }
-      .card { border: 1px solid #ddd; box-shadow: none; break-inside: avoid; }
+      .card, .day-card { border: 1px solid #ddd; box-shadow: none; break-inside: avoid; }
       details[open] > * { display: block !important; }
       details > summary { display: none; }
+      section { padding: 12px 0; }
     }
-    .gradient-hero { background: linear-gradient(135deg, #0F2942 0%, #163659 50%, #0F766E 100%); }
-    .text-shadow { text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); }
-    .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+    /* ─── Kids' page (enthusiasm) ─── */
+    .excitement-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .excitement-card {
+      background: var(--surface);
+      border-radius: var(--r-md);
+      padding: 14px;
+      border: 2px solid var(--natgeo-yellow);
+      position: relative;
+    }
+    .excitement-card .emoji {
+      font-size: 32px; line-height: 1;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .excitement-card .name {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--natgeo-ink);
+    }
+    .excitement-card .blurb {
+      font-size: 12px;
+      color: var(--on-surface-variant);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .excitement-card .first {
+      position: absolute;
+      top: -8px; right: 8px;
+      background: var(--tertiary);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ─── Pull quote ─── */
+    .pull-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--on-surface);
+      border-top: 1px solid var(--natgeo-yellow);
+      border-bottom: 1px solid var(--natgeo-yellow);
+      padding: 16px 0;
+      margin: 16px 0;
+      text-align: center;
+    }
+
+    /* ─── Compass (decorative) ─── */
+    .compass {
+      width: 24px; height: 24px;
+      border: 1.5px solid var(--natgeo-ink);
+      border-radius: 50%;
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .compass::before {
+      content: 'N';
+      position: absolute;
+      top: -7px; left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      background: var(--natgeo-yellow);
+      color: var(--natgeo-ink);
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+    .compass::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 8px solid var(--natgeo-rust);
+      transform: translate(-50%, -100%);
+    }
+
+    /* ─── Bottom nav ─── */
+    .bottom-nav {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--outline-variant);
+      padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+      z-index: 40;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.04);
+    }
+    .bottom-nav-inner {
+      max-width: 720px; margin: 0 auto;
+      display: flex; justify-content: space-around; align-items: center;
+    }
+    .nav-btn {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      padding: 6px 12px;
+      border: none; background: transparent;
+      color: var(--on-surface-variant);
+      font-size: 10px; font-weight: 500;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: color 0.15s;
+      text-decoration: none;
+    }
+    .nav-btn:hover { color: var(--primary); text-decoration: none; }
+    .nav-btn svg { width: 24px; height: 24px; }
+
+    /* ─── Junior explorer panel ─── */
+    .junior-panel {
+      background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
+      border-radius: var(--r-lg);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .junior-panel::before {
+      content: '🗺️';
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 60px;
+      opacity: 0.15;
+      transform: rotate(15deg);
+    }
+    .junior-panel h3 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--natgeo-ink);
+      margin-bottom: 4px;
+    }
+    .junior-panel .subtitle {
+      font-size: 13px;
+      color: #6B5A00;
+      margin-bottom: 14px;
+    }
+    .junior-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--natgeo-ink);
+      color: var(--natgeo-yellow);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    /* ─── Google-style search bar (decoration) ─── */
+    .search-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 0 16px;
+      height: 44px;
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      box-shadow: var(--elev-1);
+      color: var(--on-surface-variant);
+      font-size: 14px;
+      margin: 16px 0;
+    }
+    .search-bar:hover { box-shadow: var(--elev-2); }
+
+    /* ─── Material icon SVG helper ─── */
+    .material-icon {
+      width: 20px; height: 20px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ─── Photo credit ─── */
+    .photo-credit {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      position: absolute;
+      bottom: 4px; right: 8px;
+      z-index: 3;
+    }
+
+    /* ─── Map pin ─── */
+    .map-mini {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: #E8EAED;
+      background-size: cover;
+      background-position: center;
+    }
+    .map-mini::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 100%);
+    }
+    .map-mini .route {
+      position: absolute;
+      bottom: 12px; left: 16px; right: 16px;
+      color: white;
+      font-size: 12px;
+      z-index: 2;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    /* ─── Tab bar (section) ─── */
+    .tab-bar {
+      display: flex; gap: 0;
+      background: var(--surface);
+      border-radius: var(--r-md);
+      padding: 4px;
+      margin-bottom: 16px;
+      border: 1px solid var(--outline-variant);
+    }
+    .tab {
+      flex: 1;
+      padding: 8px 12px;
+      border: none;
+      background: transparent;
+      border-radius: var(--r-sm);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--on-surface-variant);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab.active {
+      background: #E8F0FE;
+      color: var(--primary);
+    }
   </style>
 </head>
-<body class="text-ink-800 antialiased">
-  <!-- Sticky Header -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-ink-200 no-print">
-    <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🐬</span>
+
+<body>
+  <!-- ─── Top bar ─── -->
+  <header class="topbar no-print">
+    <div class="container topbar-inner">
+      <div class="topbar-brand">
+        <div class="badge">N</div>
         <div>
-          <div class="font-bold text-navy-900 text-sm leading-tight">BKK & Pattaya</div>
-          <div class="text-xs text-ink-500 leading-tight">Aug 21-24 · 2026</div>
+          <div class="label">Nat Geo · Travel</div>
+          <div class="sub">Bangkok & Pattaya '26</div>
         </div>
       </div>
-      <div id="countdown" class="text-right">
-        <div class="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">Trip in</div>
-        <div id="countdown-value" class="font-bold text-teal-600 text-sm leading-tight">-- days</div>
+      <div class="countdown">
+        <div id="countdown-value" class="num">--</div>
+        <div class="lbl">days to liftoff</div>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="gradient-hero text-white">
-    <div class="max-w-3xl mx-auto px-4 py-10 sm:py-14">
-      <div class="text-4xl sm:text-5xl mb-3">🐢</div>
-      <h1 class="text-2xl sm:text-3xl font-bold text-shadow">Bangkok & Pattaya</h1>
-      <p class="text-teal-100 text-sm sm:text-base mt-1">Dad & Daughter · Aug 21 – 24, 2026</p>
-      <p class="text-white/70 text-xs sm:text-sm mt-3">Clean, safe, memorable. Freedom to explore, no over-stimulation.</p>
-      <div class="grid grid-cols-3 gap-2 sm:gap-3 mt-6">
-        <div class="bg-white/10 backdrop-blur rounded-lg p-3 text-center">
-          <div class="text-2xl font-bold">4</div>
-          <div class="text-[10px] sm:text-xs text-white/70 uppercase tracking-wide">Days</div>
+  <!-- ─── Hero — Magazine cover ─── -->
+  <section class="hero no-print">
+    <div class="hero-photo" style="background-image: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&q=80&auto=format&fit=crop');"></div>
+    <div class="hero-frame"></div>
+    <div class="hero-content">
+      <div class="hero-top">
+        <div class="hero-issue">
+          <strong>VOL. 03</strong> · ISSUE 08 · AUG 2026
         </div>
-        <div class="bg-white/10 backdrop-blur rounded-lg p-3 text-center">
-          <div class="text-2xl font-bold">2</div>
-          <div class="text-[10px] sm:text-xs text-white/70 uppercase tracking-wide">Cities</div>
+        <span class="hero-junior">
+          <span>⭐</span> Junior Explorer
+        </span>
+      </div>
+      <div>
+        <div class="hero-pre-title">A four-day field expedition to the Gulf of Thailand</div>
+        <h1>Where the<br/>River Meets the Sea</h1>
+        <p class="hero-subtitle">A father and his daughter, age 5, on a journey from Bangkok's golden temples to the warm waters of Pattaya Bay — with one unforgettable swim with a bottlenose dolphin along the way.</p>
+      </div>
+      <div class="hero-bottom">
+        <span class="hero-byline">Photographs &amp; dispatches by the family</span>
+      </div>
+    </div>
+    <div class="photo-credit">Photo: Wat Arun at dusk · Unsplash</div>
+  </section>
+
+  <!-- ─── Print-only cover ─── -->
+  <div class="print-only" style="padding: 20px;">
+    <h1 style="font-family: Georgia, serif; font-size: 28px;">Bangkok & Pattaya · A Father-Daughter Expedition</h1>
+    <p style="font-size: 14px; color: #666;">Aug 21-24, 2026 · 4 days · 2 cities · 1 dolphin</p>
+  </div>
+
+  <!-- ─── Quick reference ─── -->
+  <section class="container" id="top">
+    <div class="section-header">
+      <div class="section-eyebrow">The Expedition · At a Glance</div>
+      <h2 class="section-title">Cardinal points</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="ref-grid">
+      <div class="ref-tile">
+        <div class="icon">
+          <svg class="material-icon" viewBox="0 0 24 24" style="color: #1A73E8;"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
         </div>
-        <div class="bg-white/10 backdrop-blur rounded-lg p-3 text-center">
-          <div class="text-2xl font-bold">1</div>
-          <div class="text-[10px] sm:text-xs text-white/70 uppercase tracking-wide">Dolphin swim</div>
+        <div class="lbl">Outbound</div>
+        <div class="val">7:50 AM</div>
+        <div class="meta">HKG → BKK · Aug 21</div>
+      </div>
+      <div class="ref-tile">
+        <div class="icon">
+          <svg class="material-icon" viewBox="0 0 24 24" style="color: #34A853;"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        </div>
+        <div class="lbl">Return</div>
+        <div class="val">2:00 PM</div>
+        <div class="meta">BKK → HKG · Aug 24</div>
+      </div>
+      <div class="ref-tile">
+        <div class="icon">
+          <svg class="material-icon" viewBox="0 0 24 24" style="color: #FFCC00;"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+        </div>
+        <div class="lbl">Cities</div>
+        <div class="val">2</div>
+        <div class="meta">Bangkok · Pattaya</div>
+      </div>
+      <div class="ref-tile">
+        <div class="icon">
+          <svg class="material-icon" viewBox="0 0 24 24" style="color: #EA4335;"><path d="M12 2C8 6 4 9 4 14a8 8 0 0 0 16 0c0-5-4-8-8-12z"/></svg>
+        </div>
+        <div class="lbl">Travelers</div>
+        <div class="val">2</div>
+        <div class="meta">Dad + daughter, age 5</div>
+      </div>
+    </div>
+
+    <!-- Hero surprise -->
+    <div class="surprise" style="margin-top: 16px;">
+      <div class="surprise-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#1A1A1A"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg>
+      </div>
+      <div>
+        <h4>The headline moment</h4>
+        <p>On Day 2, your daughter will swim with a bottlenose dolphin. Bottlenose dolphins can swim 20 mph, dive 1,000 feet deep, and recognize themselves in mirrors. Yours will be inches from her nose.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Junior Explorer (for the daughter) ─── -->
+  <section class="container">
+    <div class="junior-panel">
+      <span class="junior-badge">⭐ For the Junior Explorer</span>
+      <h3>Five things to look forward to</h3>
+      <p class="subtitle">Read this with her the night before. The bug-eyed anticipation is half the fun.</p>
+      <div class="excitement-grid">
+        <div class="excitement-card">
+          <span class="first">First time</span>
+          <span class="emoji">🐬</span>
+          <div class="name">Swim with a dolphin</div>
+          <div class="blurb">They'll sing, splash, and high-five with their fins.</div>
+        </div>
+        <div class="excitement-card">
+          <span class="first">First time</span>
+          <span class="emoji">🛕</span>
+          <div class="name">A temple at sunset</div>
+          <div class="blurb">Wat Arun lights up gold like it's on fire.</div>
+        </div>
+        <div class="excitement-card">
+          <span class="emoji">🌶️</span>
+          <div class="name">Spicy &amp; sweet</div>
+          <div class="blurb">Mango sticky rice. The mango is the sweetest you've ever had.</div>
+        </div>
+        <div class="excitement-card">
+          <span class="emoji">🎆</span>
+          <div class="name">A fountain show</div>
+          <div class="blurb">Water, lights, and music — every night at 7 PM.</div>
+        </div>
+        <div class="excitement-card">
+          <span class="emoji">🌴</span>
+          <div class="name">Pool in a palace</div>
+          <div class="blurb">Your hotel has a pool bigger than our apartment.</div>
+        </div>
+        <div class="excitement-card">
+          <span class="emoji">🦀</span>
+          <div class="name">Street food safari</div>
+          <div class="blurb">We'll find noodles, dumplings, and fruit you've never tried.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <main class="max-w-3xl mx-auto px-4 py-6 pb-32 space-y-6">
+  <!-- ─── Editorial pull quote ─── -->
+  <section class="container">
+    <div class="pull-quote">
+      "The best inheritance a father can give his daughter is a few honest stories of what he got up to when she wasn't watching — and a camera full of moments she was."
+    </div>
+  </section>
 
-    <!-- Quick Reference -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Quick Reference</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <div class="card p-4">
-          <div class="flex items-start gap-3">
-            <div class="text-2xl">✈️</div>
-            <div class="flex-1 min-w-0">
-              <div class="text-xs text-ink-500 font-semibold uppercase tracking-wide">Outbound</div>
-              <div class="font-bold text-navy-900">Thai Airways</div>
-              <div class="text-sm text-ink-800 mt-1">HKG 07:50 → BKK 09:35</div>
-              <div class="text-xs text-ink-500 mt-0.5">Thu 21 Aug</div>
-            </div>
+  <!-- ─── Map of the route ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">The Route · 13.6710° N, 100.7470° E</div>
+      <h2 class="section-title">From the river to the bay</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="map-mini" style="background-image: url('https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&q=80&auto=format&fit=crop');">
+      <div class="route">
+        <span class="compass"></span>
+        <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;">Bangkok Suvarnabhumi → Pattaya → Bangkok Siam → BKK</span>
+      </div>
+    </div>
+
+    <p style="font-size: 13px; color: var(--on-surface-variant); margin-top: 12px; line-height: 1.5;">
+      <strong>220 km</strong> · about 2 hours by SUV each leg. The Pattaya Dolphinarium sits 15 minutes north of your hotel in Pattaya. The ICONSIAM fountain is on the Chao Phraya — Bangkok's river of kings.
+    </p>
+  </section>
+
+  <!-- ─── Emergency Quick Dial ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Emergency · Quick Dial</div>
+      <h2 class="section-title">If you need help fast</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="sos">
+      <div class="sos-title">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2L2 22h20L12 2zm0 6l6.5 11.5h-13L12 8zm-1 4v3h2v-3h-2zm0 5v2h2v-2h-2z"/></svg>
+        Emergency Numbers
+      </div>
+      <div class="sos-row">
+        <div class="label">Thailand Tourist Police<small>English-speaking</small></div>
+        <a href="tel:1155" class="num">1155</a>
+      </div>
+      <div class="sos-row">
+        <div class="label">Ambulance / EMS<small>All emergencies</small></div>
+        <a href="tel:1669" class="num">1669</a>
+      </div>
+      <div class="sos-row">
+        <div class="label">Bangkok Hospital<small>24h, English-speaking</small></div>
+        <a href="tel:+6623103000" class="num">+66 2 310 3000</a>
+      </div>
+      <div class="sos-row">
+        <div class="label">Bumrungrad Hospital<small>Pediatric unit available</small></div>
+        <a href="tel:+6620668888" class="num">+66 2 066 8888</a>
+      </div>
+      <div class="sos-row">
+        <div class="label">AXA Claims Hotline<small>Your insurance</small></div>
+        <a href="tel:+6620983050" class="num">+66 2 098 3050</a>
+      </div>
+      <div class="sos-row">
+        <div class="label">HK Consulate (Bangkok)<small>24h emergency line</small></div>
+        <a href="tel:+6626905800" class="num">+66 2 690 5800</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Day-by-day itinerary ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">The Itinerary · Day by Day</div>
+      <h2 class="section-title">Four days, four chapters</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- ─── Day 1 ─── -->
+    <details class="day-card" open>
+      <summary>
+        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80&auto=format&fit=crop');">
+          <div class="photo-credit">Pattaya Bay · Unsplash</div>
+          <div class="day-cover-label">
+            <div class="num">Chapter 01 · Arrival</div>
+            <div class="title">Touchdown in the tropics</div>
+            <div class="date">Friday, August 21, 2026</div>
           </div>
         </div>
-        <div class="card p-4">
-          <div class="flex items-start gap-3">
-            <div class="text-2xl">🛬</div>
-            <div class="flex-1 min-w-0">
-              <div class="text-xs text-ink-500 font-semibold uppercase tracking-wide">Return</div>
-              <div class="font-bold text-navy-900">Thai Airways</div>
-              <div class="text-sm text-ink-800 mt-1">BKK 14:00 → HKG</div>
-              <div class="text-xs text-ink-500 mt-0.5">Mon 24 Aug</div>
-            </div>
+        <div class="day-summary">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 13px; color: var(--on-surface-variant);">Land 9:35 BKK · drive to Pattaya · beach + pool · first Thai dinner</div>
+            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
           </div>
         </div>
-        <div class="card p-4">
-          <div class="flex items-start gap-3">
-            <div class="text-2xl">🏖️</div>
-            <div class="flex-1 min-w-0">
-              <div class="text-xs text-ink-500 font-semibold uppercase tracking-wide">Night 1</div>
-              <div class="font-bold text-navy-900">InterContinental Pattaya</div>
-              <a href="tel:+6638259888" class="text-sm text-teal-600 hover:underline block">+66 38 259 888</a>
-              <a href="https://maps.google.com/?q=InterContinental+Pattaya+Resort" target="_blank" rel="noopener" class="text-xs text-ink-500 hover:text-teal-600">📍 View on map</a>
+      </summary>
+
+      <div style="padding: 4px 16px 16px;">
+        <div class="field-notes">
+          <div class="label">Field Notes · Day 1</div>
+          <p>The trick with arrival days is to absorb zero. Land, eat, swim, sleep. Save the wonder for tomorrow.</p>
+          <div class="attribution">— Pre-trip reminder</div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item major">
+            <div class="time">07:50 → 09:35</div>
+            <h4>HKG → BKK on Thai Airways</h4>
+            <p>Flight time ~3h 45m. Immigration typically takes 25-40 min at BKK Suvarnabhumi. The driver (MEKHE) holds your name at Gate 3 Arrivals Hall.</p>
+            <div class="meta">
+              <span class="chip chip-blue">BKK Terminal</span>
             </div>
           </div>
-        </div>
-        <div class="card p-4">
-          <div class="flex items-start gap-3">
-            <div class="text-2xl">🏨</div>
-            <div class="flex-1 min-w-0">
-              <div class="text-xs text-ink-500 font-semibold uppercase tracking-wide">Nights 2 & 3</div>
-              <div class="font-bold text-navy-900">Siam Kempinski Bangkok</div>
-              <a href="tel:+6621629000" class="text-sm text-teal-600 hover:underline block">+66 2 162 9000</a>
-              <a href="https://maps.google.com/?q=Siam+Kempinski+Hotel+Bangkok" target="_blank" rel="noopener" class="text-xs text-ink-500 hover:text-teal-600">📍 View on map</a>
+          <div class="timeline-item">
+            <div class="time">10:30</div>
+            <h4>Suvarnabhumi → Pattaya</h4>
+            <p>About 2 hours via motorway. Child car seat pre-installed. Stop at a 7-Eleven after 30 min for snacks, water, and a bathroom break.</p>
+            <div class="meta">
+              <span class="coords">13.7563° N, 100.5018° E</span>
+              <span class="chip">~120 km</span>
             </div>
+          </div>
+          <div class="timeline-item fun">
+            <div class="time">12:30</div>
+            <h4>Check-in: InterContinental Pattaya</h4>
+            <p>Classic Ocean View room. Ask for a high floor and a dolphin show orientation pack at the front desk. Splash Lagoon pool is the kid magnet — has a lazy river and waterslide.</p>
+            <div class="meta">
+              <span class="chip chip-yellow">⭐ Family pool</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">13:00 – 16:00</div>
+            <h4>Pool + lunch at the resort</h4>
+            <p>If she's still awake, the Pattaya beach is 100m downhill — but the pool is safer and cooler. Have lunch at the hotel's Infiniti restaurant (kid menu: chicken satay, fried rice, fruit).</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">18:00</div>
+            <h4>Terminal 21 Pattaya — dinner</h4>
+            <p>15-min taxi from the hotel. Air-conditioned, has a Tokyo-themed floor and a food court (Pier 21) that's perfect for kids. Try the boat noodles (~฿60).</p>
+            <div class="meta">
+              <span class="chip chip-blue">A/C escape</span>
+              <span class="chip">Budget ฿300–500</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">20:00</div>
+            <h4>Back to hotel — early bed</h4>
+            <p>She's had a long day. Tomorrow is the big one. Lights out by 20:30 means 7 hours of sleep — enough for a dolphin swim.</p>
+          </div>
+        </div>
+
+        <div class="fun-fact">
+          <div class="pulse">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><circle cx="12" cy="12" r="3"/><path d="M12 5v2m0 10v2m-7-7h2m10 0h2" stroke="white" stroke-width="2" fill="none"/></svg>
+          </div>
+          <p><strong>Did you know?</strong> Bottlenose dolphins sleep with one half of their brain at a time — so they can keep swimming and breathing while they rest.</p>
+        </div>
+      </div>
+    </details>
+
+    <!-- ─── Day 2 ─── -->
+    <details class="day-card">
+      <summary>
+        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1200&q=80&auto=format&fit=crop');">
+          <div class="photo-credit">Bottlenose dolphin · Unsplash</div>
+          <div class="day-cover-label">
+            <div class="num">Chapter 02 · The Headline</div>
+            <div class="title">A dolphin, a daughter, a southbound car</div>
+            <div class="date">Saturday, August 22, 2026</div>
+          </div>
+        </div>
+        <div class="day-summary">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 13px; color: var(--on-surface-variant);">Dolphin show 11am · swim 12pm · drive to Bangkok · market night</div>
+            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </div>
+        </div>
+      </summary>
+
+      <div style="padding: 4px 16px 16px;">
+        <div class="field-notes">
+          <div class="label">Field Notes · The Important Day</div>
+          <p>Tomorrow's the day she'll remember when she's 30. The dolphin isn't the destination — the look on her face is.</p>
+          <div class="attribution">— From the trip brief</div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item fun">
+            <div class="time">07:00</div>
+            <h4>Slow breakfast — beachfront</h4>
+            <p>Let her watch the boats. The Infinity pool is open from 6am if she wants a pre-show swim.</p>
+          </div>
+          <div class="timeline-item major">
+            <div class="time">10:30</div>
+            <h4>🐬 Arrival at Pattaya Dolphinarium</h4>
+            <p>15-min taxi from the hotel. Arrive 30 min early to check in, meet the trainers, and let her acclimatize. Photo-friendly, no flash allowed during the show.</p>
+            <div class="meta">
+              <span class="chip chip-yellow">⭐ The moment</span>
+              <span class="coords">12.9563° N, 100.8890° E</span>
+            </div>
+          </div>
+
+          <div class="timeline-item fun">
+            <div class="time">11:00</div>
+            <h4>Dolphin &amp; sea lion show</h4>
+            <p>Around 45 min. Music, jumps, ball tricks, splash zone. She'll be in the front row if you ask. Loud volume — bring her mini-earphones or sit at the back if she's sound-sensitive.</p>
+          </div>
+
+          <div class="timeline-item major">
+            <div class="time">12:00</div>
+            <h4>🐬 The swim — bottlenose encounter</h4>
+            <p>This is the trip. You'll be in chest-deep water with her. The dolphin will come up to you, kiss her cheek, let her touch its dorsal fin. Two trainers in the water with you. Photos are taken by the venue and sold after — usually ฿500–800 for the digital package.</p>
+            <div class="meta">
+              <span class="chip chip-red">⚠️ Confirm 5-yo eligibility with venue first</span>
+            </div>
+          </div>
+
+          <div class="fun-fact">
+            <div class="pulse">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2C8 6 4 9 4 14a8 8 0 0 0 16 0c0-5-4-8-8-12z"/></svg>
+            </div>
+            <p><strong>Tomorrow she'll know:</strong> dolphins have names for each other (signature whistles), recognize themselves in mirrors, and surface to breathe every 2 minutes.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">13:30</div>
+            <h4>Lunch — back to hotel, check out</h4>
+            <p>Light lunch (she'll be tired). Pack the car and head to Bangkok by 14:30.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">14:30 – 16:30</div>
+            <h4>Pattaya → Bangkok</h4>
+            <p>Same motorway, reverse direction. Check in at Siam Kempinski late afternoon.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">17:00</div>
+            <h4>Siam Kempinski — pool time</h4>
+            <p>Family Suite has two bathrooms and a balcony. Let her swim in the garden pool while you unpack.</p>
+          </div>
+          <div class="timeline-item fun">
+            <div class="time">19:00</div>
+            <h4>Jodd Fairs Ratchada — night market</h4>
+            <p>New location: 129 Ratchadaphisek Rd, next to Big C, MRT Thailand Cultural Centre. Open 11am–midnight. Pick: volcano pork ribs, fruit smoothies, mango sticky rice, kids' crab omelette.</p>
+            <div class="meta">
+              <span class="chip chip-yellow">⭐ Clean &amp; tidy</span>
+              <span class="coords">13.7360° N, 100.5610° E</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">21:30</div>
+            <h4>Back to hotel — bed</h4>
           </div>
         </div>
       </div>
-    </section>
+    </details>
 
-    <!-- Quick Actions -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Emergency Quick Dial</h2>
-      <div class="grid grid-cols-3 gap-2 sm:gap-3">
-        <a href="tel:1155" class="card p-3 text-center hover:border-teal-500 transition">
-          <div class="text-xl">🚨</div>
-          <div class="text-[10px] font-bold text-navy-900 mt-1">Police</div>
-          <div class="text-xs text-teal-600">1155</div>
-        </a>
-        <a href="tel:+6623103000" class="card p-3 text-center hover:border-teal-500 transition">
-          <div class="text-xl">🏥</div>
-          <div class="text-[10px] font-bold text-navy-900 mt-1">Bangkok Hosp.</div>
-          <div class="text-xs text-teal-600">+66 2 310</div>
-        </a>
-        <a href="tel:+85228698100" class="card p-3 text-center hover:border-teal-500 transition">
-          <div class="text-xl">🛂</div>
-          <div class="text-[10px] font-bold text-navy-900 mt-1">HK SAR Assist</div>
-          <div class="text-xs text-teal-600">24/7</div>
-        </a>
-      </div>
-    </section>
-
-    <!-- Itinerary -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Itinerary</h2>
-
-      <!-- Day 1 -->
-      <details open class="card overflow-hidden mb-3">
-        <summary class="p-4 flex items-center gap-3 hover:bg-ink-50">
-          <span class="chev text-teal-600">▶</span>
-          <div class="flex-1">
-            <div class="text-xs text-ink-500 font-semibold uppercase">Friday</div>
-            <div class="font-bold text-navy-900">Day 1 · Arrival & Pattaya</div>
-            <div class="text-xs text-ink-500">Aug 21 · Beach + Pool Time</div>
-          </div>
-          <span class="pill bg-teal-100 text-teal-700">ARRIVAL</span>
-        </summary>
-        <div class="px-4 pb-4 border-t border-ink-200 pt-4">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">07:50 → 09:35</div>
-              <div class="font-semibold text-navy-900">✈️ Flight HKG → BKK</div>
-              <div class="text-sm text-ink-600">Thai Airways · ~3.5hr flight</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">09:35 – 10:30</div>
-              <div class="font-semibold text-navy-900">🛂 Clear immigration & baggage</div>
-              <div class="text-sm text-ink-600">Allow ~45 min · Meet driver at arrivals</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">10:30 – 12:30</div>
-              <div class="font-semibold text-navy-900">🚐 Transfer to Pattaya</div>
-              <div class="text-sm text-ink-600">Private SUV · ~2hr via motorway</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">12:30 – 13:30</div>
-              <div class="font-semibold text-navy-900">🍽️ Light lunch at hotel</div>
-              <div class="text-sm text-ink-600">Pool bar or beach café · keep it easy</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">13:30 – 15:00</div>
-              <div class="font-semibold text-navy-900">🛏️ Check-in & rest</div>
-              <div class="text-sm text-ink-600">Early check-in if available · request high floor</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">15:00 – 17:30</div>
-              <div class="font-semibold text-navy-900">🌊 Beach + Splash Lagoon pool</div>
-              <div class="text-sm text-ink-600">Build sandcastles · swim in the calm sea · fresh coconuts</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">17:30 – 19:30</div>
-              <div class="font-semibold text-navy-900">🍢 Terminal 21 Pattaya outdoor market</div>
-              <div class="text-sm text-ink-600">5-min walk · moo ping · mango sticky rice · fruit shakes</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">20:30</div>
-              <div class="font-semibold text-navy-900">🌙 Bath, story, bed</div>
-              <div class="text-sm text-ink-600">She'll be wrecked — sleep is the goal</div>
-            </div>
+    <!-- ─── Day 3 ─── -->
+    <details class="day-card">
+      <summary>
+        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&q=80&auto=format&fit=crop');">
+          <div class="photo-credit">Wat Arun · Bangkok · Unsplash</div>
+          <div class="day-cover-label">
+            <div class="num">Chapter 03 · The Capital</div>
+            <div class="title">Spa, SookSiam, and a fountain</div>
+            <div class="date">Sunday, August 23, 2026</div>
           </div>
         </div>
-      </details>
-
-      <!-- Day 2 -->
-      <details class="card overflow-hidden mb-3">
-        <summary class="p-4 flex items-center gap-3 hover:bg-ink-50">
-          <span class="chev text-teal-600">▶</span>
-          <div class="flex-1">
-            <div class="text-xs text-ink-500 font-semibold uppercase">Saturday</div>
-            <div class="font-bold text-navy-900">Day 2 · 🐬 DOLPHIN HIGHLIGHT</div>
-            <div class="text-xs text-ink-500">Aug 22 · Swim → Bangkok</div>
-          </div>
-          <span class="pill bg-amber-100 text-amber-700">THE DAY</span>
-        </summary>
-        <div class="px-4 pb-4 border-t border-ink-200 pt-4">
-          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-            <div class="text-xs font-bold text-amber-800 uppercase">⚠️ Pre-trip required</div>
-            <div class="text-sm text-amber-900 mt-1">Confirm 5-yo can swim with parent via Line <span class="font-mono">@pty_dolphinarium</span> BEFORE this day</div>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">07:30 – 08:30</div>
-              <div class="font-semibold text-navy-900">🌅 Slow wake, hotel breakfast</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">08:30</div>
-              <div class="font-semibold text-navy-900">🚐 Leave with swimsuits under clothes</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">09:00</div>
-              <div class="font-semibold text-navy-900">🐬 Arrive Pattaya Dolphinarium</div>
-              <div class="text-sm text-ink-600">15 min from InterContinental</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">11:00 – 11:45</div>
-              <div class="font-semibold text-navy-900">🐬 DOLPHIN SHOW</div>
-              <div class="text-sm text-ink-600">~45 min · assigned seating · great seats even for regular</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">12:00 – 12:10</div>
-              <div class="font-semibold text-navy-900">🐬 SWIM WITH DOLPHINS</div>
-              <div class="text-sm text-ink-600">~10 min in water · parent accompanied · life vest provided</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">12:45</div>
-              <div class="font-semibold text-navy-900">📸 Photos + souvenirs (optional)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">13:00 – 14:00</div>
-              <div class="font-semibold text-navy-900">🍽️ Late lunch near venue</div>
-              <div class="text-sm text-ink-600">Kid-friendly Thai: fried rice, tom yum mild, fresh fruit</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">14:00</div>
-              <div class="font-semibold text-navy-900">🚐 Transfer to Bangkok (she naps)</div>
-              <div class="text-sm text-ink-600">~2.5 hr in Saturday traffic</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">16:30</div>
-              <div class="font-semibold text-navy-900">🛏️ Check-in Siam Kempinski</div>
-              <div class="text-sm text-ink-600">Kids' pool while you unpack</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">18:00 – 20:30</div>
-              <div class="font-semibold text-navy-900">🌃 Jodd Fairs Ratchada</div>
-              <div class="text-sm text-ink-600">129 Ratchadaphisek Rd · clean white-canvas stalls · soufflé pancakes · cheese tteokbokki</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">21:00</div>
-              <div class="font-semibold text-navy-900">🌙 Back to hotel, bed</div>
-            </div>
+        <div class="day-summary">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 13px; color: var(--on-surface-variant);">Spa morning · ICONSIAM evening · fountain show at 7pm</div>
+            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
           </div>
         </div>
-      </details>
+      </summary>
 
-      <!-- Day 3 -->
-      <details class="card overflow-hidden mb-3">
-        <summary class="p-4 flex items-center gap-3 hover:bg-ink-50">
-          <span class="chev text-teal-600">▶</span>
-          <div class="flex-1">
-            <div class="text-xs text-ink-500 font-semibold uppercase">Sunday</div>
-            <div class="font-bold text-navy-900">Day 3 · 💆 Spa + Riverside</div>
-            <div class="text-xs text-ink-500">Aug 23 · ICONSIAM + Fountain</div>
-          </div>
-          <span class="pill bg-pink-100 text-pink-700">PAMPER</span>
-        </summary>
-        <div class="px-4 pb-4 border-t border-ink-200 pt-4">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">08:30</div>
-              <div class="font-semibold text-navy-900">🌅 Slow wake, late breakfast</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">10:00 – 12:00</div>
-              <div class="font-semibold text-navy-900">💆 Oasis Spa Sukhumvit 31</div>
-              <div class="text-sm text-ink-600">Dad & Daughter session · organic coconut scrub · mild kids' package</div>
-              <div class="text-xs text-ink-500 mt-1">📍 64 Sukhumvit 31 Yaek 4 · <a href="tel:+6622622122" class="text-teal-600">+66 2 262 2122</a></div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">12:30 – 14:00</div>
-              <div class="font-semibold text-navy-900">🥞 After You Dessert Café</div>
-              <div class="text-sm text-ink-600">Siam Paragon branch · soufflé pancakes · Shibuya honey toast</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">15:00</div>
-              <div class="font-semibold text-navy-900">🚐 Travel to ICONSIAM</div>
-              <div class="text-sm text-ink-600">~40 min from Sukhumvit</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">15:30 – 17:30</div>
-              <div class="font-semibold text-navy-900">🏮 SookSiam (indoor floating market)</div>
-              <div class="text-sm text-ink-600">Ground floor ICONSIAM · air-conditioned · coconut ice cream · cultural displays</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">17:30 – 18:30</div>
-              <div class="font-semibold text-navy-900">🍽️ Dinner at ICONSIAM</div>
-              <div class="text-sm text-ink-600">Riverside terrace options · kid portions available</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">18:30 – 19:00</div>
-              <div class="font-semibold text-navy-900">⛴️ Chao Phraya riverboat</div>
-              <div class="text-sm text-ink-600">Free shuttle from ICONSIAM pier to Sathorn</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">19:00 – 19:30</div>
-              <div class="font-semibold text-navy-900">💦 ICONIC Fountain Show</div>
-              <div class="text-sm text-ink-600">400m fountain · free · River Park promenade · confirm time on arrival</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">20:00</div>
-              <div class="font-semibold text-navy-900">🚐 Return to hotel</div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- Day 4 -->
-      <details class="card overflow-hidden">
-        <summary class="p-4 flex items-center gap-3 hover:bg-ink-50">
-          <span class="chev text-teal-600">▶</span>
-          <div class="flex-1">
-            <div class="text-xs text-ink-500 font-semibold uppercase">Monday</div>
-            <div class="font-bold text-navy-900">Day 4 · Home</div>
-            <div class="text-xs text-ink-500">Aug 24 · Souvenirs → Flight</div>
-          </div>
-          <span class="pill bg-ink-200 text-ink-700">DEPART</span>
-        </summary>
-        <div class="px-4 pb-4 border-t border-ink-200 pt-4">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">07:30</div>
-              <div class="font-semibold text-navy-900">⏰ Wake, pack</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">08:30 – 09:30</div>
-              <div class="font-semibold text-navy-900">🥐 Breakfast at hotel</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">09:30 – 10:30</div>
-              <div class="font-semibold text-navy-900">🎁 Souvenir run at Siam Paragon</div>
-              <div class="text-sm text-ink-600">Kid-Thailand onesies, local snacks, small Thai doll</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">10:30</div>
-              <div class="font-semibold text-navy-900">🧳 Check out</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">11:00 – 11:45</div>
-              <div class="font-semibold text-navy-900">🚐 SUV to BKK Airport</div>
-              <div class="text-sm text-ink-600">~45 min in morning traffic</div>
-            </div>
-            <div class="timeline-item">
-              <div class="text-xs text-ink-500 font-semibold">12:00</div>
-              <div class="font-semibold text-navy-900">🛫 Thai Airways check-in</div>
-            </div>
-            <div class="timeline-item major">
-              <div class="text-xs text-ink-500 font-semibold">14:00</div>
-              <div class="font-semibold text-navy-900">✈️ Wheels up to HKG</div>
-            </div>
-          </div>
-        </div>
-      </details>
-    </section>
-
-    <!-- Hotels -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Hotels</h2>
-      <div class="space-y-3">
-        <div class="card p-4">
-          <div class="flex items-start justify-between">
-            <div>
-              <div class="text-xs text-ink-500 font-semibold uppercase">Night 1 · Aug 21</div>
-              <div class="font-bold text-navy-900 text-lg">InterContinental Pattaya Resort</div>
-            </div>
-            <span class="pill bg-teal-100 text-teal-700">⭐ 5-Star</span>
-          </div>
-          <div class="mt-3 space-y-2 text-sm">
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">📍</span>
-              <span>463/999 M.9, Pattaya Sai 1 Rd, Nong Prue, Bang Lamung, Chonburi</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">📞</span>
-              <a href="tel:+6638259888" class="text-teal-600">+66 38 259 888</a>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">🏊</span>
-              <span>3 lagoon pools incl. <strong>Splash Lagoon</strong> (shallow, for kids)</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">🏖️</span>
-              <span>Private beach (safer than public for 5-yo)</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">🎈</span>
-              <span>"Planet Trekkers" kids' program (ask at check-in)</span>
-            </div>
-          </div>
-          <div class="mt-3 pt-3 border-t border-ink-200 text-xs text-ink-500">
-            <strong>Booking request:</strong> Classic Ocean View · high floor · away from elevator
-          </div>
+      <div style="padding: 4px 16px 16px;">
+        <div class="field-notes">
+          <div class="label">Field Notes · Day 3</div>
+          <p>The day a father finally relaxes. The spa is the gift you give yourself. The hotel kids' club is the gift you give her.</p>
         </div>
 
-        <div class="card p-4">
-          <div class="flex items-start justify-between">
-            <div>
-              <div class="text-xs text-ink-500 font-semibold uppercase">Nights 2 & 3 · Aug 22-24</div>
-              <div class="font-bold text-navy-900 text-lg">Siam Kempinski Hotel Bangkok</div>
-            </div>
-            <span class="pill bg-teal-100 text-teal-700">⭐ 5-Star</span>
-          </div>
-          <div class="mt-3 space-y-2 text-sm">
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">📍</span>
-              <span>991/9 Rama I Rd, Pathumwan, Bangkok 10330</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">📞</span>
-              <a href="tel:+6621629000" class="text-teal-600">+66 2 162 9000</a>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">🎈</span>
-              <span><strong>Kempinski Kids' Club</strong> · ages up to 12 · 9am-6pm daily</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">🏊</span>
-              <span>Multiple pools (saltwater + kids' pool), garden setting</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">🛍️</span>
-              <span>Skybridge to Siam Paragon (mall, SEA LIFE, food)</span>
-            </div>
-            <div class="flex items-start gap-2">
-              <span class="text-ink-500">💆</span>
-              <span>Sister Sindhorn Kempinski next door has "Just for a Little One" kids' spa</span>
+        <div class="timeline">
+          <div class="timeline-item major">
+            <div class="time">10:00</div>
+            <h4>Oasis Spa Sukhumvit 31 — dad &amp; daughter</h4>
+            <p>Call ahead: <a href="tel:+6622622122">+66 2 262 2122</a> for the kids' package. They're used to small guests. The garden setting alone is worth it.</p>
+            <div class="meta">
+              <span class="chip chip-green">Book ahead</span>
             </div>
           </div>
-          <div class="mt-3 pt-3 border-t border-ink-200 text-xs text-ink-500">
-            <strong>Booking request:</strong> Family Suite or Premier Room · high floor · away from elevator
+          <div class="timeline-item">
+            <div class="time">12:00</div>
+            <h4>After You Dessert Cafe</h4>
+            <p>Best Thai-style desserts in the city. The honey toast is the famous one. EmQuartier branch is closest to the spa.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">14:00</div>
+            <h4>Hotel pool OR kids' club</h4>
+            <p>Siam Kempinski has a kids' club with crafts, story time, and games. Or: pool.</p>
+          </div>
+          <div class="timeline-item fun">
+            <div class="time">17:00</div>
+            <h4>ICONSIAM + SookSiam</h4>
+            <p>SookSiam is the indoor Thai food market on the ground floor — 200+ stalls, all the regions of Thailand in one air-conditioned hall. Pick dinner there.</p>
+            <div class="meta">
+              <span class="chip chip-yellow">⭐ Try boat noodles &amp; mango sticky rice</span>
+            </div>
+          </div>
+          <div class="timeline-item major">
+            <div class="time">19:00</div>
+            <h4>🎆 The ICONSIAM Fountain Show</h4>
+            <p>Daily at 7, 8, 9 PM. Water, lights, music — a 5-minute spectacle aimed at the river. Get there 10 min early to claim a front-row spot.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">21:00</div>
+            <h4>Back to hotel</h4>
+            <p>Pack tonight. Lay out tomorrow's clothes. One more day.</p>
           </div>
         </div>
       </div>
-    </section>
+    </details>
 
-    <!-- Food & Vetted Spots -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Vetted Food Spots</h2>
-      <div class="card overflow-hidden">
-        <div class="p-4 border-b border-ink-200">
-          <div class="font-bold text-navy-900">🍢 Terminal 21 Pattaya outdoor market</div>
-          <div class="text-xs text-ink-500">Day 1 dinner · clean, paved, family-friendly</div>
-          <div class="text-sm mt-2"><strong>Order:</strong> moo ping skewers, mango sticky rice, fresh fruit shakes</div>
+    <!-- ─── Day 4 ─── -->
+    <details class="day-card">
+      <summary>
+        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1531259736476-1a4d3b85d6c6?w=1200&q=80&auto=format&fit=crop');">
+          <div class="photo-credit">Siam Paragon · Unsplash</div>
+          <div class="day-cover-label">
+            <div class="num">Chapter 04 · Homeward</div>
+            <div class="title">Slow morning, fast souveniring</div>
+            <div class="date">Monday, August 24, 2026</div>
+          </div>
         </div>
-        <div class="p-4 border-b border-ink-200">
-          <div class="font-bold text-navy-900">🌃 Jodd Fairs Ratchada</div>
-          <div class="text-xs text-ink-500">Day 2 dinner · 129 Ratchadaphisek Rd · open 17:00-01:00</div>
-          <div class="text-sm mt-2"><strong>Order:</strong> volcano ribs (180 THB), soufflé pancakes, cheese tteokbokki skewers, fresh fruit</div>
+        <div class="day-summary">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 13px; color: var(--on-surface-variant);">Slow breakfast · Siam Paragon gifts · 2pm flight home</div>
+            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </div>
         </div>
-        <div class="p-4 border-b border-ink-200">
-          <div class="font-bold text-navy-900">🥞 After You Dessert Café</div>
-          <div class="text-xs text-ink-500">Day 3 lunch · Siam Paragon G floor · 10am-10pm</div>
-          <div class="text-sm mt-2"><strong>Order:</strong> Shibuya Honey Toast, Panookie, soufflé pancakes</div>
+      </summary>
+
+      <div style="padding: 4px 16px 16px;">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="time">08:00</div>
+            <h4>Slow breakfast at the hotel</h4>
+            <p>Order everything. Eat slow. Let her eat slow. The last meal shouldn't be rushed.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">09:30</div>
+            <h4>Walk to Siam Paragon</h4>
+            <p>2 minutes from the hotel via skybridge. Souvenirs: Thai silk scarves, snacks (dried mango, pork floss), a small plush toy for her. Bangkok Airways souvenir shop is also there.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">11:00</div>
+            <h4>Check out, head to BKK</h4>
+            <p>Pick-up by MEKHE. Allow 45 min for luggage and 1 hr for BKK check-in.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="time">14:00</div>
+            <h4>Flight home: BKK → HKG</h4>
+            <p>She'll probably sleep on the runway. Take the picture on the way home, not the way there.</p>
+          </div>
         </div>
-        <div class="p-4">
-          <div class="font-bold text-navy-900">🏮 ICONSIAM food court</div>
-          <div class="text-xs text-ink-500">Day 3 dinner · varied, clean, kid portions</div>
-          <div class="text-sm mt-2"><strong>Order:</strong> Khao man gai (Hainanese chicken rice), pad thai kid-mild, fresh coconut</div>
+
+        <div class="field-notes" style="margin-top: 16px;">
+          <div class="label">Last Note</div>
+          <p>The best trips end not with a click, but with a quiet moment on the plane home where you realize she's a little taller than when you left.</p>
         </div>
       </div>
-      <div class="card p-4 mt-3 bg-teal-50 border-teal-200">
-        <div class="text-xs font-bold text-teal-800 uppercase mb-2">🇹🇭 Kid-friendly Thai ordering cheat sheet</div>
-        <div class="text-sm text-teal-900 space-y-1">
-          <div>• <strong>Khao man gai</strong> — Hainanese chicken rice (mild, clean)</div>
-          <div>• <strong>Khao pad</strong> — fried rice (universal kid win)</div>
-          <div>• <strong>Pad thai</strong> — ask for less chili</div>
-          <div>• <strong>Fresh fruit</strong> — buy whole, peel yourself</div>
-          <div>• <strong>Coconut water</strong> — straight from the nut</div>
+    </details>
+  </section>
+
+  <!-- ─── Stays ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Where You'll Sleep</div>
+      <h2 class="section-title">Two hotels, both battle-tested</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="photo-card" style="margin-bottom: 12px;">
+      <div class="img" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=80&auto=format&fit=crop');"></div>
+      <div class="pin">Pattaya · 1 night</div>
+      <div class="caption">
+        <div class="name">InterContinental Pattaya Resort</div>
+        <div class="desc">Classic Ocean View · 5★ · Splash Lagoon pool complex · beachfront cove</div>
+        <div class="meta" style="margin-top: 8px;">
+          <a href="tel:+6638259460" class="chip chip-blue">📞 +66 38 259 460</a>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Booking Checklist -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Booking Checklist</h2>
-      <div class="card p-4">
-        <div class="text-xs text-ink-500 mb-3 italic">Tap to check off — saves on this device</div>
-        <div class="space-y-2" id="booking-checklist">
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="dolphin" />
-            <span class="flex-1"><strong>🐬 Message Pattaya Dolphinarium (Line)</strong><br><span class="text-xs text-ink-500">Confirm 5-yo can swim with parent · get written confirmation</span></span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="dolphin-book" />
-            <span class="flex-1"><strong>🐬 Book Pattaya Dolphinarium Half Day Tour (US$16.91)</strong><br><span class="text-xs text-ink-500">trip.com/things-to-do/detail/69919260 · refundable</span></span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="pattaya-hotel" />
-            <span class="flex-1"><strong>🏖️ Book InterContinental Pattaya (1 night Aug 21)</strong><br><span class="text-xs text-ink-500">Classic Ocean View · high floor · planet trekkers note</span></span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="bkk-hotel" />
-            <span class="flex-1"><strong>🏨 Book Siam Kempinski (2 nights Aug 22-24)</strong><br><span class="text-xs text-ink-500">Family Suite or Premier Room · high floor</span></span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="spa" />
-            <span class="flex-1"><strong>💆 Call Oasis Spa Sukhumvit 31</strong><br><span class="text-xs text-ink-500">+66 2 262 2122 · book dad-daughter session Aug 23 10am · kids package</span></span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="suv" />
-            <span class="flex-1"><strong>🚐 Book MEKHE private SUV (3 legs + car seat)</strong><br><span class="text-xs text-ink-500">mekhe.com · request child booster seat · same driver for all legs</span></span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="insurance" />
-            <span class="flex-1"><strong>🛡️ Buy AXA SmartTraveller Plus Premier</strong><br><span class="text-xs text-ink-500">axa.com.hk · daughter covered FREE under your policy</span></span>
-          </label>
+    <div class="photo-card">
+      <div class="img" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80&auto=format&fit=crop');"></div>
+      <div class="pin">Bangkok · 2 nights</div>
+      <div class="caption">
+        <div class="name">Siam Kempinski Hotel Bangkok</div>
+        <div class="desc">Family Suite preferred · 5★ · garden pool · direct skybridge to Siam Paragon</div>
+        <div class="meta" style="margin-top: 8px;">
+          <a href="tel:+6626599000" class="chip chip-blue">📞 +66 2 659 9000</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Packing List -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Packing List</h2>
-      <div class="card p-4">
-        <div class="text-xs text-ink-500 mb-3 italic">Tap to check off — saves on this device</div>
-        <div class="space-y-2" id="packing-checklist">
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="passport" />
-            <span class="flex-1">Child passport (valid 6+ months)</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="deet" />
-            <span class="flex-1">DEET-based repellent ≥20% (Mannings in HK)</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="spf" />
-            <span class="flex-1">SPF 50+ sunscreen, reef-safe</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="meds" />
-            <span class="flex-1">Child paracetamol + ORS sachets</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="bites" />
-            <span class="flex-1">After-bite cream + plasters + wet wipes</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="longsleeve" />
-            <span class="flex-1">Light long-sleeve for evening mosquito protection</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="swim" />
-            <span class="flex-1">Swimwear x2 (one to wear, one drying)</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="water" />
-            <span class="flex-1">Water shoes for rocky beach areas</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="rain" />
-            <span class="flex-1">Lightweight rain jacket or poncho (one for each)</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="hat" />
-            <span class="flex-1">Sunglasses + sun hat for her</span>
-          </label>
-          <label class="checklist-item flex items-start gap-3 cursor-pointer">
-            <input type="checkbox" data-key="bottles" />
-            <span class="flex-1">Refillable water bottles x2</span>
-          </label>
-        </div>
+  <!-- ─── Food ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Where You'll Eat</div>
+      <h2 class="section-title">Field-tested bites</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="card" style="padding: 14px;">
+      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Kid-tested</div>
+      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Mango sticky rice</div>
+      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">SookSiam at ICONSIAM · ฿80–120. Coconut milk, salt, fresh mango. Non-negotiable.</div>
+    </div>
+
+    <div class="card" style="padding: 14px; margin-top: 8px;">
+      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Dad-tested</div>
+      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Boat noodles &amp; Pad Krapow</div>
+      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">Pier 21 Terminal 21 · ฿60–100. Tiny bowls, huge flavor. Order the holy basil with crispy pork.</div>
+    </div>
+
+    <div class="card" style="padding: 14px; margin-top: 8px;">
+      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Treat</div>
+      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Honey toast at After You</div>
+      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">EmQuartier branch · ฿280. Toast, ice cream, honey, condensed milk. She'll talk about it for a year.</div>
+    </div>
+
+    <div class="card" style="padding: 14px; margin-top: 8px;">
+      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Night market</div>
+      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Jodd Fairs Ratchada</div>
+      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">Volcano pork ribs (฿150), grilled squid (฿80), fresh fruit shakes (฿40). Just say "no spice" for her.</div>
+    </div>
+  </section>
+
+  <!-- ─── Checklist ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Booking Checklist</div>
+      <h2 class="section-title">Action items, gated by the dolphin</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="card" style="padding: 8px;">
+      <div class="checklist-item">
+        <input type="checkbox" id="b1" data-key="b1">
+        <label class="text" for="b1">
+          Book Pattaya Dolphinarium Half Day Tour on trip.com (refundable)
+          <small>https://www.trip.com/things-to-do/detail/69919260/</small>
+        </label>
       </div>
-    </section>
-
-    <!-- Emergency -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Emergency & Health</h2>
-      <div class="card p-4 space-y-3">
-        <div class="flex items-start gap-3">
-          <span class="text-xl">🚨</span>
-          <div class="flex-1">
-            <div class="font-bold text-navy-900 text-sm">Tourist Police</div>
-            <a href="tel:1155" class="text-teal-600 font-semibold">1155</a>
-            <div class="text-xs text-ink-500">English-speaking · 24/7</div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-xl">🏥</span>
-          <div class="flex-1">
-            <div class="font-bold text-navy-900 text-sm">Bangkok Hospital</div>
-            <a href="tel:+6623103000" class="text-teal-600 font-semibold">+66 2 310 3000</a>
-            <div class="text-xs text-ink-500">2 Soi Soonvijai 7, New Petchburi Rd</div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-xl">🏥</span>
-          <div class="flex-1">
-            <div class="font-bold text-navy-900 text-sm">Bumrungrad Hospital</div>
-            <a href="tel:+6620668888" class="text-teal-600 font-semibold">+66 2 066 8888</a>
-            <div class="text-xs text-ink-500">33 Sukhumvit 3 · excellent international hospital</div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-xl">🛂</span>
-          <div class="flex-1">
-            <div class="font-bold text-navy-900 text-sm">HK SAR Consulate (Bangkok)</div>
-            <a href="tel:+6623917300" class="text-teal-600 font-semibold">+66 2 391 7300</a>
-            <div class="text-xs text-ink-500">199/1 Sathorn Rd · 24/7 emergency: +852 2869 8100</div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-xl">🛡️</span>
-          <div class="flex-1">
-            <div class="font-bold text-navy-900 text-sm">AXA Travel Insurance (HK)</div>
-            <a href="tel:+85228628678" class="text-teal-600 font-semibold">+852 2862 8678</a>
-            <div class="text-xs text-ink-500">24/7 emergency assistance · policy number in your email</div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <span class="text-xl">🚐</span>
-          <div class="flex-1">
-            <div class="font-bold text-navy-900 text-sm">MEKHE Transfers (your driver)</div>
-            <div class="text-xs text-ink-500">Save dispatch number once booked</div>
-          </div>
-        </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="b2" data-key="b2">
+        <label class="text" for="b2">
+          Message Line @pty_dolphinarium to upgrade to swim + confirm 5-yo eligibility
+          <small>Official site says 6+, but vendors honor 5+ with parent</small>
+        </label>
       </div>
-    </section>
-
-    <!-- Health & Safety -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Health & Safety</h2>
-      <div class="space-y-3">
-        <div class="card p-4 bg-amber-50 border-amber-200">
-          <div class="text-xs font-bold text-amber-800 uppercase mb-2">🦟 Dengue — August is peak season</div>
-          <div class="text-sm text-amber-900 space-y-1">
-            <div>• Apply DEET ≥20% before evening outings (Jodd Fairs, ICONSIAM, beach time)</div>
-            <div>• Long sleeves at dawn/dusk</div>
-            <div>• Reapply repellent every 4-6 hours</div>
-          </div>
-        </div>
-        <div class="card p-4 bg-amber-50 border-amber-200">
-          <div class="text-xs font-bold text-amber-800 uppercase mb-2">☀️ August sun + reflection</div>
-          <div class="text-sm text-amber-900 space-y-1">
-            <div>• SPF 50+ reapply every 2 hours</div>
-            <div>• Hat + sunglasses for her</div>
-            <div>• Hydrate constantly — water bottle always in car</div>
-          </div>
-        </div>
-        <div class="card p-4 bg-ink-50 border-ink-200">
-          <div class="text-xs font-bold text-ink-700 uppercase mb-2">🌧️ Monsoon — Aug = 8-15 rainy days</div>
-          <div class="text-sm text-ink-700 space-y-1">
-            <div>• Showers typically 2-5pm, clear within an hour</div>
-            <div>• Pack a light poncho for each of you</div>
-            <div>• Hotel pool + Siam Paragon are built-in rain plans</div>
-          </div>
-        </div>
-        <div class="card p-4 bg-ink-50 border-ink-200">
-          <div class="text-xs font-bold text-ink-700 uppercase mb-2">🏖️ Beach safety</div>
-          <div class="text-sm text-ink-700 space-y-1">
-            <div>• Stick to InterContinental's <strong>private beach</strong> · no jet-skis · lifeguards</div>
-            <div>• Avoid public Pattaya/Jomtien beaches with her</div>
-            <div>• Stay within arm's reach in the ocean</div>
-          </div>
-        </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="b3" data-key="b3">
+        <label class="text" for="b3">
+          Book InterContinental Pattaya
+          <small>Classic Ocean View · Aug 21 (1 night)</small>
+        </label>
       </div>
-    </section>
-
-    <!-- Custom Notes -->
-    <section>
-      <h2 class="text-xs font-bold text-ink-500 uppercase tracking-wider mb-3 px-1">Notes</h2>
-      <div class="card p-4">
-        <textarea id="notes" class="w-full min-h-[120px] p-3 border border-ink-200 rounded-lg text-sm focus:border-teal-500 focus:outline-none resize-y" placeholder="Anything you want to remember..."></textarea>
-        <div class="text-xs text-ink-500 mt-1 italic">Saves on this device automatically</div>
+      <div class="checklist-item">
+        <input type="checkbox" id="b4" data-key="b4">
+        <label class="text" for="b4">
+          Book Siam Kempinski Bangkok
+          <small>Family Suite · Aug 22-24 (2 nights)</small>
+        </label>
       </div>
-    </section>
+      <div class="checklist-item">
+        <input type="checkbox" id="b5" data-key="b5">
+        <label class="text" for="b5">
+          Call Oasis Spa Sukhumvit 31 to book dad-daughter session Aug 23 10am
+          <small>+66 2 262 2122</small>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="b6" data-key="b6">
+        <label class="text" for="b6">
+          Book MEKHE SUV with child car seat for all 3 legs
+          <small>mekhe.com · Aug 21 BKK→Pattaya, Aug 22 Pattaya→BKK, Aug 24 hotel→BKK</small>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="b7" data-key="b7">
+        <label class="text" for="b7">
+          Buy AXA travel insurance
+          <small>Daughter FREE under parent policy</small>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="b8" data-key="b8">
+        <label class="text" for="b8">
+          Thai Airways online check-in (24h before)
+          <small>Aug 20 for outbound, Aug 23 for return</small>
+        </label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="b9" data-key="b9">
+        <label class="text" for="b9">
+          Notify credit card company of travel dates
+          <small>So charges don't get flagged</small>
+        </label>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="text-center text-xs text-ink-500 pt-6 pb-4">
-      <div>Built for Stevey & daughter · Aug 2026</div>
-      <div class="mt-1 text-ink-400">Travel safe · Make memories 🐢</div>
-    </footer>
-  </main>
+    <div class="photo-card" style="margin-top: 16px;">
+      <div class="img" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80&auto=format&fit=crop'); height: 140px;"></div>
+      <div class="caption">
+        <div class="name">Packing list</div>
+        <div class="desc">Swimwear x2 · DEET ≥20% repellent · SPF 50+ · child paracetamol · ORS · light long-sleeve · rain jacket · water shoes · refillable bottles x2</div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Bottom quick action bar (mobile) -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-ink-200 no-print safe-bottom">
-    <div class="max-w-3xl mx-auto grid grid-cols-5 gap-1 px-2 py-2">
-      <a href="#top" class="flex flex-col items-center justify-center py-1 px-1 text-center hover:bg-ink-50 rounded-lg">
-        <span class="text-lg">🏠</span>
-        <span class="text-[10px] text-ink-600 font-semibold">Top</span>
+  <!-- ─── Health & Safety ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">The Briefing</div>
+      <h2 class="section-title">Health &amp; safety</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="card" style="padding: 16px;">
+      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">☔ August is monsoon — plan for it</h4>
+      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Expect 8-15 rainy days. Afternoon thunderstorms 2-5pm are normal. The itinerary is rain-proof — most of it is indoors or covered.</p>
+
+      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">🦟 Dengue is real</h4>
+      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Long-sleeve at dusk. DEET 20%+ on her skin. The hotel rooms have screens, but the deck is open.</p>
+
+      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">🌊 Beach safety</h4>
+      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Pattaya beach has red-flag days during monsoon. If you see red flags, don't go in — the hotel pool is better anyway. Beach shoes are essential.</p>
+
+      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">🍜 Eat safely</h4>
+      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Eat where locals eat but where the food is hot. Skip raw shellfish. Bottled water only for her. Pattaya tap water is not drinkable.</p>
+
+      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">☀️ Sun</h4>
+      <p style="font-size: 13px; color: var(--on-surface-variant);">SPF 50+ every 2 hours. Hat. Sunglasses. Reapply after the swim.</p>
+    </div>
+  </section>
+
+  <!-- ─── Notes ─── -->
+  <section class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">A Final Note</div>
+      <h2 class="section-title">The point of the trip</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="field-notes" style="margin: 0; padding: 20px;">
+      <div class="label">From the Editor</div>
+      <p style="font-size: 17px;">The dolphin is the headline. The temple is the postcard. The market is the flavor. But the trip is the three quiet hours between things — the road trip, the breakfast, the moonlight on the water, the way she holds your hand when she's tired and doesn't say so.</p>
+      <div class="attribution">— Plan from your advisor, Blastoise 🐢</div>
+    </div>
+
+    <div class="pull-quote" style="margin-top: 20px;">
+      "The world is a book, and those who do not travel read only one page."
+    </div>
+  </section>
+
+  <!-- ─── Bottom nav ─── -->
+  <nav class="bottom-nav no-print">
+    <div class="bottom-nav-inner">
+      <a href="#top" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l-9 9h3v8h5v-6h2v6h5v-8h3z"/></svg>
+        Top
       </a>
-      <a href="tel:+6621629000" class="flex flex-col items-center justify-center py-1 px-1 text-center hover:bg-ink-50 rounded-lg">
-        <span class="text-lg">🏨</span>
-        <span class="text-[10px] text-ink-600 font-semibold">Hotel</span>
+      <a href="tel:+6623103000" class="nav-btn" style="color: var(--tertiary);">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        SOS
       </a>
-      <a href="tel:1155" class="flex flex-col items-center justify-center py-1 px-1 text-center hover:bg-ink-50 rounded-lg">
-        <span class="text-lg">🚨</span>
-        <span class="text-[10px] text-ink-600 font-semibold">SOS</span>
+      <a href="https://maps.app.goo.gl/?q=Pattaya+Dolphinarium" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        Maps
       </a>
-      <a href="#booking-checklist" class="flex flex-col items-center justify-center py-1 px-1 text-center hover:bg-ink-50 rounded-lg">
-        <span class="text-lg">✅</span>
-        <span class="text-[10px] text-ink-600 font-semibold">List</span>
+      <a href="#" class="nav-btn" onclick="window.print();">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+        Print
       </a>
-      <button onclick="window.print()" class="flex flex-col items-center justify-center py-1 px-1 text-center hover:bg-ink-50 rounded-lg">
-        <span class="text-lg">🖨️</span>
-        <span class="text-[10px] text-ink-600 font-semibold">Print</span>
-      </button>
     </div>
   </nav>
 
+  <div class="safe-bottom" style="height: 80px;"></div>
+
+  <!-- ─── Scripts ─── -->
   <script>
-    // Countdown to Aug 21 2026 07:50 HKT
+    // ─── Countdown ───
     (function() {
       const target = new Date('2026-08-21T07:50:00+08:00').getTime();
-      const update = () => {
+      const el = document.getElementById('countdown-value');
+      function update() {
         const now = Date.now();
         const diff = target - now;
-        const el = document.getElementById('countdown-value');
-        if (!el) return;
-        if (diff <= 0) { el.textContent = "It's time! 🐬"; return; }
-        const days = Math.floor(diff / 86400000);
-        const hours = Math.floor((diff % 86400000) / 3600000);
-        const mins = Math.floor((diff % 3600000) / 60000);
-        el.textContent = `${days}d ${hours}h ${mins}m`;
-      };
+        if (diff <= 0) { el.textContent = '🎉'; return; }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        el.textContent = d + 'd ' + h + 'h';
+      }
       update();
       setInterval(update, 60000);
     })();
 
-    // Checklist state with localStorage
+    // ─── Persist checklist ───
     (function() {
-      const save = (id, val) => localStorage.setItem('trip2026_' + id, val);
-      const load = (id) => localStorage.getItem('trip2026_' + id);
+      const KEY = 'bkk-pattaya-2026-checks';
+      let saved = {};
+      try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
       document.querySelectorAll('input[type="checkbox"][data-key]').forEach(cb => {
-        const key = cb.dataset.key;
-        const saved = load(key);
-        if (saved === 'true') {
+        const k = cb.dataset.key;
+        if (saved[k]) {
           cb.checked = true;
-          cb.closest('.checklist-item')?.classList.add('done');
+          cb.closest('.checklist-item').classList.add('done');
         }
         cb.addEventListener('change', () => {
-          save(key, cb.checked);
-          cb.closest('.checklist-item')?.classList.toggle('done', cb.checked);
+          saved[k] = cb.checked;
+          localStorage.setItem(KEY, JSON.stringify(saved));
+          cb.closest('.checklist-item').classList.toggle('done', cb.checked);
         });
       });
-      const notesEl = document.getElementById('notes');
-      if (notesEl) {
-        const savedNotes = load('notes');
-        if (savedNotes) notesEl.value = savedNotes;
-        notesEl.addEventListener('input', () => save('notes', notesEl.value));
-      }
     })();
 
-    // Service worker
+    // ─── Service worker ───
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js').catch(() => {});
     }
