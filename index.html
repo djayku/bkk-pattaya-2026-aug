@@ -1,1580 +1,1949 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" "#202124" />
-  <meta name="description" content="Stevey & daughter's Bangkok & Pattaya field expedition — Aug 21-24, 2026" />
-  <title>Bangkok & Pattaya · A Father-Daughter Expedition · Aug 21-24 2026</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23202124'/><rect x='6' y='6' width='88' height='88' fill='none' stroke='%23FFCC00' stroke-width='6'/><text x='50' y='68' text-anchor='middle' font-size='52' font-family='Georgia' font-weight='bold' fill='%23FFCC00'>N</text></svg>" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23202124'/><rect x='6' y='6' width='88' height='88' fill='none' stroke='%23FFCC00' stroke-width='6'/><text x='50' y='68' text-anchor='middle' font-size='52' font-family='Georgia' font-weight='bold' fill='%23FFCC00'>N</text></svg>" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FAF7F2">
+  <meta name="description" content="A dad's trip with his daughter — Bangkok & Pattaya, August 21–24, 2026. A dolphin swim, a garden spa, and a fountain show.">
+  <title>Bangkok & Pattaya · Aug 21–24 · Father & Daughter</title>
 
-  <!-- Typography: Google Sans (system fallback), EB Garamond for editorial serif -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='80' font-size='80'%3E🐬%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='80' font-size='80'%3E🐬%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ─── Tokens ─── */
+    /* ───────────────────────────────────────────────
+       DESIGN SYSTEM — Apple x National Geographic Kids
+       Cream · Charcoal · Sunset · Yellow
+       ─────────────────────────────────────────────── */
     :root {
-      /* Google Material You neutrals */
+      /* Palette */
+      --bg: #FAF7F2;
+      --bg-2: #F4EFE5;
       --surface: #FFFFFF;
-      --surface-1: #F8F9FA;
-      --surface-2: #F1F3F4;
-      --on-surface: #202124;
-      --on-surface-variant: #5F6368;
-      --outline: #DADCE0;
-      --outline-variant: #E8EAED;
-      --primary: #1A73E8;            /* Google Blue */
-      --on-primary: #FFFFFF;
-      --secondary: #34A853;          /* Google Green */
-      --tertiary: #EA4335;            /* Google Red */
-      /* National Geographic */
-      --natgeo-yellow: #FFCC00;
-      --natgeo-yellow-soft: #FFF3B0;
-      --natgeo-ink: #1A1A1A;
-      --natgeo-bone: #F5F1E8;
-      --natgeo-rust: #B5651D;
-      --natgeo-deep: #2C3E2D;
+      --surface-2: #FBF8F2;
+      --ink: #1A1A1A;
+      --ink-2: #5C5C5C;
+      --ink-3: #9A958A;
+      --accent: #FF6B35;        /* Sunset orange — signature */
+      --accent-2: #E63946;      /* Signal red — critical */
+      --blue: #007AFF;          /* Apple system blue */
+      --green: #34C759;
+      --yellow: #FFD60A;        /* NG Kids yellow */
+      --pink: #FF8FB1;          /* Soft pink */
+      --teal: #00C2B8;          /* Lagoon */
+      --border: #ECE6DA;
+      --border-strong: #1A1A1A;
+
       /* Type */
-      --font-sans: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-serif: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
-      --font-mono: 'Roboto Mono', ui-monospace, Menlo, monospace;
-      /* Elevation */
-      --elev-1: 0 1px 2px rgba(60,64,67,0.1), 0 1px 3px 1px rgba(60,64,67,0.06);
-      --elev-2: 0 1px 2px rgba(60,64,67,0.12), 0 2px 6px 2px rgba(60,64,67,0.08);
-      --elev-3: 0 4px 8px 3px rgba(60,64,67,0.12), 0 1px 3px rgba(60,64,67,0.08);
-      /* Radii — Material 4dp scale */
-      --r-xs: 4px;
-      --r-sm: 8px;
-      --r-md: 12px;
-      --r-lg: 16px;
-      --r-xl: 28px;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+      --font-serif: 'Fraunces', 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+      /* Spacing */
+      --s-1: 4px;
+      --s-2: 8px;
+      --s-3: 12px;
+      --s-4: 16px;
+      --s-5: 20px;
+      --s-6: 24px;
+      --s-7: 32px;
+      --s-8: 48px;
+      --s-9: 64px;
+      --s-10: 96px;
+      --s-11: 128px;
+
+      /* Radii */
+      --r-sm: 10px;
+      --r-md: 16px;
+      --r-lg: 24px;
+      --r-xl: 32px;
+      --r-2xl: 40px;
+      --r-pill: 999px;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 3px rgba(26, 26, 26, 0.04), 0 1px 2px rgba(26, 26, 26, 0.03);
+      --shadow-md: 0 4px 24px rgba(26, 26, 26, 0.06), 0 2px 6px rgba(26, 26, 26, 0.04);
+      --shadow-lg: 0 16px 48px rgba(26, 26, 26, 0.10), 0 4px 12px rgba(26, 26, 26, 0.04);
+      --shadow-xl: 0 32px 64px rgba(26, 26, 26, 0.14), 0 8px 16px rgba(26, 26, 26, 0.06);
+
+      /* Motion */
+      --ease: cubic-bezier(0.32, 0.72, 0, 1);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    /* ─── Base ─── */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      font-family: var(--font-sans);
-      color: var(--on-surface);
-      background: var(--surface-1);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
-      font-size: 15px;
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
     }
-    h1, h2, h3, h4 { font-weight: 600; color: var(--on-surface); letter-spacing: -0.01em; margin: 0; }
-    p { margin: 0; }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ::selection { background: var(--accent); color: white; }
 
     /* ─── Layout ─── */
-    .container { max-width: 720px; margin: 0 auto; padding: 0 16px; }
-    .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
-
-    /* ─── Material components ─── */
-    .card {
-      background: var(--surface);
-      border-radius: var(--r-lg);
-      box-shadow: var(--elev-1);
-      border: 1px solid var(--outline-variant);
-      overflow: hidden;
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 var(--s-6);
     }
-    .chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      height: 28px; padding: 0 12px;
-      border-radius: 8px;
-      font-size: 12px; font-weight: 500; letter-spacing: 0.02em;
-      background: var(--surface-2);
-      color: var(--on-surface-variant);
-      border: 1px solid var(--outline-variant);
-    }
-    .chip-yellow { background: var(--natgeo-yellow-soft); border-color: var(--natgeo-yellow); color: #6B5A00; }
-    .chip-blue { background: #E8F0FE; border-color: #D2E3FC; color: #1967D2; }
-    .chip-green { background: #E6F4EA; border-color: #CEEAD6; color: #137333; }
-    .chip-red { background: #FCE8E6; border-color: #FAD2CF; color: #C5221F; }
-    .chip-mono { font-family: var(--font-mono); font-size: 11px; }
-
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      height: 44px; padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 500; font-size: 14px;
-      border: none; cursor: pointer;
-      transition: all 0.15s ease;
-      text-decoration: none;
-    }
-    .btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: var(--elev-1); }
-    .btn-primary:hover { background: #1765CC; box-shadow: var(--elev-2); text-decoration: none; }
-    .btn-tonal { background: #E8F0FE; color: #1967D2; }
-    .btn-tonal:hover { background: #D2E3FC; text-decoration: none; }
-    .btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--outline); }
-    .btn-outline:hover { background: var(--surface-2); text-decoration: none; }
-    .btn-fab {
-      width: 56px; height: 56px; border-radius: 16px;
-      background: var(--primary); color: white;
-      box-shadow: var(--elev-3);
-      border: none; cursor: pointer;
+    @media (max-width: 640px) {
+      .container { padding: 0 var(--s-5); }
     }
 
-    /* ─── Nat Geo frame ─── */
-    .natgeo-frame {
-      position: relative;
-      border: 3px solid var(--natgeo-ink);
-      box-shadow: inset 0 0 0 6px var(--natgeo-yellow), inset 0 0 0 9px var(--natgeo-ink);
-    }
-    .natgeo-edge {
-      background: linear-gradient(180deg, var(--natgeo-yellow) 0%, var(--natgeo-yellow) 8px, transparent 8px, transparent calc(100% - 8px), var(--natgeo-yellow) calc(100% - 8px));
-    }
-
-    /* ─── Header ─── */
-    .topbar {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--outline-variant);
-    }
-    .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; }
-    .topbar-brand { display: flex; align-items: center; gap: 8px; }
-    .topbar-brand .badge {
-      width: 28px; height: 28px;
-      background: var(--natgeo-ink);
-      border: 2px solid var(--natgeo-yellow);
-      border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-serif);
-      font-weight: 600;
-      color: var(--natgeo-yellow);
-      font-size: 16px;
-    }
-    .topbar-brand .label { font-weight: 500; font-size: 14px; color: var(--on-surface); }
-    .topbar-brand .sub { font-size: 11px; color: var(--on-surface-variant); font-weight: 400; }
-
-    .countdown {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-    .countdown .num { font-size: 16px; font-weight: 600; color: var(--primary); line-height: 1; }
-    .countdown .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--on-surface-variant); font-weight: 500; margin-top: 2px; }
-
-    /* ─── Hero — Magazine cover ─── */
-    .hero {
-      position: relative;
-      min-height: 480px;
-      color: white;
-      overflow: hidden;
-      background: linear-gradient(180deg, #0F1A2E 0%, #1A2D4D 100%);
-    }
-    .hero-photo {
-      position: absolute; inset: 0;
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.1) contrast(1.05);
-    }
-    .hero-photo::after {
-      content: ''; position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, rgba(15,26,46,0.45) 0%, rgba(15,26,46,0.15) 30%, rgba(15,26,46,0.85) 100%);
-    }
-    .hero-frame {
-      position: absolute; inset: 12px;
-      border: 2px solid rgba(255,204,0,0.6);
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      padding: 56px 24px 32px;
-      height: 100%;
-      display: flex; flex-direction: column; justify-content: space-between;
-    }
-    .hero-top { display: flex; justify-content: space-between; align-items: flex-start; }
-    .hero-issue {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.85;
-    }
-    .hero-issue strong { color: var(--natgeo-yellow); font-weight: 500; }
-    .hero-pre-title {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 14px;
-      color: var(--natgeo-yellow);
-      letter-spacing: 0.02em;
-      margin-bottom: 8px;
-    }
-    .hero h1 {
-      font-family: var(--font-serif);
-      font-weight: 600;
-      font-size: 40px;
-      line-height: 1.05;
-      letter-spacing: -0.015em;
-      color: white;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-      margin-bottom: 12px;
-    }
-    .hero-subtitle {
-      font-size: 15px;
-      line-height: 1.4;
-      opacity: 0.92;
-      max-width: 380px;
-    }
-    .hero-bottom { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .hero-byline {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.7;
-    }
-    .hero-junior {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--natgeo-yellow);
-      color: var(--natgeo-ink);
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    /* ─── Section ─── */
-    section { padding: 32px 0; }
-    .section-header { margin-bottom: 20px; padding: 0 4px; }
-    .section-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--on-surface-variant);
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 28px;
-      line-height: 1.15;
-      font-weight: 600;
-      color: var(--on-surface);
-    }
-    .section-rule {
-      width: 40px; height: 3px;
-      background: var(--natgeo-yellow);
-      margin-top: 8px;
-    }
-
-    /* ─── Quick reference chips ─── */
-    .ref-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .ref-tile {
-      background: var(--surface);
-      border-radius: var(--r-lg);
-      padding: 14px;
-      border: 1px solid var(--outline-variant);
-      display: flex; flex-direction: column; gap: 4px;
-    }
-    .ref-tile .lbl {
-      font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--on-surface-variant); font-weight: 500;
-    }
-    .ref-tile .val { font-size: 15px; font-weight: 600; color: var(--on-surface); }
-    .ref-tile .meta { font-size: 12px; color: var(--on-surface-variant); }
-    .ref-tile .icon {
-      width: 32px; height: 32px;
-      border-radius: 8px;
-      background: #E8F0FE;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 4px;
-    }
-
-    /* ─── Surprise ribbon ─── */
-    .surprise {
-      background: linear-gradient(135deg, #FFF6D6 0%, #FFE9A3 100%);
-      border: 1px solid #F0D770;
-      border-radius: var(--r-lg);
-      padding: 16px;
-      display: flex; gap: 14px;
-      align-items: flex-start;
-    }
-    .surprise-icon {
-      width: 44px; height: 44px;
-      background: var(--natgeo-yellow);
-      border: 2px solid var(--natgeo-ink);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .surprise h4 {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      margin-bottom: 4px;
-      color: var(--natgeo-ink);
-    }
-    .surprise p { font-size: 13px; color: #4A4012; }
-
-    /* ─── Field Notes card (Nat Geo style) ─── */
-    .field-notes {
-      background: var(--natgeo-bone);
-      border-radius: var(--r-md);
-      border-left: 4px solid var(--natgeo-rust);
-      padding: 14px 16px;
-      margin: 12px 0;
-    }
-    .field-notes .label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--natgeo-rust);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .field-notes p { font-family: var(--font-serif); font-size: 15px; color: var(--natgeo-ink); line-height: 1.5; font-style: italic; }
-    .field-notes .attribution { font-size: 11px; color: var(--on-surface-variant); margin-top: 6px; font-style: normal; font-family: var(--font-sans); }
-
-    /* ─── Fun fact (for kids) ─── */
-    .fun-fact {
-      background: linear-gradient(135deg, #FCE8E6 0%, #FAD2CF 100%);
-      border-radius: var(--r-md);
-      padding: 10px 14px;
-      display: flex; gap: 10px;
+    /* ─── Top Bar ─── */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: var(--s-4) var(--s-6);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(250, 247, 242, 0.72);
+      border-bottom: 1px solid var(--border);
+      display: flex;
       align-items: center;
-      margin: 8px 0;
+      justify-content: space-between;
     }
-    .fun-fact .pulse {
-      width: 32px; height: 32px;
-      background: var(--tertiary);
+    .top-bar-logo {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .top-bar-logo .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      background: var(--accent);
+      margin: 0 4px;
+      transform: translateY(-2px);
+    }
+    .top-bar-mini {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+    }
+    .top-bar-live {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: 6px 12px;
+      background: var(--ink);
+      color: white;
+      border-radius: var(--r-pill);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 var(--accent);
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(234,67,53,0.4); }
-      50% { box-shadow: 0 0 0 8px rgba(234,67,53,0); }
+      0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.6); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 107, 53, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
     }
-    .fun-fact p { font-size: 13px; color: #8B1A12; line-height: 1.4; }
-    .fun-fact strong { font-weight: 600; }
 
-    /* ─── Day card (expandable) ─── */
-    .day-card { background: var(--surface); border-radius: var(--r-lg); border: 1px solid var(--outline-variant); margin-bottom: 16px; overflow: hidden; }
-    .day-cover { position: relative; height: 160px; background-size: cover; background-position: center; }
-    .day-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%); }
-    .day-cover-label { position: absolute; left: 16px; bottom: 12px; right: 16px; color: white; z-index: 2; }
-    .day-cover-label .num {
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      min-height: 92svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--s-9) var(--s-6) var(--s-8);
+      overflow: hidden;
+      color: white;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.08);
+      animation: heroZoom 1.4s var(--ease-out) forwards;
+    }
+    @keyframes heroZoom {
+      to { transform: scale(1.0); }
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.75) 100%),
+        linear-gradient(0deg, rgba(255, 107, 53, 0.08) 0%, rgba(0,0,0,0) 30%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 920px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: var(--s-5);
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(56px, 14vw, 144px);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      margin-bottom: var(--s-6);
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+    .hero-subtitle {
+      font-size: 17px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 540px;
+      margin-bottom: var(--s-7);
+      font-weight: 400;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      align-items: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--r-pill);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+    }
+    .hero-pill.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: var(--s-7);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--s-2);
+      animation: scrollBob 2.4s ease-in-out infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
+    }
+    @keyframes scrollBob {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 6px); }
+    }
+
+    /* ─── Stats strip ─── */
+    .stats {
+      padding: var(--s-9) 0 var(--s-7);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--s-2);
+    }
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+    }
+    .stat {
+      text-align: left;
+    }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+    .stat-num em {
+      color: var(--accent);
+      font-style: italic;
+    }
+    .stat-label {
       font-family: var(--font-mono);
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      opacity: 0.85;
-      margin-bottom: 4px;
+      color: var(--ink-2);
+      margin-top: var(--s-3);
     }
-    .day-cover-label .title {
+
+    /* ─── Section header ─── */
+    .section {
+      padding: var(--s-10) 0;
+    }
+    .section-head {
+      max-width: 720px;
+      margin-bottom: var(--s-8);
+    }
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--s-4);
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-title {
       font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 600;
-      line-height: 1.1;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      font-weight: 400;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: var(--ink);
     }
-    .day-cover-label .date { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+    .section-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .section-lede {
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--ink-2);
+      margin-top: var(--s-4);
+      max-width: 600px;
+    }
 
-    .day-summary { padding: 14px 16px; }
+    /* ─── Junior panel (NG Kids) ─── */
+    .junior {
+      background: var(--yellow);
+      border-radius: var(--r-2xl);
+      padding: var(--s-8);
+      margin: var(--s-8) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .junior::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+    }
+    .junior-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--yellow);
+      padding: 6px 12px;
+      border-radius: var(--r-pill);
+      margin-bottom: var(--s-5);
+    }
+    .junior-title {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: var(--s-3);
+    }
+    .junior-sub {
+      font-size: 16px;
+      color: var(--ink);
+      opacity: 0.75;
+      margin-bottom: var(--s-7);
+      max-width: 480px;
+    }
+    .junior-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--s-4);
+    }
+    @media (max-width: 640px) {
+      .junior-grid { grid-template-columns: repeat(2, 1fr); }
+      .junior { padding: var(--s-6); }
+    }
+    .j-card {
+      background: white;
+      border-radius: var(--r-lg);
+      padding: var(--s-5);
+      transition: transform 0.4s var(--ease-out);
+    }
+    .j-card:hover {
+      transform: translateY(-4px);
+    }
+    .j-card.emoji {
+      font-size: 32px;
+      line-height: 1;
+      margin-bottom: var(--s-3);
+    }
+    .j-card.first {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: white;
+      padding: 3px 8px;
+      border-radius: var(--r-pill);
+      margin-bottom: var(--s-3);
+    }
+    .j-card-title {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: var(--s-2);
+    }
+    .j-card-blurb {
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--ink-2);
+    }
 
-    details.day-card > summary { list-style: none; cursor: pointer; }
-    details.day-card > summary::-webkit-details-marker { display: none; }
-    .chev { transition: transform 0.2s; }
-    details[open] .chev { transform: rotate(90deg); }
+    /* ─── Pull quote ─── */
+    .pullquote {
+      max-width: 820px;
+      margin: var(--s-9) auto;
+      padding: var(--s-7) var(--s-6);
+      text-align: center;
+    }
+    .pullquote-text {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .pullquote-text::before {
+      content: '“';
+      display: block;
+      font-size: 1.5em;
+      line-height: 0.5;
+      color: var(--accent);
+      margin-bottom: var(--s-4);
+    }
+    .pullquote-attr {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      margin-top: var(--s-5);
+    }
+
+    /* ─── Day cards ─── */
+    .day-card {
+      background: var(--surface);
+      border-radius: var(--r-2xl);
+      overflow: hidden;
+      margin-bottom: var(--s-7);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.4s var(--ease);
+    }
+    .day-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+    .day-card[data-open="true"] {
+      box-shadow: var(--shadow-lg);
+    }
+    .day-cover {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    @media (max-width: 640px) {
+      .day-cover { height: 240px; }
+    }
+    .day-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out);
+    }
+    .day-card:hover .day-cover img {
+      transform: scale(1.04);
+    }
+    .day-cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.7) 100%);
+    }
+    .day-cover-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--s-6);
+      color: white;
+    }
+    .day-chapter {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: var(--s-2);
+    }
+    .day-title {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--s-3);
+    }
+    .day-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .day-date {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--r-pill);
+    }
+    .day-toggle {
+      position: absolute;
+      top: var(--s-5);
+      right: var(--s-5);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s var(--ease-out);
+      z-index: 2;
+    }
+    .day-card[data-open="true"] .day-toggle {
+      transform: rotate(45deg);
+    }
+    .day-toggle svg {
+      width: 18px;
+      height: 18px;
+      color: var(--ink);
+    }
+
+    .day-body {
+      display: none;
+      padding: var(--s-7) var(--s-6) var(--s-8);
+    }
+    .day-card[data-open="true"] .day-body {
+      display: block;
+      animation: slideDown 0.5s var(--ease-out);
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .day-summary {
+      padding: var(--s-5) var(--s-6);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: var(--s-4);
+    }
+    .day-summary-text {
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.4;
+    }
 
     /* ─── Timeline ─── */
-    .timeline { position: relative; padding-left: 28px; }
-    .timeline::before { content: ''; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; background: var(--outline); }
-    .timeline-item { position: relative; padding-bottom: 18px; }
-    .timeline-item:last-child { padding-bottom: 0; }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -28px; top: 6px;
-      width: 20px; height: 20px; border-radius: 50%;
+    .timeline {
+      position: relative;
+      padding-left: var(--s-7);
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--border) 100%);
+    }
+    .t-item {
+      position: relative;
+      padding-bottom: var(--s-6);
+    }
+    .t-item:last-child {
+      padding-bottom: 0;
+    }
+    .t-item::before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 8px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
       background: var(--surface);
-      border: 3px solid var(--primary);
+      border: 2px solid var(--accent);
+      transition: transform 0.3s var(--ease-out);
     }
-    .timeline-item.major::before { background: var(--primary); box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--primary); }
-    .timeline-item.fun::before { background: var(--natgeo-yellow); border-color: var(--natgeo-ink); }
-    .timeline-item .time {
+    .t-item.major::before {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+    }
+    .t-item.fun::before {
+      background: var(--yellow);
+      border-color: var(--ink);
+    }
+    .t-time {
       font-family: var(--font-mono);
-      font-size: 11px; font-weight: 500;
-      color: var(--on-surface-variant);
-      letter-spacing: 0.04em;
-      margin-bottom: 2px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: var(--s-2);
     }
-    .timeline-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-    .timeline-item p { font-size: 13px; color: var(--on-surface-variant); line-height: 1.5; }
-    .timeline-item .meta {
-      display: flex; gap: 6px; flex-wrap: wrap;
-      margin-top: 6px;
+    .t-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: var(--s-3);
     }
-    .timeline-item .coords {
+    .t-body {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--ink-2);
+      margin-bottom: var(--s-3);
+    }
+    .t-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+      margin-top: var(--s-3);
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-1);
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+      font-size: 11px;
+      font-weight: 500;
+      font-family: var(--font-mono);
+      letter-spacing: 0.02em;
+      background: var(--bg-2);
+      color: var(--ink);
+    }
+    .chip-accent { background: var(--accent); color: white; }
+    .chip-yellow { background: var(--yellow); color: var(--ink); }
+    .chip-blue { background: rgba(0, 122, 255, 0.1); color: var(--blue); }
+    .chip-green { background: rgba(52, 199, 89, 0.12); color: var(--green); }
+    .chip-red { background: rgba(255, 59, 48, 0.10); color: var(--accent-2); }
+    .chip-pink { background: rgba(255, 143, 177, 0.15); color: #C2185B; }
+
+    /* ─── Did you know? ─── */
+    .dyk {
+      margin: var(--s-6) 0;
+      padding: var(--s-5);
+      background: var(--yellow);
+      border-radius: var(--r-lg);
+      position: relative;
+      border: 1.5px solid var(--ink);
+    }
+    .dyk-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
       font-family: var(--font-mono);
       font-size: 10px;
-      color: var(--on-surface-variant);
-      background: var(--surface-2);
-      padding: 1px 6px;
-      border-radius: 4px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--ink);
+      color: var(--yellow);
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+      margin-bottom: var(--s-3);
+    }
+    .dyk-body {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .dyk-body strong {
+      font-weight: 700;
+    }
+
+    /* ─── Field notes ─── */
+    .field-note {
+      margin: var(--s-6) 0 var(--s-7);
+      padding: var(--s-5);
+      background: var(--bg-2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--r-md) var(--r-md) 0;
+    }
+    .field-note-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--s-2);
+    }
+    .field-note-body {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--ink);
+    }
+    .field-note-attr {
+      font-size: 12px;
+      color: var(--ink-2);
+      margin-top: var(--s-2);
+      font-style: normal;
+    }
+
+    /* ─── Stays ─── */
+    .stays-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-5);
+    }
+    @media (max-width: 640px) {
+      .stays-grid { grid-template-columns: 1fr; }
+    }
+    .stay-card {
+      background: var(--surface);
+      border-radius: var(--r-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: all 0.4s var(--ease-out);
+    }
+    .stay-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .stay-img {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    .stay-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out);
+    }
+    .stay-card:hover .stay-img img {
+      transform: scale(1.06);
+    }
+    .stay-pin {
+      position: absolute;
+      top: var(--s-4);
+      left: var(--s-4);
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: var(--r-pill);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+    }
+    .stay-body {
+      padding: var(--s-5);
+    }
+    .stay-name {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: var(--s-2);
+    }
+    .stay-desc {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink-2);
+      margin-bottom: var(--s-4);
+    }
+    .stay-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    /* ─── Food cards ─── */
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--s-4);
+    }
+    @media (max-width: 640px) {
+      .food-grid { grid-template-columns: 1fr; }
+    }
+    .food-card {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      padding: var(--s-5);
+      border: 1px solid var(--border);
+      transition: all 0.3s var(--ease-out);
+    }
+    .food-card:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+    .food-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--s-2);
+    }
+    .food-name {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: var(--s-2);
+    }
+    .food-where {
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+
+    /* ─── Spa highlight ─── */
+    .spa {
+      background: var(--ink);
+      color: white;
+      border-radius: var(--r-2xl);
+      padding: var(--s-8);
+      position: relative;
+      overflow: hidden;
+      margin: var(--s-8) 0;
+    }
+    .spa::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.22) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 50%;
+    }
+    .spa-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--s-4);
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+    }
+    .spa-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .spa-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--s-4);
+    }
+    .spa-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .spa-body {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 540px;
+      margin-bottom: var(--s-6);
+    }
+    .spa-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: 12px 20px;
+      border-radius: var(--r-pill);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s var(--ease-out);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: white;
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.18);
     }
 
     /* ─── Checklist ─── */
-    .checklist-item {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 12px;
-      border-radius: var(--r-sm);
-      cursor: pointer;
-      transition: background 0.15s;
+    .checklist {
+      background: var(--surface);
+      border-radius: var(--r-2xl);
+      padding: var(--s-7);
+      border: 1px solid var(--border);
     }
-    .checklist-item:hover { background: var(--surface-2); }
-    .checklist-item input[type="checkbox"] {
-      width: 18px; height: 18px;
-      accent-color: var(--primary);
-      cursor: pointer;
-      flex-shrink: 0;
+    .progress-wrap {
+      margin-bottom: var(--s-6);
     }
-    .checklist-item .text { flex: 1; font-size: 14px; color: var(--on-surface); }
-    .checklist-item .text small { display: block; font-size: 11px; color: var(--on-surface-variant); margin-top: 2px; }
-    .checklist-item.done .text { text-decoration: line-through; color: var(--on-surface-variant); }
-
-    /* ─── Photo card ─── */
-    .photo-card {
-      position: relative;
-      border-radius: var(--r-lg);
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      margin-bottom: var(--s-2);
+    }
+    .progress-bar {
+      height: 6px;
+      background: var(--bg-2);
+      border-radius: var(--r-pill);
       overflow: hidden;
-      box-shadow: var(--elev-1);
-      background: var(--surface);
     }
-    .photo-card .img {
-      width: 100%; height: 180px;
-      background-size: cover; background-position: center;
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--yellow) 100%);
+      border-radius: var(--r-pill);
+      transition: width 0.5s var(--ease-out);
+      width: 0%;
     }
-    .photo-card .caption {
-      padding: 12px 14px;
-      background: var(--surface);
-      border-top: 1px solid var(--outline-variant);
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-4);
+      padding: var(--s-4) 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: opacity 0.3s var(--ease);
     }
-    .photo-card .caption .name {
-      font-family: var(--font-serif);
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--on-surface);
+    .check-item:last-child {
+      border-bottom: none;
     }
-    .photo-card .caption .desc {
-      font-size: 12px;
-      color: var(--on-surface-variant);
+    .check-item.done .check-text {
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
+    .check-box {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s var(--ease-spring);
+      background: transparent;
       margin-top: 2px;
     }
-    .photo-card .pin {
-      position: absolute; top: 12px; right: 12px;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      padding: 4px 8px;
-      border-radius: 999px;
+    .check-item.done .check-box {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .check-box svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0;
+      color: white;
+      transition: opacity 0.2s var(--ease);
+    }
+    .check-item.done .check-box svg {
+      opacity: 1;
+    }
+    .check-text {
+      flex: 1;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ink);
+      transition: all 0.3s var(--ease);
+    }
+    .check-text small {
+      display: block;
+      font-size: 12px;
+      color: var(--ink-2);
+      margin-top: 2px;
       font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--on-surface);
-      display: flex; align-items: center; gap: 4px;
+      letter-spacing: 0.02em;
     }
-    .photo-card .pin::before { content: '📍'; font-size: 10px; }
 
-    /* ─── Contact link ─── */
-    .contact-link {
-      display: flex; align-items: center; gap: 12px;
-      padding: 12px 14px;
+    /* ─── Health & safety ─── */
+    .health-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--s-4);
+    }
+    @media (max-width: 640px) {
+      .health-grid { grid-template-columns: 1fr; }
+    }
+    .health-card {
       background: var(--surface);
-      border-radius: var(--r-md);
-      border: 1px solid var(--outline-variant);
-      margin-bottom: 8px;
-      text-decoration: none; color: var(--on-surface);
-      transition: all 0.15s;
-    }
-    .contact-link:hover { background: var(--surface-2); box-shadow: var(--elev-1); text-decoration: none; }
-    .contact-link .icon {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: #E8F0FE;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-link .info { flex: 1; min-width: 0; }
-    .contact-link .info .name { font-size: 14px; font-weight: 500; }
-    .contact-link .info .meta { font-size: 12px; color: var(--on-surface-variant); }
-    .contact-link .chev { color: var(--on-surface-variant); }
-
-    /* ─── SOS card ─── */
-    .sos {
-      background: linear-gradient(135deg, #FCE8E6 0%, #FAD2CF 100%);
-      border: 1px solid #F5A59E;
       border-radius: var(--r-lg);
-      padding: 16px;
+      padding: var(--s-5);
+      border: 1px solid var(--border);
+    }
+    .health-icon {
+      font-size: 28px;
+      margin-bottom: var(--s-3);
+    }
+    .health-title {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: var(--s-2);
+    }
+    .health-body {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink-2);
+    }
+
+    /* ─── SOS ─── */
+    .sos {
+      background: var(--accent-2);
+      color: white;
+      border-radius: var(--r-2xl);
+      padding: var(--s-7);
+      margin-top: var(--s-7);
     }
     .sos-title {
       font-family: var(--font-mono);
       font-size: 11px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--tertiary);
-      font-weight: 600;
-      margin-bottom: 10px;
-      display: flex; align-items: center; gap: 6px;
+      margin-bottom: var(--s-5);
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
     }
     .sos-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(197,34,31,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--s-4) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
     .sos-row:last-child { border-bottom: none; }
-    .sos-row .label { font-size: 13px; color: var(--on-surface); font-weight: 500; }
-    .sos-row .label small { display: block; font-size: 11px; color: var(--on-surface-variant); font-weight: 400; }
-    .sos-row .num { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--tertiary); }
-
-    /* ─── Print ─── */
-    .print-only { display: none; }
-    @media print {
-      body { background: white; }
-      .no-print, .no-print * { display: none !important; }
-      .print-only { display: block; }
-      .card, .day-card { border: 1px solid #ddd; box-shadow: none; break-inside: avoid; }
-      details[open] > * { display: block !important; }
-      details > summary { display: none; }
-      section { padding: 12px 0; }
+    .sos-label {
+      font-size: 14px;
+      font-weight: 500;
     }
-
-    /* ─── Kids' page (enthusiasm) ─── */
-    .excitement-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-    }
-    .excitement-card {
-      background: var(--surface);
-      border-radius: var(--r-md);
-      padding: 14px;
-      border: 2px solid var(--natgeo-yellow);
-      position: relative;
-    }
-    .excitement-card .emoji {
-      font-size: 32px; line-height: 1;
-      margin-bottom: 8px;
+    .sos-label small {
       display: block;
-    }
-    .excitement-card .name {
-      font-family: var(--font-serif);
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--natgeo-ink);
-    }
-    .excitement-card .blurb {
-      font-size: 12px;
-      color: var(--on-surface-variant);
-      margin-top: 4px;
-      line-height: 1.4;
-    }
-    .excitement-card .first {
-      position: absolute;
-      top: -8px; right: 8px;
-      background: var(--tertiary);
-      color: white;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    /* ─── Pull quote ─── */
-    .pull-quote {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 18px;
-      line-height: 1.4;
-      color: var(--on-surface);
-      border-top: 1px solid var(--natgeo-yellow);
-      border-bottom: 1px solid var(--natgeo-yellow);
-      padding: 16px 0;
-      margin: 16px 0;
-      text-align: center;
-    }
-
-    /* ─── Compass (decorative) ─── */
-    .compass {
-      width: 24px; height: 24px;
-      border: 1.5px solid var(--natgeo-ink);
-      border-radius: 50%;
-      position: relative;
-      display: inline-block;
-      flex-shrink: 0;
-    }
-    .compass::before {
-      content: 'N';
-      position: absolute;
-      top: -7px; left: 50%;
-      transform: translateX(-50%);
+      font-size: 11px;
+      opacity: 0.7;
       font-family: var(--font-mono);
-      font-size: 8px;
-      font-weight: 700;
-      background: var(--natgeo-yellow);
-      color: var(--natgeo-ink);
-      padding: 0 3px;
-      border-radius: 2px;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
     }
-    .compass::after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 0; height: 0;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      border-bottom: 8px solid var(--natgeo-rust);
-      transform: translate(-50%, -100%);
+    .sos-num {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: var(--r-pill);
+    }
+
+    /* ─── Final note ─── */
+    .final {
+      text-align: center;
+      padding: var(--s-11) var(--s-6);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .final-mark {
+      font-size: 56px;
+      line-height: 1;
+      margin-bottom: var(--s-5);
+    }
+    .final-text {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      font-style: italic;
+    }
+    .final-attr {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      margin-top: var(--s-6);
     }
 
     /* ─── Bottom nav ─── */
     .bottom-nav {
-      position: fixed; bottom: 0; left: 0; right: 0;
-      background: var(--surface);
-      border-top: 1px solid var(--outline-variant);
-      padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
-      z-index: 40;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.04);
-    }
-    .bottom-nav-inner {
-      max-width: 720px; margin: 0 auto;
-      display: flex; justify-content: space-around; align-items: center;
+      position: fixed;
+      bottom: var(--s-5);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 90;
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-radius: var(--r-pill);
+      padding: 6px;
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      gap: 2px;
     }
     .nav-btn {
-      display: flex; flex-direction: column; align-items: center; gap: 2px;
-      padding: 6px 12px;
-      border: none; background: transparent;
-      color: var(--on-surface-variant);
-      font-size: 10px; font-weight: 500;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: color 0.15s;
-      text-decoration: none;
-    }
-    .nav-btn:hover { color: var(--primary); text-decoration: none; }
-    .nav-btn svg { width: 24px; height: 24px; }
-
-    /* ─── Junior explorer panel ─── */
-    .junior-panel {
-      background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
-      border-radius: var(--r-lg);
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .junior-panel::before {
-      content: '🗺️';
-      position: absolute;
-      top: 12px; right: 16px;
-      font-size: 60px;
-      opacity: 0.15;
-      transform: rotate(15deg);
-    }
-    .junior-panel h3 {
-      font-family: var(--font-serif);
-      font-size: 22px;
-      color: var(--natgeo-ink);
-      margin-bottom: 4px;
-    }
-    .junior-panel .subtitle {
-      font-size: 13px;
-      color: #6B5A00;
-      margin-bottom: 14px;
-    }
-    .junior-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--natgeo-ink);
-      color: var(--natgeo-yellow);
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    /* ─── Google-style search bar (decoration) ─── */
-    .search-bar {
-      display: flex; align-items: center; gap: 12px;
-      padding: 0 16px;
-      height: 44px;
-      background: var(--surface);
-      border: 1px solid var(--outline);
-      border-radius: 999px;
-      box-shadow: var(--elev-1);
-      color: var(--on-surface-variant);
-      font-size: 14px;
-      margin: 16px 0;
-    }
-    .search-bar:hover { box-shadow: var(--elev-2); }
-
-    /* ─── Material icon SVG helper ─── */
-    .material-icon {
-      width: 20px; height: 20px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-
-    /* ─── Photo credit ─── */
-    .photo-credit {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      position: absolute;
-      bottom: 4px; right: 8px;
-      z-index: 3;
-    }
-
-    /* ─── Map pin ─── */
-    .map-mini {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      background: #E8EAED;
-      background-size: cover;
-      background-position: center;
-    }
-    .map-mini::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 100%);
-    }
-    .map-mini .route {
-      position: absolute;
-      bottom: 12px; left: 16px; right: 16px;
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      padding: 10px 16px;
+      border-radius: var(--r-pill);
       color: white;
       font-size: 12px;
-      z-index: 2;
-      display: flex; align-items: center; gap: 8px;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+      transition: background 0.3s var(--ease);
+    }
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .nav-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+    .nav-btn.sos {
+      background: var(--accent-2);
+    }
+    .nav-btn.sos:hover {
+      background: #ff6961;
+    }
+    @media (max-width: 480px) {
+      .nav-btn span { display: none; }
+      .nav-btn { padding: 10px 12px; }
     }
 
-    /* ─── Tab bar (section) ─── */
-    .tab-bar {
-      display: flex; gap: 0;
-      background: var(--surface);
-      border-radius: var(--r-md);
-      padding: 4px;
-      margin-bottom: 16px;
-      border: 1px solid var(--outline-variant);
+    .safe-bottom {
+      height: 100px;
     }
-    .tab {
-      flex: 1;
-      padding: 8px 12px;
-      border: none;
-      background: transparent;
-      border-radius: var(--r-sm);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--on-surface-variant);
-      cursor: pointer;
-      transition: all 0.15s;
+
+    /* ─── Animation helpers ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
     }
-    .tab.active {
-      background: #E8F0FE;
-      color: var(--primary);
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Print ─── */
+    @media print {
+      .top-bar, .bottom-nav, .day-toggle, .hero-scroll, .check-input { display: none !important; }
+      .day-body { display: block !important; }
+      .day-card { box-shadow: none; break-inside: avoid; }
+      .hero { min-height: 0; padding: 40px 20px; }
+    }
+
+    /* ─── Reduced motion ─── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
-
 <body>
-  <!-- ─── Top bar ─── -->
-  <header class="topbar no-print">
-    <div class="container topbar-inner">
-      <div class="topbar-brand">
-        <div class="badge">N</div>
-        <div>
-          <div class="label">Nat Geo · Travel</div>
-          <div class="sub">Bangkok & Pattaya '26</div>
-        </div>
-      </div>
-      <div class="countdown">
-        <div id="countdown-value" class="num">--</div>
-        <div class="lbl">days to liftoff</div>
-      </div>
+
+  <!-- ─── Top Bar ─── -->
+  <header class="top-bar">
+    <div class="top-bar-logo">BKK<span class="dot"></span>PTY</div>
+    <div class="top-bar-live">
+      <span class="live-dot"></span>
+      <span id="countdown-pill">—</span>
     </div>
   </header>
 
-  <!-- ─── Hero — Magazine cover ─── -->
-  <section class="hero no-print">
-    <div class="hero-photo" style="background-image: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&q=80&auto=format&fit=crop');"></div>
-    <div class="hero-frame"></div>
+  <!-- ─── Hero ─── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=2400&q=85&auto=format&fit=crop" alt="">
+    </div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-top">
-        <div class="hero-issue">
-          <strong>VOL. 03</strong> · ISSUE 08 · AUG 2026
-        </div>
-        <span class="hero-junior">
-          <span>⭐</span> Junior Explorer
-        </span>
-      </div>
-      <div>
-        <div class="hero-pre-title">A four-day field expedition to the Gulf of Thailand</div>
-        <h1>Where the<br/>River Meets the Sea</h1>
-        <p class="hero-subtitle">A father and his daughter, age 5, on a journey from Bangkok's golden temples to the warm waters of Pattaya Bay — with one unforgettable swim with a bottlenose dolphin along the way.</p>
-      </div>
-      <div class="hero-bottom">
-        <span class="hero-byline">Photographs &amp; dispatches by the family</span>
+      <div class="hero-eyebrow">Father & Daughter · Summer 2026</div>
+      <h1 class="hero-title">Bangkok<br>& <em>Pattaya</em></h1>
+      <p class="hero-subtitle">Four days. One dolphin. A rooftop pool, a garden spa, and a fountain show on the river of kings.</p>
+      <div class="hero-meta">
+        <span class="hero-pill primary" id="countdown-hero">— days to go</span>
+        <span class="hero-pill">Aug 21 → 24</span>
+        <span class="hero-pill">🇭🇰 → 🇹🇭</span>
       </div>
     </div>
-    <div class="photo-credit">Photo: Wat Arun at dusk · Unsplash</div>
+    <div class="hero-scroll">Scroll</div>
   </section>
 
-  <!-- ─── Print-only cover ─── -->
-  <div class="print-only" style="padding: 20px;">
-    <h1 style="font-family: Georgia, serif; font-size: 28px;">Bangkok & Pattaya · A Father-Daughter Expedition</h1>
-    <p style="font-size: 14px; color: #666;">Aug 21-24, 2026 · 4 days · 2 cities · 1 dolphin</p>
+  <!-- ─── Stats ─── -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num">04</div>
+          <div class="stat-label">Days</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><em>1</em></div>
+          <div class="stat-label">Dolphin swim</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">01</div>
+          <div class="stat-label">Garden spa</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><em>1</em></div>
+          <div class="stat-label">Fountain show</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Pull quote ─── -->
+  <div class="pullquote">
+    <p class="pullquote-text">The world is a book, and those who do not travel read only one page.</p>
+    <div class="pullquote-attr">— St. Augustine (loosely)</div>
   </div>
 
-  <!-- ─── Quick reference ─── -->
-  <section class="container" id="top">
-    <div class="section-header">
-      <div class="section-eyebrow">The Expedition · At a Glance</div>
-      <h2 class="section-title">Cardinal points</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="ref-grid">
-      <div class="ref-tile">
-        <div class="icon">
-          <svg class="material-icon" viewBox="0 0 24 24" style="color: #1A73E8;"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-        </div>
-        <div class="lbl">Outbound</div>
-        <div class="val">7:50 AM</div>
-        <div class="meta">HKG → BKK · Aug 21</div>
-      </div>
-      <div class="ref-tile">
-        <div class="icon">
-          <svg class="material-icon" viewBox="0 0 24 24" style="color: #34A853;"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-        </div>
-        <div class="lbl">Return</div>
-        <div class="val">2:00 PM</div>
-        <div class="meta">BKK → HKG · Aug 24</div>
-      </div>
-      <div class="ref-tile">
-        <div class="icon">
-          <svg class="material-icon" viewBox="0 0 24 24" style="color: #FFCC00;"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
-        </div>
-        <div class="lbl">Cities</div>
-        <div class="val">2</div>
-        <div class="meta">Bangkok · Pattaya</div>
-      </div>
-      <div class="ref-tile">
-        <div class="icon">
-          <svg class="material-icon" viewBox="0 0 24 24" style="color: #EA4335;"><path d="M12 2C8 6 4 9 4 14a8 8 0 0 0 16 0c0-5-4-8-8-12z"/></svg>
-        </div>
-        <div class="lbl">Travelers</div>
-        <div class="val">2</div>
-        <div class="meta">Dad + daughter, age 5</div>
-      </div>
-    </div>
-
-    <!-- Hero surprise -->
-    <div class="surprise" style="margin-top: 16px;">
-      <div class="surprise-icon">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="#1A1A1A"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg>
-      </div>
-      <div>
-        <h4>The headline moment</h4>
-        <p>On Day 2, your daughter will swim with a bottlenose dolphin. Bottlenose dolphins can swim 20 mph, dive 1,000 feet deep, and recognize themselves in mirrors. Yours will be inches from her nose.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Junior Explorer (for the daughter) ─── -->
+  <!-- ─── Junior Panel (NG Kids) ─── -->
   <section class="container">
-    <div class="junior-panel">
-      <span class="junior-badge">⭐ For the Junior Explorer</span>
-      <h3>Five things to look forward to</h3>
-      <p class="subtitle">Read this with her the night before. The bug-eyed anticipation is half the fun.</p>
-      <div class="excitement-grid">
-        <div class="excitement-card">
+    <div class="junior">
+      <div class="junior-eyebrow">⭐ For the Junior Explorer</div>
+      <h2 class="junior-title">Five things to look forward to</h2>
+      <p class="junior-sub">Read this with her the night before. The bug-eyed anticipation is half the fun.</p>
+      <div class="junior-grid">
+        <div class="j-card">
           <span class="first">First time</span>
-          <span class="emoji">🐬</span>
-          <div class="name">Swim with a dolphin</div>
-          <div class="blurb">They'll sing, splash, and high-five with their fins.</div>
+          <div class="emoji">🐬</div>
+          <div class="j-card-title">Swim with a dolphin</div>
+          <div class="j-card-blurb">They'll sing, splash, and high-five with their fins.</div>
         </div>
-        <div class="excitement-card">
+        <div class="j-card">
           <span class="first">First time</span>
-          <span class="emoji">🛕</span>
-          <div class="name">A temple at sunset</div>
-          <div class="blurb">Wat Arun lights up gold like it's on fire.</div>
+          <div class="emoji">🍫</div>
+          <div class="j-card-title">A chocolate hour</div>
+          <div class="j-card-blurb">Mövenpick's free daily chocolate buffet. Yes, every day.</div>
         </div>
-        <div class="excitement-card">
-          <span class="emoji">🌶️</span>
-          <div class="name">Spicy &amp; sweet</div>
-          <div class="blurb">Mango sticky rice. The mango is the sweetest you've ever had.</div>
+        <div class="j-card">
+          <div class="emoji">📸</div>
+          <div class="j-card-title">A photo booth strip</div>
+          <div class="j-card-blurb">90s sticker portraits. One physical keepsake to take home.</div>
         </div>
-        <div class="excitement-card">
-          <span class="emoji">🎆</span>
-          <div class="name">A fountain show</div>
-          <div class="blurb">Water, lights, and music — every night at 7 PM.</div>
+        <div class="j-card">
+          <div class="emoji">🌶️</div>
+          <div class="j-card-title">Spicy &amp; sweet</div>
+          <div class="j-card-blurb">Mango sticky rice. The mango is the sweetest you've ever had.</div>
         </div>
-        <div class="excitement-card">
-          <span class="emoji">🌴</span>
-          <div class="name">Pool in a palace</div>
-          <div class="blurb">Your hotel has a pool bigger than our apartment.</div>
+        <div class="j-card">
+          <div class="emoji">🎆</div>
+          <div class="j-card-title">A fountain show</div>
+          <div class="j-card-blurb">Water, lights, and music along the river — every night at 7 PM.</div>
         </div>
-        <div class="excitement-card">
-          <span class="emoji">🦀</span>
-          <div class="name">Street food safari</div>
-          <div class="blurb">We'll find noodles, dumplings, and fruit you've never tried.</div>
+        <div class="j-card">
+          <div class="emoji">🌴</div>
+          <div class="j-card-title">Pool in a palace</div>
+          <div class="j-card-blurb">Your hotel has a waterpark bigger than our apartment.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── Editorial pull quote ─── -->
-  <section class="container">
-    <div class="pull-quote">
-      "The best inheritance a father can give his daughter is a few honest stories of what he got up to when she wasn't watching — and a camera full of moments she was."
+  <!-- ─── Itinerary ─── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">The Itinerary</div>
+        <h2 class="section-title">Four days, <em>four chapters</em></h2>
+      </div>
+
+      <!-- ─── Day 1 ─── -->
+      <article class="day-card" data-open="true">
+        <div class="day-cover" onclick="toggleDay(this)">
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&q=85&auto=format&fit=crop" alt="">
+          <div class="day-cover-overlay"></div>
+          <div class="day-cover-content">
+            <div class="day-chapter">Chapter 01 · Arrival</div>
+            <h3 class="day-title">Touchdown in the <em>tropics</em></h3>
+            <span class="day-date">Friday · August 21, 2026</span>
+          </div>
+          <button class="day-toggle" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+        <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
+          <div class="day-summary-text">Land 9:35 BKK · drive to Pattaya · Lost World waterpark · Terminal 21 dinner</div>
+        </div>
+        <div class="day-body">
+          <div class="field-note">
+            <div class="field-note-label">Field Notes</div>
+            <p class="field-note-body">The trick with arrival days is to absorb zero. Land, eat, splash, sleep. Save the wonder for tomorrow.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="t-item major">
+              <div class="t-time">07:50 → 09:35</div>
+              <h4 class="t-title">HKG → BKK on Thai Airways</h4>
+              <p class="t-body">Flight ~3h 45m. Immigration 25–40 min at Suvarnabhumi. U-Young Travel driver holds your name at Gate 3/4.</p>
+              <div class="t-meta"><span class="chip">TG601</span><span class="chip-blue">BKK Terminal</span></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">10:30</div>
+              <h4 class="t-title">Suvarnabhumi → Pattaya</h4>
+              <p class="t-body">~1.5 hours via motorway. Child car seat pre-installed. Stop at a 7-Eleven after 30 min for snacks, water, a bathroom break.</p>
+              <div class="t-meta"><span class="chip">~120 km</span></div>
+            </div>
+            <div class="t-item fun">
+              <div class="t-time">12:30</div>
+              <h4 class="t-title">Check-in: Centara Grand Mirage</h4>
+              <p class="t-body">Ocean View Family Room. The headline here is the Lost World waterpark — lazy river, slides, splash pads, direct beach access. Wong Amat cove.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ Lost World</span></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">13:00 – 17:00</div>
+              <h4 class="t-title">Waterpark + lunch at Coast Beach Club</h4>
+              <p class="t-body">Lunch first at the on-site Coast Beach Club (kid menu: chicken satay, fried rice, fruit), then into the waterpark. Easy pace — she's decompressing after the flight.</p>
+            </div>
+            <div class="t-item">
+              <div class="t-time">17:30</div>
+              <h4 class="t-title">Shower &amp; change</h4>
+              <p class="t-body">Wash off the chlorine. Get her out of wet swimmers.</p>
+            </div>
+            <div class="t-item">
+              <div class="t-time">18:00 – 19:30</div>
+              <h4 class="t-title">Terminal 21 Pattaya — dinner</h4>
+              <p class="t-body">5-min Grab. Pier 21 food court for boat noodles (฿60), mango sticky rice, fruit shakes. The airplane display is a kid magnet.</p>
+              <div class="t-meta"><span class="chip-blue">A/C escape</span><span class="chip">Budget ฿300–500</span></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">20:30</div>
+              <h4 class="t-title">Back to hotel — early bed</h4>
+              <p class="t-body">Tomorrow is the big one. Lights out by 20:30 means 7 hours of sleep — enough for a dolphin swim.</p>
+            </div>
+          </div>
+
+          <div class="dyk">
+            <div class="dyk-label">Did you know?</div>
+            <p class="dyk-body"><strong>Bottlenose dolphins sleep with one half of their brain at a time</strong> — so they can keep swimming and breathing while they rest. Tomorrow's show will be in the morning, when they're wide awake.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─── Day 2 ─── -->
+      <article class="day-card">
+        <div class="day-cover" onclick="toggleDay(this)">
+          <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1600&q=85&auto=format&fit=crop" alt="">
+          <div class="day-cover-overlay"></div>
+          <div class="day-cover-content">
+            <div class="day-chapter">Chapter 02 · The Headline</div>
+            <h3 class="day-title">A dolphin, a daughter, a <em>southbound car</em></h3>
+            <span class="day-date">Saturday · August 22, 2026</span>
+          </div>
+          <button class="day-toggle" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+        <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
+          <div class="day-summary-text">Dolphin show 11am · swim 12pm · drive to Sukhumvit · Chocolate Hour · Jodd Fairs night</div>
+        </div>
+        <div class="day-body">
+          <div class="field-note">
+            <div class="field-note-label">Field Notes · The Important Day</div>
+            <p class="field-note-body">Tomorrow's the day she'll remember when she's 30. The dolphin isn't the destination — the look on her face is.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-time">08:00 – 09:30</div>
+              <h4 class="t-title">Resort breakfast</h4>
+              <p class="t-body">Centara's buffet. Eat slow. The last meal in Pattaya.</p>
+            </div>
+            <div class="t-item major">
+              <div class="t-time">10:30</div>
+              <h4 class="t-title">🐬 Arrival at Pattaya Dolphinarium</h4>
+              <p class="t-body">~12–15 min from Centara. Arrive 30 min early to check in, meet the trainers, let her acclimatize. No flash during the show.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ The moment</span></div>
+            </div>
+            <div class="t-item fun">
+              <div class="t-time">11:00</div>
+              <h4 class="t-title">Dolphin &amp; sea lion show</h4>
+              <p class="t-body">~45 min. Music, jumps, ball tricks, splash zone. Front row if you ask. Loud volume — sit at the back if she's sound-sensitive.</p>
+            </div>
+            <div class="t-item major">
+              <div class="t-time">12:00</div>
+              <h4 class="t-title">🐬 The swim — bottlenose encounter</h4>
+              <p class="t-body">This is the trip. Chest-deep water with her. The dolphin will kiss her cheek, let her touch its dorsal fin. Two trainers in the water. Photos sold after — ฿500–800 for the digital package.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ 5-yo confirmed</span></div>
+            </div>
+          </div>
+
+          <div class="dyk">
+            <div class="dyk-label">Did you know?</div>
+            <p class="dyk-body">Dolphins have <strong>names for each other</strong> (signature whistles), recognize themselves in mirrors, and surface to breathe every 2 minutes. Tomorrow she'll know this from the inside.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-time">13:00</div>
+              <h4 class="t-title">Shower &amp; light lunch</h4>
+              <p class="t-body">Quick shower at the facility. Light lunch (she'll be tired). Pack the car by 14:30.</p>
+            </div>
+            <div class="t-item">
+              <div class="t-time">14:30 – 17:00</div>
+              <h4 class="t-title">Pattaya → Bangkok (Highway 7)</h4>
+              <p class="t-body">~2.5 hrs on a Saturday afternoon — budget for traffic. U-Young Travel stays with you all three legs.</p>
+              <div class="t-meta"><span class="chip">~150 km</span></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">15:30</div>
+              <h4 class="t-title">Check-in: Mövenpick Hotel Sukhumvit 15</h4>
+              <p class="t-body">Sukhumvit Soi 15, 5-min walk to BTS Asok. Rooftop pool with the Rainforest Bar. Free Tuk Tuk shuttle to the BTS every 30 min.</p>
+            </div>
+            <div class="t-item fun">
+              <div class="t-time">16:00 – 17:00</div>
+              <h4 class="t-title">🍫 Mövenpick Chocolate Hour</h4>
+              <p class="t-body">Daily at Lelawadee Restaurant — complimentary bite-sized chocolate creations, 60 minutes of sweet. Don't let her overdo it; Jodd Fairs dinner is at 18:30.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ Daily, free</span></div>
+            </div>
+            <div class="t-item fun">
+              <div class="t-time">18:30 – 21:00</div>
+              <h4 class="t-title">Jodd Fairs Ratchada — night market</h4>
+              <p class="t-body">MRT Sukhumvit → Phetchaburi → Thailand Cultural Centre (2 stops). Volcano pork ribs (Leng Saap), grilled skewers, coconut ice cream, mango sticky rice, lanterns.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ First Bangkok night</span></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">21:30</div>
+              <h4 class="t-title">Back to hotel — bed</h4>
+              <p class="t-body">She will sleep. You will sleep. Tomorrow is spa day.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─── Day 3 ─── -->
+      <article class="day-card">
+        <div class="day-cover" onclick="toggleDay(this)">
+          <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1600&q=85&auto=format&fit=crop" alt="">
+          <div class="day-cover-overlay"></div>
+          <div class="day-cover-content">
+            <div class="day-chapter">Chapter 03 · The Capital</div>
+            <h3 class="day-title">The <em>memory-maker</em> day</h3>
+            <span class="day-date">Sunday · August 23, 2026</span>
+          </div>
+          <button class="day-toggle" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+        <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
+          <div class="day-summary-text">Cafe breakfast · Siam Square shops · garden spa · ICONSIAM · fountain show 7pm</div>
+        </div>
+        <div class="day-body">
+          <div class="field-note">
+            <div class="field-note-label">Field Notes</div>
+            <p class="field-note-body">Six small moments, none of them rushed. The photo strip from the booth will end up on the fridge; the spa photo will end up framed.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="t-item fun">
+              <div class="t-time">08:30 – 10:00</div>
+              <h4 class="t-title">Cafe breakfast — Kay's or Roast</h4>
+              <p class="t-body">Kay's (Sukhumvit 49) for the indie vibe, or Roast at EmQuartier for the polished brunch. ~5-min taxi from Mövenpick. Fluffy french toast, fruit smoothie bowls. Photo-worthy by default.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ Photo op</span></div>
+            </div>
+            <div class="t-item major">
+              <div class="t-time">10:15 – 12:45</div>
+              <h4 class="t-title">🛍 Siam Square outdoor pedestrian streets</h4>
+              <p class="t-body">BTS Asok → Siam (2 stops, direct). Walk Soi 2–5: car-free, clean, kid-safe. Hit <strong>Daddy and the Muscle Academy</strong> (Siam Soi 2) — pastel dresses, hair clips, tote bags. <strong>2nd Floor Photo Booth</strong> for the 90s sticker strip.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ Kid shops + photo strip</span><span class="chip-blue">Rain backup: EmQuartier</span></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">13:15 – 14:45</div>
+              <h4 class="t-title">Lunch + travel to Sukhumvit 31</h4>
+              <p class="t-body">Light lunch in Siam Square (Korean cheese coin pancake / coconut slushie snack walk). Then BTS or Grab to Spa.</p>
+            </div>
+            <div class="t-item major">
+              <div class="t-time">15:00 – 16:00</div>
+              <h4 class="t-title">💆 Oasis Spa Sukhumvit 31</h4>
+              <p class="t-body">Hidden Lanna-style villa with lotus ponds + secret gardens. Her: Kid First Sensation Massage (60-min organic coconut oil). You: Aromatherapy Hot Oil (60 min). Herbal tea on the wooden walkways.</p>
+              <div class="t-meta"><span class="chip-green">Book in advance</span><a href="tel:+6622622122" class="chip-blue">📞 +66 2 262 2122</a></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">16:30 – 17:30</div>
+              <h4 class="t-title">Mövenpick — pool + Chocolate Hour</h4>
+              <p class="t-body">5–7 min Grab back. Rooftop pool or quick shower. Catch the 16:00–17:00 Chocolate Hour if timing works.</p>
+            </div>
+            <div class="t-item fun">
+              <div class="t-time">18:00 – 20:00</div>
+              <h4 class="t-title">ICONSIAM + SookSiam</h4>
+              <p class="t-body">Taxi straight to the riverfront. SookSiam is the indoor Thai food + craft market on the ground floor — 200+ stalls, all the regions of Thailand in one air-conditioned hall. <strong>Souvenirs happen here.</strong></p>
+              <div class="t-meta"><span class="chip-yellow">⭐ Try boat noodles &amp; mango sticky rice</span><span class="chip-green">🛍 Souvenirs · until 22:00</span></div>
+            </div>
+            <div class="t-item major">
+              <div class="t-time">19:00</div>
+              <h4 class="t-title">🎆 ICONSIAM River Fountain Show</h4>
+              <p class="t-body">5-min spectacle — water + lights + music on the Chao Phraya. Front-row riverside promenade. Bring the camera.</p>
+            </div>
+            <div class="t-item">
+              <div class="t-time">20:30</div>
+              <h4 class="t-title">Back to hotel — pack</h4>
+              <p class="t-body">Lay out her clothes. One more sleep.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ─── Day 4 ─── -->
+      <article class="day-card">
+        <div class="day-cover" onclick="toggleDay(this)">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=85&auto=format&fit=crop" alt="">
+          <div class="day-cover-overlay"></div>
+          <div class="day-cover-content">
+            <div class="day-chapter">Chapter 04 · Homeward</div>
+            <h3 class="day-title">Pool morning, <em>slow goodbye</em></h3>
+            <span class="day-date">Monday · August 24, 2026</span>
+          </div>
+          <button class="day-toggle" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+        <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
+          <div class="day-summary-text">Slow breakfast · moo ping · one last splash · 2pm flight home</div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-time">08:30 – 10:15</div>
+              <h4 class="t-title">Farewell morning — your call</h4>
+              <p class="t-body"><strong>Option A:</strong> Moo Ping grilled pork skewers + sticky rice from the morning carts on Soi 15 (5 min walk).<br><br><strong>Option B:</strong> Pier 21 food court at Terminal 21 Asok (opens 10:00) — 7-min walk. Mango sticky rice + pad thai before packing.</p>
+            </div>
+            <div class="t-item">
+              <div class="t-time">10:15</div>
+              <h4 class="t-title">Final rooftop pool splash</h4>
+              <p class="t-body">Rainforest Rooftop Bar views from Mövenpick's rooftop pool. One last splash. Pack at your own pace after — bell desk holds luggage.</p>
+            </div>
+            <div class="t-item major">
+              <div class="t-time">10:45</div>
+              <h4 class="t-title">Check out, head to BKK</h4>
+              <p class="t-body">Pick-up by U-Young Travel. ~35–45 min to Suvarnabhumi via Sirat Expressway. ⚠️ Tighter than ideal for 14:00 international — bell desk can hold bags if you need a few extra minutes.</p>
+            </div>
+            <div class="t-item major">
+              <div class="t-time">14:00</div>
+              <h4 class="t-title">Flight home: BKK → HKG</h4>
+              <p class="t-body">She'll probably sleep on the runway. Take the picture on the way home, not the way there.</p>
+            </div>
+          </div>
+
+          <div class="field-note">
+            <div class="field-note-label">Last Note</div>
+            <p class="field-note-body">All souvenirs are already done — picked up at SookSiam in ICONSIAM yesterday. Today just needs to be quiet. The best trips end not with a click, but with a moment on the plane home where you realize she's a little taller than when you left.</p>
+          </div>
+        </div>
+      </article>
     </div>
-  </section>
-
-  <!-- ─── Map of the route ─── -->
-  <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">The Route · 13.6710° N, 100.7470° E</div>
-      <h2 class="section-title">From the river to the bay</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="map-mini" style="background-image: url('https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&q=80&auto=format&fit=crop');">
-      <div class="route">
-        <span class="compass"></span>
-        <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;">Bangkok Suvarnabhumi → Pattaya → Bangkok Siam → BKK</span>
-      </div>
-    </div>
-
-    <p style="font-size: 13px; color: var(--on-surface-variant); margin-top: 12px; line-height: 1.5;">
-      <strong>220 km</strong> · about 2 hours by SUV each leg. The Pattaya Dolphinarium sits 15 minutes north of your hotel in Pattaya. The ICONSIAM fountain is on the Chao Phraya — Bangkok's river of kings.
-    </p>
-  </section>
-
-  <!-- ─── Emergency Quick Dial ─── -->
-  <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Emergency · Quick Dial</div>
-      <h2 class="section-title">If you need help fast</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="sos">
-      <div class="sos-title">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2L2 22h20L12 2zm0 6l6.5 11.5h-13L12 8zm-1 4v3h2v-3h-2zm0 5v2h2v-2h-2z"/></svg>
-        Emergency Numbers
-      </div>
-      <div class="sos-row">
-        <div class="label">Thailand Tourist Police<small>English-speaking</small></div>
-        <a href="tel:1155" class="num">1155</a>
-      </div>
-      <div class="sos-row">
-        <div class="label">Ambulance / EMS<small>All emergencies</small></div>
-        <a href="tel:1669" class="num">1669</a>
-      </div>
-      <div class="sos-row">
-        <div class="label">Bangkok Hospital<small>24h, English-speaking</small></div>
-        <a href="tel:+6623103000" class="num">+66 2 310 3000</a>
-      </div>
-      <div class="sos-row">
-        <div class="label">Bumrungrad Hospital<small>Pediatric unit available</small></div>
-        <a href="tel:+6620668888" class="num">+66 2 066 8888</a>
-      </div>
-      <div class="sos-row">
-        <div class="label">AXA Claims Hotline<small>Your insurance</small></div>
-        <a href="tel:+6620983050" class="num">+66 2 098 3050</a>
-      </div>
-      <div class="sos-row">
-        <div class="label">HK Consulate (Bangkok)<small>24h emergency line</small></div>
-        <a href="tel:+6626905800" class="num">+66 2 690 5800</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Day-by-day itinerary ─── -->
-  <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">The Itinerary · Day by Day</div>
-      <h2 class="section-title">Four days, four chapters</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <!-- ─── Day 1 ─── -->
-    <details class="day-card" open>
-      <summary>
-        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80&auto=format&fit=crop');">
-          <div class="photo-credit">Pattaya coast · Unsplash</div>
-          <div class="day-cover-label">
-            <div class="num">Chapter 01 · Arrival</div>
-            <div class="title">Waterpark, beach &amp; first Thai dinner</div>
-            <div class="date">Friday, August 21, 2026</div>
-          </div>
-        </div>
-        <div class="day-summary">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-size: 13px; color: var(--on-surface-variant);">Land 9:35 BKK · drive to Pattaya · Lost World waterpark · Terminal 21 dinner</div>
-            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </div>
-        </div>
-      </summary>
-
-      <div style="padding: 4px 16px 16px;">
-        <div class="field-notes">
-          <div class="label">Field Notes · Day 1</div>
-          <p>The trick with arrival days is to absorb zero. Land, eat, swim, sleep. Save the wonder for tomorrow.</p>
-          <div class="attribution">— Pre-trip reminder</div>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item major">
-            <div class="time">07:50 → 09:35</div>
-            <h4>HKG → BKK on Thai Airways</h4>
-            <p>Flight time ~3h 45m. Immigration typically takes 25-40 min at BKK Suvarnabhumi. The driver (U-Young Travel) holds your name at Gate 3/4 Arrivals Hall.</p>
-            <div class="meta">
-              <span class="chip chip-blue">BKK Terminal</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="time">10:30</div>
-            <h4>Suvarnabhumi → Pattaya</h4>
-            <p>About 2 hours via motorway. Child car seat pre-installed. Stop at a 7-Eleven after 30 min for snacks, water, and a bathroom break.</p>
-            <div class="meta">
-              <span class="coords">13.7563° N, 100.5018° E</span>
-              <span class="chip">~120 km</span>
-            </div>
-          </div>
-          <div class="timeline-item fun">
-            <div class="time">12:30</div>
-            <h4>Check-in: Centara Grand Mirage Beach Resort</h4>
-            <p>Ocean View Family Room. The headline here is the "Lost World" waterpark — lazy river, slides, splash pads, direct beach access. Wong Amat cove, ~12 min from the Dolphinarium tomorrow.</p>
-            <div class="meta">
-              <span class="chip chip-yellow">⭐ Lost World waterpark</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="time">13:00 – 16:00</div>
-            <h4>Waterpark + lunch at Coast Beach Club</h4>
-            <p>Lunch first at the on-site Coast Beach Club (kid menu: chicken satay, fried rice, fruit), then into the waterpark. Easy pace — she's decompressing after the flight.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="time">18:00</div>
-            <h4>Terminal 21 Pattaya — dinner</h4>
-            <p>15-min taxi from the hotel. Air-conditioned, has a Tokyo-themed floor and a food court (Pier 21) that's perfect for kids. Try the boat noodles (~฿60).</p>
-            <div class="meta">
-              <span class="chip chip-blue">A/C escape</span>
-              <span class="chip">Budget ฿300–500</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="time">20:00</div>
-            <h4>Back to hotel — early bed</h4>
-            <p>She's had a long day. Tomorrow is the big one. Lights out by 20:30 means 7 hours of sleep — enough for a dolphin swim.</p>
-          </div>
-        </div>
-
-        <div class="fun-fact">
-          <div class="pulse">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><circle cx="12" cy="12" r="3"/><path d="M12 5v2m0 10v2m-7-7h2m10 0h2" stroke="white" stroke-width="2" fill="none"/></svg>
-          </div>
-          <p><strong>Did you know?</strong> Bottlenose dolphins sleep with one half of their brain at a time — so they can keep swimming and breathing while they rest.</p>
-        </div>
-      </div>
-    </details>
-
-    <!-- ─── Day 2 ─── -->
-    <details class="day-card">
-      <summary>
-        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=1200&q=80&auto=format&fit=crop');">
-          <div class="photo-credit">Bottlenose dolphin · Unsplash</div>
-          <div class="day-cover-label">
-            <div class="num">Chapter 02 · The Headline</div>
-            <div class="title">A dolphin, a daughter, a southbound car</div>
-            <div class="date">Saturday, August 22, 2026</div>
-          </div>
-        </div>
-        <div class="day-summary">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-size: 13px; color: var(--on-surface-variant);">Dolphin show 11am · swim 12pm · drive to Sukhumvit · Chocolate Hour · Jodd Fairs night</div>
-            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </div>
-        </div>
-      </summary>
-
-      <div style="padding: 4px 16px 16px;">
-        <div class="field-notes">
-          <div class="label">Field Notes · The Important Day</div>
-          <p>Tomorrow's the day she'll remember when she's 30. The dolphin isn't the destination — the look on her face is.</p>
-          <div class="attribution">— From the trip brief</div>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item fun">
-            <div class="time">07:00</div>
-            <h4>Slow breakfast — beachfront</h4>
-            <p>Let her watch the boats. The Infinity pool is open from 6am if she wants a pre-show swim.</p>
-          </div>
-          <div class="timeline-item major">
-            <div class="time">10:30</div>
-            <h4>🐬 Arrival at Pattaya Dolphinarium</h4>
-            <p>~12–15 min drive from Centara Grand Mirage. Arrive 30 min early to check in, meet the trainers, and let her acclimatize. Photo-friendly, no flash allowed during the show.</p>
-            <div class="meta">
-              <span class="chip chip-yellow">⭐ The moment</span>
-              <span class="coords">12.9563° N, 100.8890° E</span>
-            </div>
-          </div>
-
-          <div class="timeline-item fun">
-            <div class="time">11:00</div>
-            <h4>Dolphin &amp; sea lion show</h4>
-            <p>Around 45 min. Music, jumps, ball tricks, splash zone. She'll be in the front row if you ask. Loud volume — bring her mini-earphones or sit at the back if she's sound-sensitive.</p>
-          </div>
-
-          <div class="timeline-item major">
-            <div class="time">12:00</div>
-            <h4>🐬 The swim — bottlenose encounter</h4>
-            <p>This is the trip. You'll be in chest-deep water with her. The dolphin will come up to you, kiss her cheek, let her touch its dorsal fin. Two trainers in the water with you. Photos are taken by the venue and sold after — usually ฿500–800 for the digital package.</p>
-            <div class="meta">
-              <span class="chip chip-red">⚠️ Confirm 5-yo eligibility with venue first</span>
-            </div>
-          </div>
-
-          <div class="fun-fact">
-            <div class="pulse">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M12 2C8 6 4 9 4 14a8 8 0 0 0 16 0c0-5-4-8-8-12z"/></svg>
-            </div>
-            <p><strong>Tomorrow she'll know:</strong> dolphins have names for each other (signature whistles), recognize themselves in mirrors, and surface to breathe every 2 minutes.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="time">13:15</div>
-            <h4>Quick shower &amp; change at the facility</h4>
-            <p>Then a light lunch near the venue — she'll be tired. Pack the car by 14:30.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="time">14:30 – 17:00</div>
-            <h4>Pattaya → Bangkok (Highway 7)</h4>
-            <p>~2.5 hrs on a Saturday afternoon — budget for traffic. U-Young Travel stays with you all three legs.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="time">15:30</div>
-            <h4>Check-in: Mövenpick Hotel Sukhumvit 15</h4>
-            <p>Sukhumvit Soi 15, 5-min walk to BTS Asok / MRT Sukhumvit. Rooftop pool with the Rainforest Bar. Free Tuk Tuk shuttle to the BTS runs every 30 min.</p>
-          </div>
-          <div class="timeline-item fun">
-            <div class="time">16:00 – 17:00</div>
-            <h4>🍫 Mövenpick Chocolate Hour</h4>
-            <p>Daily at Lelawadee Restaurant — complimentary bite-sized chocolate creations,60 minutes of sweet. Don't let her overdo it; Jodd Fairs dinner is at 18:30.</p>
-            <div class="meta">
-              <span class="chip chip-yellow">⭐ Daily, free</span>
-            </div>
-          </div>
-          <div class="timeline-item fun">
-            <div class="time">18:30 – 21:00</div>
-            <h4>Jodd Fairs Ratchada — night market</h4>
-            <p>Grab or MRT to: 129 Ratchadaphisek Rd, next to Big C, MRT Thailand Cultural Centre. Open 11am–midnight. Pick: volcano pork ribs (Leng Saap), grilled skewers, coconut ice cream, fresh fruit shakes.</p>
-            <div class="meta">
-              <span class="chip chip-yellow">⭐ First Bangkok night</span>
-              <span class="coords">13.7360° N, 100.5610° E</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="time">21:30</div>
-            <h4>Back to hotel — bed</h4>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- ─── Day 3 ─── -->
-    <details class="day-card">
-      <summary>
-        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&q=80&auto=format&fit=crop');">
-          <div class="photo-credit">Wat Arun · Bangkok · Unsplash</div>
-          <div class="day-cover-label">
-            <div class="num">Chapter 03 · The Capital</div>
-            <div class="title">The memory-maker day</div>
-            <div class="date">Sunday, August 23, 2026</div>
-          </div>
-        </div>
-        <div class="day-summary">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-size: 13px; color: var(--on-surface-variant);">Cafe breakfast · Siam Square shops · garden spa · ICONSIAM · fountain show 7pm</div>
-            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </div>
-        </div>
-      </summary>
-
-      <div style="padding: 4px 16px 16px;">
-        <div class="field-notes">
-          <div class="label">Field Notes · Day 3</div>
-          <p>The memory-maker day. Six small moments, none of them rushed. The photo strip from the booth will end up on the fridge; the spa photo will end up framed.</p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item fun">
-            <div class="time">08:30 – 10:00</div>
-            <h4>Cafe breakfast — Kay's Sukhumvit 49 or Roast at EmQuartier</h4>
-            <p>Sunlit, plant-filled, easy start. ~5-min taxi from Mövenpick. Fluffy french toast, fruit smoothie bowls, soft opening to the day. Photo-worthy by default.</p>
-            <div class="meta">
-              <span class="chip chip-yellow">⭐ Photo op</span>
-            </div>
-          </div>
-          <div class="timeline-item major">
-            <div class="time">10:15 – 12:45</div>
-            <h4>🛍 Siam Square outdoor pedestrian streets</h4>
-            <p>BTS Asok → Siam (2 stops, direct). Walk Soi 2–5: car-free, clean, kid-safe. Hit <strong>Daddy and the Muscle Academy</strong> (Siam Soi 2) — pastel dresses, hair clips, tote bags, stationery. <strong>2nd Floor Photo Booth</strong> for the 90s sticker strip you take home.</p>
-            <div class="meta">
-              <span class="chip chip-yellow">⭐ Kid shops + photo strip</span>
-              <span class="chip chip-blue">Rain backup: EmQuartier kids' floor / Terminal 21 Asok</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="time">13:15 – 14:45</div>
-            <h4>🍴 Lunch + travel to spa</h4>
-            <p>Light lunch in Siam Square area (Korean cheese coin pancake / coconut slushie snack walk as you go). Then BTS or Grab to Sukhumvit 31.</p>
-          </div>
-          <div class="timeline-item major">
-            <div class="time">15:00 – 16:00</div>
-            <h4>💆 Oasis Spa Sukhumvit 31 — dad &amp; daughter</h4>
-            <p>Hidden Lanna-style villa with lotus ponds + secret gardens. Her: Kid First Sensation Massage (60-min organic coconut oil). You: Aromatherapy Hot Oil (60 min). Herbal tea on the wooden walkways after.</p>
-            <div class="meta">
-              <span class="chip chip-green">Book in advance</span>
-              <span class="coords">Sukhumvit Soi 31</span>
-              <a href="tel:+6622622122" class="chip chip-blue">📞 +66 2 262 2122</a>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="time">16:30 – 17:30</div>
-            <h4>Mövenpick — pool + Chocolate Hour</h4>
-            <p>5–7 min Grab back. Rooftop pool or quick shower. Catch the 16:00–17:00 Chocolate Hour at Lelawadee if timing works.</p>
-          </div>
-          <div class="timeline-item fun">
-            <div class="time">18:00 – 20:00</div>
-            <h4>ICONSIAM + SookSiam</h4>
-            <p>Taxi or hotel car straight to the riverfront. SookSiam is the indoor Thai food + craft market on the ground floor — 200+ stalls, all the regions of Thailand in one air-conditioned hall. <strong>Souvenirs happen here.</strong></p>
-            <div class="meta">
-              <span class="chip chip-yellow">⭐ Try boat noodles &amp; mango sticky rice</span>
-              <span class="chip chip-green">🛍 Souvenirs · open until 22:00</span>
-            </div>
-          </div>
-          <div class="timeline-item major">
-            <div class="time">19:00</div>
-            <h4>🎆 ICONSIAM River Fountain Show</h4>
-            <p>5-min spectacle — water + lights + music on the Chao Phraya. Front-row riverside promenade. Bring the camera.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="time">20:30</div>
-            <h4>Back to hotel — pack for tomorrow</h4>
-            <p>Lay out her clothes. One more sleep.</p>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- ─── Day 4 ─── -->
-    <details class="day-card">
-      <summary>
-        <div class="day-cover" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80&auto=format&fit=crop');">
-          <div class="photo-credit">Hotel pool · Unsplash</div>
-          <div class="day-cover-label">
-            <div class="num">Chapter 04 · Homeward</div>
-            <div class="title">Pool morning, slow goodbye</div>
-            <div class="date">Monday, August 24, 2026</div>
-          </div>
-        </div>
-        <div class="day-summary">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-size: 13px; color: var(--on-surface-variant);">Slow breakfast · hotel pool · 2pm flight home</div>
-            <svg class="chev material-icon" viewBox="0 0 24 24" style="color: var(--on-surface-variant);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </div>
-        </div>
-      </summary>
-
-      <div style="padding: 4px 16px 16px;">
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="time">08:30 – 10:15</div>
-            <h4>Farewell morning — your call</h4>
-            <p><strong>Option A (street bite):</strong> Moo Ping grilled pork skewers + sticky rice from the morning carts right on Soi 15 — 5 min walk from the hotel.<br><br><strong>Option B (sit-down brunch):</strong> Pier 21 food court at Terminal 21 Asok (opens 10:00) — 7-min walk from the hotel. Mango sticky rice + pad thai before packing.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="time">10:45</div>
-            <h4>Check out, head to BKK</h4>
-            <p>Pick-up by U-Young Travel. ~35–45 min to Suvarnabhumi via Sirat Expressway. ⚠️ Tighter than ideal for 14:00 international — bell desk can hold bags if you need a few extra minutes.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="time">14:00</div>
-            <h4>Flight home: BKK → HKG</h4>
-            <p>She'll probably sleep on the runway. Take the picture on the way home, not the way there.</p>
-          </div>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="time">~11:30</div>
-            <h4>Touch down at BKK</h4>
-            <p>U-Young drops you at Departures. Thai Airways check-in counters are on Level 4. Aim for the 3-hr international buffer.</p>
-          </div>
-        </div>
-
-        <div class="field-notes" style="margin-top: 16px;">
-          <div class="label">Last Note</div>
-          <p>All souvenirs are already done — picked up at SookSiam in ICONSIAM yesterday. Today just needs to be quiet. The best trips end not with a click, but with a moment on the plane home where you realize she's a little taller than when you left.</p>
-        </div>
-
-        <div class="field-notes" style="margin-top: 12px; background: #FFF7E6; border-left-color: #FFCC00;">
-          <div class="label">Heads Up · Aug 24 is a Monday</div>
-          <p>Siam Paragon, MBK, ICONSIAM all open 10am — too late for a souvenir run. Chatuchak Weekend Market is closed Mondays. SookSiam (yesterday) is where the gifts live. Platinum Fashion Mall (opens 09:00) is the only option if you really want one last quick stop.</p>
-        </div>
-      </div>
-    </details>
   </section>
 
   <!-- ─── Stays ─── -->
-  <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Where You'll Sleep</div>
-      <h2 class="section-title">Two hotels, both battle-tested</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="photo-card" style="margin-bottom: 12px;">
-      <div class="img" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=80&auto=format&fit=crop');"></div>
-      <div class="pin">Pattaya · 1 night</div>
-      <div class="caption">
-        <div class="name">Centara Grand Mirage Beach Resort Pattaya</div>
-        <div class="desc">Ocean View Family Room · 5★ · Lost World waterpark (lazy river, slides, splash pads) · Wong Amat cove</div>
-        <div class="meta" style="margin-top: 8px;">
-          <a href="tel:+6638714981" class="chip chip-blue">📞 +66 38 714 981</a>
-        </div>
+  <section class="section" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Where You'll Sleep</div>
+        <h2 class="section-title">Two hotels, <em>both battle-tested</em></h2>
       </div>
-    </div>
-
-    <div class="photo-card">
-      <div class="img" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80&auto=format&fit=crop');"></div>
-      <div class="pin">Bangkok · 2 nights</div>
-      <div class="caption">
-        <div class="name">Mövenpick Hotel Sukhumvit 15</div>
-        <div class="desc">5★ · rooftop pool + Rainforest Bar · daily Chocolate Hour 16:00–17:00 · 5-min walk to BTS Asok · free Tuk Tuk shuttle</div>
-        <div class="meta" style="margin-top: 8px;">
-          <a href="tel:+6621193100" class="chip chip-blue">📞 +66 2 119 3100</a>
-        </div>
+      <div class="stays-grid">
+        <article class="stay-card">
+          <div class="stay-img">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=85&auto=format&fit=crop" alt="">
+            <span class="stay-pin">Pattaya · 1 night</span>
+          </div>
+          <div class="stay-body">
+            <h3 class="stay-name">Centara Grand Mirage</h3>
+            <p class="stay-desc">Ocean View Family Room · 5★ · Lost World waterpark (lazy river, slides, splash pads) · Wong Amat cove</p>
+            <div class="stay-actions">
+              <span class="chip-green">✅ Booked</span>
+              <a href="tel:+6638714981" class="chip-blue">📞 +66 38 714 981</a>
+            </div>
+          </div>
+        </article>
+        <article class="stay-card">
+          <div class="stay-img">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=85&auto=format&fit=crop" alt="">
+            <span class="stay-pin">Bangkok · 2 nights</span>
+          </div>
+          <div class="stay-body">
+            <h3 class="stay-name">Mövenpick Sukhumvit 15</h3>
+            <p class="stay-desc">5★ · rooftop pool + Rainforest Bar · daily Chocolate Hour 16:00–17:00 · 5-min walk to BTS Asok</p>
+            <div class="stay-actions">
+              <a href="tel:+6621193100" class="chip-blue">📞 +66 2 119 3100</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ─── Food ─── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Where You'll Eat</div>
+        <h2 class="section-title">Field-tested <em>bites</em></h2>
+      </div>
+      <div class="food-grid">
+        <article class="food-card">
+          <div class="food-tag">Kid-tested</div>
+          <h3 class="food-name">Mango sticky rice</h3>
+          <p class="food-where">SookSiam at ICONSIAM · ฿80–120. Coconut milk, salt, fresh mango. Non-negotiable.</p>
+        </article>
+        <article class="food-card">
+          <div class="food-tag">Dad-tested</div>
+          <h3 class="food-name">Boat noodles &amp; Pad Krapow</h3>
+          <p class="food-where">Pier 21 Terminal 21 · ฿60–100. Tiny bowls, huge flavor. Holy basil with crispy pork.</p>
+        </article>
+        <article class="food-card">
+          <div class="food-tag">Treat</div>
+          <h3 class="food-name">Honey toast at After You</h3>
+          <p class="food-where">EmQuartier branch · ฿280. Toast, ice cream, honey, condensed milk. She'll talk about it for a year.</p>
+        </article>
+        <article class="food-card">
+          <div class="food-tag">Night market</div>
+          <h3 class="food-name">Jodd Fairs Ratchada</h3>
+          <p class="food-where">Volcano pork ribs (฿150), grilled squid (฿80), fresh fruit shakes (฿40). Just say "no spice" for her.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Spa Highlight ─── -->
   <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Where You'll Eat</div>
-      <h2 class="section-title">Field-tested bites</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="card" style="padding: 14px;">
-      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Kid-tested</div>
-      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Mango sticky rice</div>
-      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">SookSiam at ICONSIAM · ฿80–120. Coconut milk, salt, fresh mango. Non-negotiable.</div>
-    </div>
-
-    <div class="card" style="padding: 14px; margin-top: 8px;">
-      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Dad-tested</div>
-      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Boat noodles &amp; Pad Krapow</div>
-      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">Pier 21 Terminal 21 · ฿60–100. Tiny bowls, huge flavor. Order the holy basil with crispy pork.</div>
-    </div>
-
-    <div class="card" style="padding: 14px; margin-top: 8px;">
-      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Treat</div>
-      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Honey toast at After You</div>
-      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">EmQuartier branch · ฿280. Toast, ice cream, honey, condensed milk. She'll talk about it for a year.</div>
-    </div>
-
-    <div class="card" style="padding: 14px; margin-top: 8px;">
-      <div style="font-size: 13px; font-weight: 500; color: var(--primary); margin-bottom: 4px;">Night market</div>
-      <div style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Jodd Fairs Ratchada</div>
-      <div style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">Volcano pork ribs (฿150), grilled squid (฿80), fresh fruit shakes (฿40). Just say "no spice" for her.</div>
+    <div class="spa">
+      <div class="spa-eyebrow">Sunday Sanctuary</div>
+      <h2 class="spa-title">A garden, a lotus pond, <em>and you two</em></h2>
+      <p class="spa-body">Oasis Spa Sukhumvit 31 is a hidden Lanna-style villa tucked down a quiet alley. The water feature trickles. The frangipani drops. The coconut oil is warm. Book the side-by-side villa suite — she'll be next to you, not across the room.</p>
+      <div class="spa-actions">
+        <a href="tel:+6622622122" class="btn btn-primary">📞 +66 2 262 2122</a>
+        <a href="https://maps.app.goo.gl/?q=Oasis+Spa+Sukhumvit+31+Bangkok" class="btn btn-ghost">Open in Maps</a>
+      </div>
     </div>
   </section>
 
   <!-- ─── Checklist ─── -->
-  <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">Booking Checklist</div>
-      <h2 class="section-title">Action items, gated by the dolphin</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="card" style="padding: 8px;">
-      <div class="checklist-item">
-        <input type="checkbox" id="b1" data-key="b1">
-        <label class="text" for="b1">
-          Book Pattaya Dolphinarium Half Day Tour on trip.com (refundable)
-          <small>https://www.trip.com/things-to-do/detail/69919260/</small>
-        </label>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Booking Checklist</div>
+        <h2 class="section-title">Action items, <em>gated by the dolphin</em></h2>
       </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b2" data-key="b2">
-        <label class="text" for="b2">
-          Message Line @pty_dolphinarium to upgrade to swim + confirm 5-yo eligibility
-          <small>Official site says 6+, but vendors honor 5+ with parent</small>
+      <div class="checklist">
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>Progress</span>
+            <span id="progress-text">0 / 9</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        </div>
+        <label class="check-item" data-key="b1">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Book Pattaya Dolphinarium Half Day Tour on trip.com (refundable)<small>https://www.trip.com/things-to-do/detail/69919260/</small></span>
         </label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b3" data-key="b3">
-        <label class="text" for="b3">
-          ✅ Centara Grand Mirage Beach Resort Pattaya — BOOKED
-          <small>Ocean View Family Room · Aug 21 (1 night)</small>
+        <label class="check-item" data-key="b2">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">✅ Dolphinarium 5-yo swim confirmed by venue<small>Line @pty_dolphinarium · done Aug 9</small></span>
         </label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b4" data-key="b4">
-        <label class="text" for="b4">
-          Book Mövenpick Hotel Sukhumvit 15 Bangkok
-          <small>47 Sukhumvit Soi 15 · Aug 22-24 (2 nights) · request high floor</small>
+        <label class="check-item" data-key="b3">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">✅ Centara Grand Mirage Beach Resort Pattaya<small>Ocean View Family Room · Aug 21 (1 night)</small></span>
         </label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b5" data-key="b5">
-        <label class="text" for="b5">
-          Book Oasis Spa Sukhumvit 31 — dad-daughter villa session Aug 23 3pm
-          <small>+66 2 262 2122 · Lanna garden villa, lotus ponds · private suite · 15 min taxi from Mövenpick</small>
+        <label class="check-item" data-key="b4">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Book Mövenpick Hotel Sukhumvit 15 Bangkok<small>47 Sukhumvit Soi 15 · Aug 22-24 (2 nights) · request high floor</small></span>
         </label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b6" data-key="b6">
-        <label class="text" for="b6">
-          Confirm U-Young Travel SUV + child car seat for all 3 legs
-          <small>Aug 21 BKK→Pattaya, Aug 22 Pattaya→BKK, Aug 24 hotel→BKK</small>
+        <label class="check-item" data-key="b5">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Book Oasis Spa Sukhumvit 31 — dad-daughter villa session Aug 23 3pm<small>+66 2 262 2122 · Lanna villa · private suite</small></span>
         </label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b7" data-key="b7">
-        <label class="text" for="b7">
-          Buy AXA travel insurance
-          <small>Daughter FREE under parent policy</small>
+        <label class="check-item" data-key="b6">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Confirm U-Young Travel SUV + child car seat for all 3 legs<small>Aug 21 BKK→Pattaya · Aug 22 Pattaya→BKK · Aug 24 hotel→BKK</small></span>
         </label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b8" data-key="b8">
-        <label class="text" for="b8">
-          Thai Airways online check-in (24h before)
-          <small>Aug 20 for outbound, Aug 23 for return</small>
+        <label class="check-item" data-key="b7">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Buy AXA SmartTraveller Plus Premier<small>Daughter FREE under parent policy</small></span>
         </label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="b9" data-key="b9">
-        <label class="text" for="b9">
-          Notify credit card company of travel dates
-          <small>So charges don't get flagged</small>
+        <label class="check-item" data-key="b8">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Thai Airways online check-in (24h before)<small>Aug 20 outbound · Aug 23 return</small></span>
         </label>
-      </div>
-    </div>
-
-    <div class="photo-card" style="margin-top: 16px;">
-      <div class="img" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80&auto=format&fit=crop'); height: 140px;"></div>
-      <div class="caption">
-        <div class="name">Packing list</div>
-        <div class="desc">Swimwear x2 · DEET ≥20% repellent · SPF 50+ · child paracetamol · ORS · light long-sleeve · rain jacket · water shoes · refillable bottles x2</div>
+        <label class="check-item" data-key="b9">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Notify credit card company of travel dates<small>So charges don't get flagged</small></span>
+        </label>
       </div>
     </div>
   </section>
 
   <!-- ─── Health & Safety ─── -->
-  <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">The Briefing</div>
-      <h2 class="section-title">Health &amp; safety</h2>
-      <div class="section-rule"></div>
-    </div>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">The Briefing</div>
+        <h2 class="section-title">Health &amp; <em>safety</em></h2>
+      </div>
+      <div class="health-grid">
+        <article class="health-card">
+          <div class="health-icon">☔</div>
+          <h3 class="health-title">August is monsoon</h3>
+          <p class="health-body">Expect 8–15 rainy days. Afternoon thunderstorms 2–5 PM are normal. The itinerary is rain-proof — most of it is indoors or covered.</p>
+        </article>
+        <article class="health-card">
+          <div class="health-icon">🦟</div>
+          <h3 class="health-title">Dengue is real</h3>
+          <p class="health-body">Long-sleeve at dusk. DEET 20%+ on her skin. The hotel rooms have screens, but the deck is open.</p>
+        </article>
+        <article class="health-card">
+          <div class="health-icon">🌊</div>
+          <h3 class="health-title">Beach safety</h3>
+          <p class="health-body">Pattaya beach has red-flag days during monsoon. If you see red flags, don't go in — the hotel pool is better anyway. Beach shoes essential.</p>
+        </article>
+        <article class="health-card">
+          <div class="health-icon">🍜</div>
+          <h3 class="health-title">Eat safely</h3>
+          <p class="health-body">Eat where locals eat but where the food is hot. Skip raw shellfish. Bottled water only for her. Pattaya tap water is not drinkable.</p>
+        </article>
+      </div>
 
-    <div class="card" style="padding: 16px;">
-      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">☔ August is monsoon — plan for it</h4>
-      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Expect 8-15 rainy days. Afternoon thunderstorms 2-5pm are normal. The itinerary is rain-proof — most of it is indoors or covered.</p>
-
-      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">🦟 Dengue is real</h4>
-      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Long-sleeve at dusk. DEET 20%+ on her skin. The hotel rooms have screens, but the deck is open.</p>
-
-      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">🌊 Beach safety</h4>
-      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Pattaya beach has red-flag days during monsoon. If you see red flags, don't go in — the hotel pool is better anyway. Beach shoes are essential.</p>
-
-      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">🍜 Eat safely</h4>
-      <p style="font-size: 13px; color: var(--on-surface-variant); margin-bottom: 12px;">Eat where locals eat but where the food is hot. Skip raw shellfish. Bottled water only for her. Pattaya tap water is not drinkable.</p>
-
-      <h4 style="font-family: var(--font-serif); font-size: 18px; margin-bottom: 8px;">☀️ Sun</h4>
-      <p style="font-size: 13px; color: var(--on-surface-variant);">SPF 50+ every 2 hours. Hat. Sunglasses. Reapply after the swim.</p>
+      <div class="sos">
+        <div class="sos-title">⚠ Emergency · Quick Dial</div>
+        <div class="sos-row">
+          <div class="sos-label">Thailand Tourist Police<small>English-speaking</small></div>
+          <a href="tel:1155" class="sos-num">1155</a>
+        </div>
+        <div class="sos-row">
+          <div class="sos-label">Ambulance / EMS<small>All emergencies</small></div>
+          <a href="tel:1669" class="sos-num">1669</a>
+        </div>
+        <div class="sos-row">
+          <div class="sos-label">Bangkok Hospital<small>24h · English</small></div>
+          <a href="tel:+6623103000" class="sos-num">+66 2 310 3000</a>
+        </div>
+        <div class="sos-row">
+          <div class="sos-label">Bumrungrad Hospital<small>Pediatric unit available</small></div>
+          <a href="tel:+6620668888" class="sos-num">+66 2 066 8888</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ─── Notes ─── -->
-  <section class="container">
-    <div class="section-header">
-      <div class="section-eyebrow">A Final Note</div>
-      <h2 class="section-title">The point of the trip</h2>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="field-notes" style="margin: 0; padding: 20px;">
-      <div class="label">From the Editor</div>
-      <p style="font-size: 17px;">The dolphin is the headline. The temple is the postcard. The market is the flavor. But the trip is the three quiet hours between things — the road trip, the breakfast, the moonlight on the water, the way she holds your hand when she's tired and doesn't say so.</p>
-      <div class="attribution">— Plan from your advisor, Blastoise 🐢</div>
-    </div>
-
-    <div class="pull-quote" style="margin-top: 20px;">
-      "The world is a book, and those who do not travel read only one page."
-    </div>
+  <!-- ─── Final Note ─── -->
+  <section class="final">
+    <div class="final-mark">🐬</div>
+    <p class="final-text">The dolphin is the headline. The temple is the postcard. The market is the flavor. But the trip is the three quiet hours between things — the road trip, the breakfast, the moonlight on the water, the way she holds your hand when she's tired and doesn't say so.</p>
+    <div class="final-attr">— From your advisor, Blastoise 🐢</div>
   </section>
 
-  <!-- ─── Bottom nav ─── -->
+  <!-- ─── Bottom Nav ─── -->
   <nav class="bottom-nav no-print">
-    <div class="bottom-nav-inner">
-      <a href="#top" class="nav-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l-9 9h3v8h5v-6h2v6h5v-8h3z"/></svg>
-        Top
-      </a>
-      <a href="tel:+6623103000" class="nav-btn" style="color: var(--tertiary);">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        SOS
-      </a>
-      <a href="https://maps.app.goo.gl/?q=Pattaya+Dolphinarium" class="nav-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-        Maps
-      </a>
-      <a href="#" class="nav-btn" onclick="window.print();">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
-        Print
-      </a>
-    </div>
+    <a href="#top" class="nav-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      <span>Top</span>
+    </a>
+    <a href="tel:1669" class="nav-btn sos">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>SOS</span>
+    </a>
+    <a href="https://maps.app.goo.gl/?q=Pattaya+Dolphinarium" class="nav-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Maps</span>
+    </a>
+    <a href="#" class="nav-btn" onclick="window.print(); return false;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span>Print</span>
+    </a>
   </nav>
 
-  <div class="safe-bottom" style="height: 80px;"></div>
+  <div class="safe-bottom"></div>
 
   <!-- ─── Scripts ─── -->
   <script>
+    // ─── Day toggle ───
+    function toggleDay(el) {
+      const card = el.closest('.day-card');
+      const isOpen = card.dataset.open === 'true';
+      document.querySelectorAll('.day-card').forEach(c => c.dataset.open = 'false');
+      if (!isOpen) card.dataset.open = 'true';
+    }
+
     // ─── Countdown ───
     (function() {
       const target = new Date('2026-08-21T07:50:00+08:00').getTime();
-      const el = document.getElementById('countdown-value');
+      const elPill = document.getElementById('countdown-pill');
+      const elHero = document.getElementById('countdown-hero');
       function update() {
         const now = Date.now();
         const diff = target - now;
-        if (diff <= 0) { el.textContent = '🎉'; return; }
+        if (diff <= 0) {
+          if (elPill) elPill.textContent = '🎉 live';
+          if (elHero) elHero.textContent = '🎉 we are here';
+          return;
+        }
         const d = Math.floor(diff / 86400000);
         const h = Math.floor((diff % 86400000) / 3600000);
-        el.textContent = d + 'd ' + h + 'h';
+        const m = Math.floor((diff % 3600000) / 60000);
+        const txt = d + 'd ' + h + 'h ' + (m > 0 ? m + 'm' : '');
+        if (elPill) elPill.textContent = txt;
+        if (elHero) elHero.textContent = txt + ' to go';
       }
       update();
       setInterval(update, 60000);
@@ -1582,21 +1951,47 @@
 
     // ─── Persist checklist ───
     (function() {
-      const KEY = 'bkk-pattaya-2026-checks';
+      const KEY = 'bkk-pa-checks-v2';
       let saved = {};
       try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
-      document.querySelectorAll('input[type="checkbox"][data-key]').forEach(cb => {
+      const items = document.querySelectorAll('.check-item[data-key]');
+      const total = items.length;
+      function updateProgress() {
+        const done = document.querySelectorAll('.check-item.done').length;
+        const pct = (done / total) * 100;
+        const fill = document.getElementById('progress-fill');
+        const text = document.getElementById('progress-text');
+        if (fill) fill.style.width = pct + '%';
+        if (text) text.textContent = done + ' / ' + total;
+      }
+      items.forEach(cb => {
         const k = cb.dataset.key;
-        if (saved[k]) {
-          cb.checked = true;
-          cb.closest('.checklist-item').classList.add('done');
-        }
-        cb.addEventListener('change', () => {
-          saved[k] = cb.checked;
+        if (saved[k]) cb.classList.add('done');
+        cb.addEventListener('click', (e) => {
+          // Prevent default label behavior
+          e.preventDefault();
+          cb.classList.toggle('done');
+          saved[k] = cb.classList.contains('done');
           localStorage.setItem(KEY, JSON.stringify(saved));
-          cb.closest('.checklist-item').classList.toggle('done', cb.checked);
+          updateProgress();
         });
       });
+      updateProgress();
+    })();
+
+    // ─── Scroll reveal ───
+    (function() {
+      const els = document.querySelectorAll('.section-head, .day-card, .stay-card, .food-card, .health-card, .junior, .spa, .checklist');
+      els.forEach(el => el.classList.add('reveal'));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(el => io.observe(el));
     })();
 
     // ─── Service worker ───
