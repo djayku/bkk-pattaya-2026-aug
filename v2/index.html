@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#F2F2F7">
+  <title>Bangkok & Pattaya · Dad & Daughter 2026</title>
+  <link rel="manifest" href="../manifest.json">
+  <style>
+    :root {
+      --ios-bg: #F2F2F7;
+      --ios-bg-2: #FFFFFF;
+      --ios-card: #FFFFFF;
+      --ios-secondary-bg: #F2F2F7;
+      --ios-label: #000000;
+      --ios-secondary-label: #8E8E93;
+      --ios-tertiary-label: #C7C7CC;
+      --ios-blue: #007AFF;
+      --ios-pink: #FF3B30;
+      --ios-orange: #FF9500;
+      --ios-green: #34C759;
+      --ios-indigo: #5856D6;
+      --ios-yellow: #FFCC00;
+      --glass-bg: rgba(255, 255, 255, 0.78);
+      --glass-border: rgba(255, 255, 255, 0.5);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--ios-bg);
+      color: var(--ios-label);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+      padding-bottom: calc(100px + env(safe-area-inset-bottom));
+      padding-top: env(safe-area-inset-top);
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.01em;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: var(--ios-blue); text-decoration: none; }
+    button { font-family: inherit; }
+
+    /* ─── iOS Large Title Header ─── */
+    .header-container {
+      padding: 16px 20px 8px;
+      background: var(--ios-bg);
+    }
+    .header-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(242, 242, 247, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      padding-top: calc(env(safe-area-inset-top) + 8px);
+      border-bottom: 0.5px solid var(--ios-tertiary-label);
+    }
+    .subtitle {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--ios-secondary-label);
+      padding: 0 20px;
+      margin-top: 6px;
+    }
+    .large-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--ios-label);
+      margin-top: 2px;
+      padding: 0 20px 8px;
+    }
+
+    /* ─── Live Pulse Widget ─── */
+    .pulse-widget {
+      margin: 12px 20px;
+      background: linear-gradient(135deg, #1C1C1E, #2C2C2E);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 16px 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .pulse-info { flex: 1; min-width: 0; }
+    .pulse-info h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--ios-orange);
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pulse-info h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .pulse-info p {
+      font-size: 0.75rem;
+      color: #A1A1A6;
+      margin-top: 2px;
+    }
+    .pulse-badge {
+      background: rgba(255,149,0,0.2);
+      color: var(--ios-orange);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 0.5px solid rgba(255,149,0,0.3);
+      flex-shrink: 0;
+    }
+
+    /* ─── Day Picker Horizontal Scroll ─── */
+    .day-selector {
+      display: flex;
+      gap: 8px;
+      padding: 8px 20px 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: var(--ios-bg);
+      position: sticky;
+      top: calc(env(safe-area-inset-top) + 88px);
+      z-index: 40;
+    }
+    .day-selector::-webkit-scrollbar { display: none; }
+    .day-chip {
+      background: rgba(230, 230, 235, 0.7);
+      border: none;
+      padding: 7px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ios-label);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .day-chip.active {
+      background: var(--ios-label);
+      color: white;
+      transform: scale(1.02);
+    }
+
+    /* ─── Tab Views ─── */
+    .tab-view { display: none; padding: 0 20px 20px; }
+    .tab-view.active { display: block; }
+
+    /* ─── iOS Card ─── */
+    .ios-card {
+      background: var(--ios-card);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card-hero-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body { padding: 14px 16px; }
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      flex: 1;
+      min-width: 0;
+    }
+    .time-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(0,122,255,0.1);
+      color: var(--ios-blue);
+      padding: 3px 9px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .time-pill.optional {
+      background: rgba(142,142,147,0.15);
+      color: var(--ios-secondary-label);
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--ios-secondary-label);
+      line-height: 1.4;
+    }
+    .card-desc strong { color: var(--ios-label); font-weight: 600; }
+    .card-meta {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .meta-chip {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: var(--ios-bg);
+      color: var(--ios-secondary-label);
+      padding: 3px 9px;
+      border-radius: 8px;
+    }
+    .meta-chip.green {
+      background: rgba(52,199,89,0.15);
+      color: var(--ios-green);
+    }
+    .meta-chip.orange {
+      background: rgba(255,149,0,0.15);
+      color: var(--ios-orange);
+    }
+
+    /* ─── Apple Wallet Pass ─── */
+    .wallet-pass {
+      background: linear-gradient(135deg, #2D3748, #1A202C);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .wallet-pass::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(246,173,85,0.15) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+    }
+    .pass-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #A0AEC0;
+      font-weight: 700;
+    }
+    .pass-thai {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #F6AD55;
+      margin: 6px 0 4px;
+      line-height: 1.2;
+    }
+    .pass-eng {
+      font-size: 0.82rem;
+      color: #E2E8F0;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .pass-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 0.5px solid rgba(255,255,255,0.15);
+      gap: 8px;
+    }
+    .btn-pass-action {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: none;
+      padding: 7px 12px;
+      border-radius: var(--radius-md);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-pass-action:active {
+      background: rgba(255,255,255,0.25);
+    }
+    .pass-meta {
+      font-size: 0.7rem;
+      color: #A0AEC0;
+      font-weight: 500;
+    }
+
+    /* ─── Scrapbook Mission Card ─── */
+    .scrapbook-card {
+      background: var(--ios-card);
+      border-radius: var(--radius-xl);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+    }
+    .scrapbook-card.done {
+      background: rgba(52,199,89,0.06);
+      opacity: 0.7;
+    }
+    .scrapbook-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .scrapbook-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+    }
+    .scrapbook-when {
+      font-size: 0.7rem;
+      color: var(--ios-secondary-label);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .ios-switch {
+      width: 24px;
+      height: 24px;
+      accent-color: var(--ios-green);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .camera-dropzone {
+      margin-top: 10px;
+      border: 1.5px dashed #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 12px;
+      text-align: center;
+      background: #F8FAFC;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .camera-dropzone.has-photo {
+      padding: 8px;
+      justify-content: flex-start;
+    }
+    .btn-snap {
+      background: var(--ios-indigo);
+      color: white;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 18px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-snap:active { opacity: 0.85; }
+    .btn-snap.has-photo {
+      background: var(--ios-green);
+    }
+    .photo-thumbnail {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      border: 1.5px solid white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      display: none;
+    }
+
+    .mission-progress {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--ios-bg-2);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+      color: var(--ios-secondary-label);
+    }
+    .progress-bar {
+      flex: 1;
+      height: 4px;
+      background: var(--ios-bg);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--ios-green);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .progress-text {
+      font-weight: 700;
+      color: var(--ios-label);
+    }
+
+    /* ─── Cash / Money Card ─── */
+    .cash-hero {
+      background: linear-gradient(135deg, #1C1C1E, #2C2C2E);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .cash-hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255,204,0,0.2) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+    }
+    .cash-amount-hero {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .cash-amount-sub {
+      font-size: 0.85rem;
+      color: #A1A1A6;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .cash-action {
+      font-size: 0.78rem;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 0.5px solid rgba(255,255,255,0.15);
+      line-height: 1.4;
+      color: #E2E8F0;
+    }
+
+    .prepaid-card {
+      background: rgba(52,199,89,0.08);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--ios-label);
+    }
+    .prepaid-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--ios-green);
+      margin-bottom: 4px;
+    }
+
+    .cash-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 12px 0;
+      border-bottom: 0.5px solid var(--ios-tertiary-label);
+    }
+    .cash-row:last-child { border-bottom: none; }
+    .cash-day-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ios-label);
+    }
+    .cash-day-amount {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ios-label);
+    }
+    .cash-day-detail {
+      font-size: 0.75rem;
+      color: var(--ios-secondary-label);
+      margin-top: 2px;
+    }
+
+    /* ─── Reminder List ─── */
+    .reminder-section {
+      background: var(--ios-card);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .reminder-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ios-label);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .reminder-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .reminder-list li {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--ios-label);
+      padding: 6px 0 6px 22px;
+      position: relative;
+    }
+    .reminder-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--ios-green);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .reminder-list li strong {
+      font-weight: 700;
+    }
+    .reminder-list li.pending::before {
+      content: '○';
+      color: var(--ios-orange);
+    }
+
+    /* ─── Checklist ─── */
+    .checklist-card {
+      background: var(--ios-card);
+      border-radius: var(--radius-xl);
+      padding: 4px 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 0.5px solid var(--ios-tertiary-label);
+      cursor: pointer;
+    }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-item.done .checklist-text { opacity: 0.5; text-decoration: line-through; }
+    .checklist-checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid var(--ios-tertiary-label);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    .checklist-item.done .checklist-checkbox {
+      background: var(--ios-green);
+      border-color: var(--ios-green);
+      color: white;
+    }
+    .checklist-checkbox::after {
+      content: '✓';
+      font-size: 13px;
+      color: white;
+      font-weight: 700;
+      display: none;
+    }
+    .checklist-item.done .checklist-checkbox::after { display: block; }
+    .checklist-text {
+      flex: 1;
+      font-size: 0.85rem;
+      color: var(--ios-label);
+      line-height: 1.35;
+    }
+    .checklist-text small {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--ios-secondary-label);
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    /* ─── Health Quick Tips ─── */
+    .health-tip {
+      background: rgba(255,149,0,0.1);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      color: var(--ios-label);
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .health-tip-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── Quick Stats Row (Info Tab) ─── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .stat-mini {
+      background: var(--ios-card);
+      border-radius: var(--radius-md);
+      padding: 12px 8px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .stat-mini-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--ios-blue);
+      letter-spacing: -0.02em;
+    }
+    .stat-mini-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--ios-secondary-label);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* ─── Greeting Card ─── */
+    .greeting-card {
+      background: linear-gradient(135deg, rgba(255,149,0,0.15), rgba(255,204,0,0.1));
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .greeting-thai {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--ios-label);
+      margin-bottom: 4px;
+    }
+    .greeting-roman {
+      font-size: 0.75rem;
+      color: var(--ios-secondary-label);
+      margin-bottom: 8px;
+    }
+    .greeting-note {
+      font-size: 0.78rem;
+      color: var(--ios-label);
+      line-height: 1.4;
+    }
+
+    /* ─── Floating Glass Bottom Nav ─── */
+    .glass-nav {
+      position: fixed;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      left: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border: 0.5px solid rgba(0, 0, 0, 0.08);
+      height: 60px;
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      z-index: 100;
+    }
+    .nav-item {
+      border: none;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--ios-secondary-label);
+      font-size: 0.65rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 8px;
+      -webkit-tap-highlight-color: transparent;
+      transition: color 0.2s ease;
+    }
+    .nav-item.active { color: var(--ios-blue); }
+    .nav-icon {
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+      line-height: 1;
+    }
+
+    /* ─── Section Header (sub pages) ─── */
+    .section-h {
+      padding: 16px 0 8px;
+    }
+    .section-h-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 2px;
+    }
+    .section-h-sub {
+      font-size: 0.82rem;
+      color: var(--ios-secondary-label);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <div class="header-sticky">
+    <div class="subtitle">Dad & Daughter Trip · Aug 21–24</div>
+    <div class="large-title">Thailand 2026</div>
+  </div>
+
+  <!-- Live Pulse Widget -->
+  <div class="pulse-widget">
+    <div class="pulse-info">
+      <h4>Next Milestone</h4>
+      <h3 id="pulse-title">Arrival & Waterpark</h3>
+      <p id="pulse-sub">Centara Grand Mirage · Aug 21, 12:30 PM</p>
+    </div>
+    <span class="pulse-badge" id="pulse-badge">Up Next</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- TAB 1: PLAN -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <main id="tab-plan" class="tab-view active">
+
+    <div class="day-selector">
+      <button class="day-chip active" onclick="filterDay('all', this)">All Days</button>
+      <button class="day-chip" onclick="filterDay('day1', this)">Aug 21 · Pattaya</button>
+      <button class="day-chip" onclick="filterDay('day2', this)">Aug 22 · Dolphins</button>
+      <button class="day-chip" onclick="filterDay('day3', this)">Aug 23 · Spa</button>
+      <button class="day-chip" onclick="filterDay('day4', this)">Aug 24 · Home</button>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-block" data-day="day1">
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">BKK → Pattaya drive</div>
+            <span class="time-pill">10:30 – 12:30</span>
+          </div>
+          <div class="card-desc">~2 hours via Motorway 7 (Sat monsoon can stretch to 2.5). <strong>MANDATORY pit stop at 30 min</strong> at PTT/7-Eleven — water, snacks, toilet.</div>
+          <div class="card-meta">
+            <span class="meta-chip">~120 km</span>
+            <span class="meta-chip">📦 Pack from HKG: granola, juice, water bottles, fan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">Centara · Lost World waterpark</div>
+            <span class="time-pill">12:30 – 18:00</span>
+          </div>
+          <div class="card-desc">Ocean View Family Room. Check-in 15:00 — <strong>drop bags at bell desk</strong>, use changing rooms. Waterpark: lazy river, slides, splash pads, private beach. Wong Amat cove.</div>
+          <div class="card-meta">
+            <span class="meta-chip green">✅ Booked</span>
+            <span class="meta-chip">⭐ Lost World</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">🍽️ Dinner — your call</div>
+            <span class="time-pill optional">OPTIONAL</span>
+          </div>
+          <div class="card-desc"><strong>Option A:</strong> Hotel — Coast Beach Club sunset, in-room dining, or resort restaurant. Recommended Day 1 (she's cooked).<br><br><strong>Option B:</strong> Grab to Terminal 21 Pattaya → Pier 21 food court. Boat noodles (฿60), mango sticky rice, fruit shakes. Airplane display = kid magnet.</div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">Early bed</div>
+            <span class="time-pill">20:00</span>
+          </div>
+          <div class="card-desc">Tomorrow is the big one. Lights out by 20:00 = 7+ hours of sleep — enough for a dolphin swim.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-block" data-day="day2">
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1570458436416-b8fcccfe883f?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">🐬 Dolphin show & swim</div>
+            <span class="time-pill">11:00 – 13:00</span>
+          </div>
+          <div class="card-desc">11am show, 12pm private swim (chest-deep). Daughter high-fives the dolphin with their fins. 5-yo confirmed OK by venue.</div>
+          <div class="card-meta">
+            <span class="meta-chip green">✅ Prepaid</span>
+            <span class="meta-chip orange">⭐ The headline</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">🍫 Mövenpick Chocolate Hour</div>
+            <span class="time-pill">16:00 – 17:00</span>
+          </div>
+          <div class="card-desc">Daily at Lelawadee Restaurant — complimentary bite-sized chocolate creations. <strong>Priority — do not miss.</strong></div>
+          <div class="card-meta">
+            <span class="meta-chip green">✅ Booked</span>
+            <span class="meta-chip">⭐ Daily, free</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">🌃 Evening — your call</div>
+            <span class="time-pill optional">OPTIONAL</span>
+          </div>
+          <div class="card-desc"><strong>Option A · Jodd Fairs 19:00–21:00:</strong> MRT Sukhumvit → Thailand Cultural Centre (2 stops). Volcano pork ribs (฿150), grilled skewers, coconut ice cream, lanterns, kids' carnival zone. <strong>Cash only</strong> — bring ~฿1,500 in small notes.<br><br><strong>Option B · Hotel dinner + early bed</strong> (recommended if she's wrecked from swim + drive).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-block" data-day="day3">
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">Siam Square pedestrian streets</div>
+            <span class="time-pill">10:15 – 12:45</span>
+          </div>
+          <div class="card-desc">BTS Asok → Siam (2 stops). Soi 2–5: car-free, kid-safe. <strong>Daddy & the Muscle Academy</strong> (Siam Soi 2) — pastel dresses, hair clips, tote bags. <strong>2nd Floor Photo Booth</strong> for 90s sticker strip.</div>
+          <div class="card-meta">
+            <span class="meta-chip orange">⭐ Kid shops + photo strip</span>
+            <span class="meta-chip">📦 Day 3 heat kit: hats, water, fan, cooling towel</span>
+            <span class="meta-chip">❄️ AC break every 30 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">💆 Oasis Spa Sukhumvit 31</div>
+            <span class="time-pill">13:30 – 14:30</span>
+          </div>
+          <div class="card-desc">Hidden Lanna-style villa with lotus ponds + secret gardens. Her: Kid First Sensation Massage (60-min organic coconut oil). You: Aromatherapy Hot Oil. Shared private room. <strong>She'll likely nap during the massage.</strong></div>
+          <div class="card-meta">
+            <span class="meta-chip green">✅ Confirmed (ID 922070)</span>
+            <span class="meta-chip">📞 +66 2 262 2122</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">🛏️ Quiet hotel block</div>
+            <span class="time-pill">15:00 – 16:30</span>
+          </div>
+          <div class="card-desc"><strong>Skip the second pool session</strong> — over-stimulation risk. Room time, cartoons, real nap. Recharge.</div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">🎆 ICONSIAM + SookSiam</div>
+            <span class="time-pill">18:00 – 20:00</span>
+          </div>
+          <div class="card-desc">Free shuttle boat from Saphan Taksin. SookSiam = indoor Thai food + craft market on the ground floor. <strong>Souvenirs happen here</strong> (budget ฿1,500–2,000). 7pm river fountain show.</div>
+          <div class="card-meta">
+            <span class="meta-chip orange">⭐ Try boat noodles & mango sticky rice</span>
+            <span class="meta-chip green">🛍 Souvenirs · until 22:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-block" data-day="day4">
+      <div class="ios-card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">🍢 Moo Ping street cart breakfast</div>
+            <span class="time-pill">08:00 – 09:00</span>
+          </div>
+          <div class="card-desc">5-min walk on Soi 15. <strong>The most memorable Thai breakfast of the trip.</strong> Grilled pork skewers (฿20) + sticky rice + iced Thai tea. ~฿150 total. She'll remember this for years.</div>
+          <div class="card-meta">
+            <span class="meta-chip">Cash only</span>
+            <span class="meta-chip orange">⭐ Closing memory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">Final rooftop pool splash</div>
+            <span class="time-pill">09:00 – 10:00</span>
+          </div>
+          <div class="card-desc">Rainforest Rooftop Bar views from Mövenpick's pool. One last splash. Pack at your own pace — bell desk holds luggage.</div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">Check out → BKK</div>
+            <span class="time-pill optional">10:30 OR 11:00</span>
+          </div>
+          <div class="card-desc"><strong>Flexible checkout:</strong> 10:30 if morning is going smooth, 11:00 if she's melting. ~35–45 min to Suvarnabhumi via Chalong Rat. Still 2+ hr buffer for 14:00 flight.</div>
+          <div class="card-meta">
+            <span class="meta-chip green">✅ U-Young prepaid</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ios-card">
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-title">Flight home: BKK → HKG</div>
+            <span class="time-pill">14:00</span>
+          </div>
+          <div class="card-desc">She'll probably sleep on the runway. Take the picture on the way home, not the way there.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- TAB 2: DRIVERS -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <main id="tab-drivers" class="tab-view">
+    <div class="section-h">
+      <div class="section-h-title">🗣️ Show Your Driver</div>
+      <div class="section-h-sub">Flash these Thai address cards on your phone. Drivers read Thai script.</div>
+    </div>
+
+    <div class="wallet-pass">
+      <div class="pass-label">PICKUP · AUG 21 · 10:30</div>
+      <div class="pass-thai">สนามบิน สุวรรณภูมิ</div>
+      <div class="pass-eng">Suvarnabhumi Airport (BKK) → Centara Grand Mirage Pattaya</div>
+      <div class="pass-footer">
+        <span class="pass-meta">~120 km · 2 hr</span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-pass-action" onclick="copyThai(this, 'สนามบิน สุวรรณภูมิ')">Copy Thai</button>
+          <a class="btn-pass-action" href="https://maps.google.com/?q=Suvarnabhumi+Airport" target="_blank">Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wallet-pass">
+      <div class="pass-label">HOTEL · PATTAYA</div>
+      <div class="pass-thai">เซ็นทารา แกรนด์ มิราจ</div>
+      <div class="pass-eng">Centara Grand Mirage Beach Resort Pattaya</div>
+      <div class="pass-footer">
+        <span class="pass-meta">📞 +66 38 714 981</span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-pass-action" onclick="copyThai(this, 'เซ็นทารา แกรนด์ มิราจ พัทยา')">Copy Thai</button>
+          <a class="btn-pass-action" href="https://maps.google.com/?q=Centara+Grand+Mirage+Pattaya" target="_blank">Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wallet-pass">
+      <div class="pass-label">CHARTER · AUG 22 · 09:30</div>
+      <div class="pass-thai">พัทยา ดอลฟินเนเรียม</div>
+      <div class="pass-eng">Pattaya Dolphinarium → Mövenpick Sukhumvit 15</div>
+      <div class="pass-footer">
+        <span class="pass-meta">Full-day charter · child seat</span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-pass-action" onclick="copyThai(this, 'พัทยา ดอลฟินเนเรียม')">Copy Thai</button>
+          <a class="btn-pass-action" href="https://maps.google.com/?q=Pattaya+Dolphinarium" target="_blank">Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wallet-pass">
+      <div class="pass-label">HOTEL · BANGKOK</div>
+      <div class="pass-thai">เมอเวนพิค สุขุมวิท 15</div>
+      <div class="pass-eng">Mövenpick Hotel Sukhumvit 15 Bangkok · Agoda #1658113935722925</div>
+      <div class="pass-footer">
+        <span class="pass-meta">📞 +66 2 119 3100</span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-pass-action" onclick="copyThai(this, 'เมอเวนพิค สุขุมวิท 15')">Copy Thai</button>
+          <a class="btn-pass-action" href="https://maps.google.com/?q=Movenpick+Sukhumvit+15" target="_blank">Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wallet-pass">
+      <div class="pass-label">DAY 3 · 12:45</div>
+      <div class="pass-thai">โอเอซิส สปา สุขุมวิท 31</div>
+      <div class="pass-eng">Oasis Spa Sukhumvit 31 · Booking ID 922070</div>
+      <div class="pass-footer">
+        <span class="pass-meta">📞 +66 2 262 2122</span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-pass-action" onclick="copyThai(this, 'โอเอซิส สปา สุขุมวิท 31')">Copy Thai</button>
+          <a class="btn-pass-action" href="https://maps.google.com/?q=Oasis+Spa+Sukhumvit+31" target="_blank">Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wallet-pass">
+      <div class="pass-label">RETURN · AUG 24</div>
+      <div class="pass-thai">สนามบิน สุวรรณภูมิ</div>
+      <div class="pass-eng">Mövenpick Sukhumvit 15 → Suvarnabhumi Airport (BKK)</div>
+      <div class="pass-footer">
+        <span class="pass-meta">10:30 or 11:00 pickup</span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-pass-action" onclick="copyThai(this, 'สนามบิน สุวรรณภูมิ')">Copy Thai</button>
+          <a class="btn-pass-action" href="https://maps.google.com/?q=Suvarnabhumi+Airport" target="_blank">Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="greeting-card">
+      <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--ios-secondary-label);margin-bottom:8px;">👋 Greeting</div>
+      <div class="greeting-thai">สวัสดีค่ะ ขอบคุณค่ะ</div>
+      <div class="greeting-roman">sà-wàt-dii kʰâ · kʰɔ̀ːp-kʰūn kʰâ</div>
+      <div class="greeting-note">"Hello" and "Thank you" — polite particles, said with a smile. Works for everything.</div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- TAB 3: MISSIONS -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <main id="tab-missions" class="tab-view">
+    <div class="section-h">
+      <div class="section-h-title">✨ Her Mission Book</div>
+      <div class="section-h-sub">Tap ✓ to tick off. Tap camera to save a photo. Builds her trip scrapbook.</div>
+    </div>
+
+    <div class="mission-progress">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <span class="progress-text" id="progressText">0/6</span>
+    </div>
+
+    <div class="scrapbook-card" data-mission="dolphin">
+      <div class="scrapbook-header">
+        <div style="flex:1;">
+          <div class="scrapbook-title">🐬 Swim with a dolphin</div>
+          <div class="scrapbook-when">Aug 22 · 11am show · 12pm swim</div>
+        </div>
+        <input type="checkbox" class="ios-switch" onclick="toggleMission(this)">
+      </div>
+      <div class="camera-dropzone" id="zone-dolphin">
+        <button class="btn-snap" onclick="document.getElementById('pic-dolphin').click()">📸 Take a photo</button>
+        <input type="file" id="pic-dolphin" accept="image/*" capture="environment" style="display:none" onchange="savePhoto('dolphin', this)">
+        <img id="img-dolphin" class="photo-thumbnail">
+      </div>
+    </div>
+
+    <div class="scrapbook-card" data-mission="chocolate">
+      <div class="scrapbook-header">
+        <div style="flex:1;">
+          <div class="scrapbook-title">🍫 A chocolate hour</div>
+          <div class="scrapbook-when">Aug 22 & 23 · 4pm</div>
+        </div>
+        <input type="checkbox" class="ios-switch" onclick="toggleMission(this)">
+      </div>
+      <div class="camera-dropzone" id="zone-chocolate">
+        <button class="btn-snap" onclick="document.getElementById('pic-chocolate').click()">📸 Take a photo</button>
+        <input type="file" id="pic-chocolate" accept="image/*" capture="environment" style="display:none" onchange="savePhoto('chocolate', this)">
+        <img id="img-chocolate" class="photo-thumbnail">
+      </div>
+    </div>
+
+    <div class="scrapbook-card" data-mission="photobooth">
+      <div class="scrapbook-header">
+        <div style="flex:1;">
+          <div class="scrapbook-title">📸 90s sticker photo strip</div>
+          <div class="scrapbook-when">Aug 23 · 11am</div>
+        </div>
+        <input type="checkbox" class="ios-switch" onclick="toggleMission(this)">
+      </div>
+      <div class="camera-dropzone" id="zone-photobooth">
+        <button class="btn-snap" onclick="document.getElementById('pic-photobooth').click()">📸 Take a photo</button>
+        <input type="file" id="pic-photobooth" accept="image/*" capture="environment" style="display:none" onchange="savePhoto('photobooth', this)">
+        <img id="img-photobooth" class="photo-thumbnail">
+      </div>
+    </div>
+
+    <div class="scrapbook-card" data-mission="mango">
+      <div class="scrapbook-header">
+        <div style="flex:1;">
+          <div class="scrapbook-title">🥥 Mango sticky rice</div>
+          <div class="scrapbook-when">Aug 23 · afternoon</div>
+        </div>
+        <input type="checkbox" class="ios-switch" onclick="toggleMission(this)">
+      </div>
+      <div class="camera-dropzone" id="zone-mango">
+        <button class="btn-snap" onclick="document.getElementById('pic-mango').click()">📸 Take a photo</button>
+        <input type="file" id="pic-mango" accept="image/*" capture="environment" style="display:none" onchange="savePhoto('mango', this)">
+        <img id="img-mango" class="photo-thumbnail">
+      </div>
+    </div>
+
+    <div class="scrapbook-card" data-mission="spa">
+      <div class="scrapbook-header">
+        <div style="flex:1;">
+          <div class="scrapbook-title">💆 A spa session</div>
+          <div class="scrapbook-when">Aug 23 · 1:30pm</div>
+        </div>
+        <input type="checkbox" class="ios-switch" onclick="toggleMission(this)">
+      </div>
+      <div class="camera-dropzone" id="zone-spa">
+        <button class="btn-snap" onclick="document.getElementById('pic-spa').click()">📸 Take a photo</button>
+        <input type="file" id="pic-spa" accept="image/*" capture="environment" style="display:none" onchange="savePhoto('spa', this)">
+        <img id="img-spa" class="photo-thumbnail">
+      </div>
+    </div>
+
+    <div class="scrapbook-card" data-mission="fountain">
+      <div class="scrapbook-header">
+        <div style="flex:1;">
+          <div class="scrapbook-title">⛲ A fountain show</div>
+          <div class="scrapbook-when">Aug 23 · 7pm</div>
+        </div>
+        <input type="checkbox" class="ios-switch" onclick="toggleMission(this)">
+      </div>
+      <div class="camera-dropzone" id="zone-fountain">
+        <button class="btn-snap" onclick="document.getElementById('pic-fountain').click()">📸 Take a photo</button>
+        <input type="file" id="pic-fountain" accept="image/*" capture="environment" style="display:none" onchange="savePhoto('fountain', this)">
+        <img id="img-fountain" class="photo-thumbnail">
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- TAB 4: CASH -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <main id="tab-cash" class="tab-view">
+    <div class="cash-hero">
+      <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--ios-orange);letter-spacing:0.8px;">CASH POOL · TO WITHDRAW</div>
+      <div class="cash-amount-hero">฿13,000</div>
+      <div class="cash-amount-sub">≈ HKD 3,000 · USD 380</div>
+      <div class="cash-action">Withdraw at BKK airport ATM on arrival (best rate). Cap ~20–30k THB per withdrawal — usually 1–2 hits.</div>
+    </div>
+
+    <div class="prepaid-card">
+      <div class="prepaid-label">✅ Prepaid · Zero cash needed</div>
+      Flights · both hotels · dolphinarium show+swim · U-Young Aug 21 + Aug 24 · Oasis Spa (use card on-site, tip in cash)
+    </div>
+
+    <div class="reminder-section">
+      <div class="reminder-title">📊 Day-by-day breakdown</div>
+      <div class="cash-row">
+        <div>
+          <div class="cash-day-label">Day 1 · Aug 21</div>
+          <div class="cash-day-detail">Lunch ฿800–1,000 · optional Pier 21 dinner ฿400 · Grab ฿150–200</div>
+        </div>
+        <div class="cash-day-amount">฿1,200–1,800</div>
+      </div>
+      <div class="cash-row">
+        <div>
+          <div class="cash-day-label">Day 2 · Aug 22</div>
+          <div class="cash-day-detail">Dolphinarium PREPAID · lunch ฿400 · Jodd Fairs ฿1,500 if going</div>
+        </div>
+        <div class="cash-day-amount">฿2,150</div>
+      </div>
+      <div class="cash-row">
+        <div>
+          <div class="cash-day-label">Day 3 · Aug 23</div>
+          <div class="cash-day-detail">Kay's ฿700 · BTS ฿60 · shops ฿1,200 · spa PREPAID · souvenirs ฿1,500–2,000 · dinner ฿800</div>
+        </div>
+        <div class="cash-day-amount">฿6,400</div>
+      </div>
+      <div class="cash-row">
+        <div>
+          <div class="cash-day-label">Day 4 · Aug 24</div>
+          <div class="cash-day-detail">Moo Ping ฿150 · airport lunch ฿500 · U-Young PREPAID</div>
+        </div>
+        <div class="cash-day-amount">฿650</div>
+      </div>
+    </div>
+
+    <div class="reminder-section">
+      <div class="reminder-title">🧳 Pack from HKG</div>
+      <ul class="reminder-list">
+        <li>Granola bars + juice boxes (airport + Day 1 car)</li>
+        <li>Refillable water bottles + small folding fan + cooling towel</li>
+        <li>Hats (Day 3 Siam Square heat)</li>
+        <li>Child paracetamol + <strong>ORS sachets</strong> + electrolytes (Pedialyte)</li>
+        <li>Anti-nausea (Gravol kids) + bandaids + hand sanitizer</li>
+        <li>DEET 20%+ repellent + SPF 50+ sunscreen</li>
+        <li>Waterproof phone pouch (dolphinarium photos)</li>
+        <li>Beach shoes / water shoes (pool deck gets hot)</li>
+      </ul>
+    </div>
+
+    <div class="reminder-section">
+      <div class="reminder-title">💸 Tipping customs</div>
+      <ul class="reminder-list">
+        <li><strong>Housekeeping:</strong> ฿20–40/night on the pillow</li>
+        <li><strong>Drivers</strong> (U-Young × 3 legs): ฿100–200/leg</li>
+        <li><strong>Restaurants:</strong> usually no tip (10% service charge auto-added); round up if you want</li>
+        <li><strong>Spa:</strong> ฿100–200 on top of bill (not auto-included)</li>
+      </ul>
+    </div>
+
+    <div class="reminder-section">
+      <div class="reminder-title">🌧️ Heavy-rain Day 3 backup list</div>
+      <ul class="reminder-list">
+        <li><strong>KidZania Bangkok</strong> (Gateway Ekamai) — 4–14 yr olds, indoor role-play city, ~฿1,000</li>
+        <li><strong>Sea Life Bangkok</strong> (Siam Paragon B1) — ocean tunnel, AC</li>
+        <li><strong>Snow Town</strong> (Gateway Ekamai) — indoor snow play</li>
+        <li><strong>MBK 6F kids' zone</strong> — free indoor play area</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- TAB 5: INFO -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <main id="tab-info" class="tab-view">
+    <div class="stats-row">
+      <div class="stat-mini">
+        <div class="stat-mini-num">4</div>
+        <div class="stat-mini-label">Days</div>
+      </div>
+      <div class="stat-mini">
+        <div class="stat-mini-num">1</div>
+        <div class="stat-mini-label">Dolphin</div>
+      </div>
+      <div class="stat-mini">
+        <div class="stat-mini-num">1</div>
+        <div class="stat-mini-label">Spa</div>
+      </div>
+      <div class="stat-mini">
+        <div class="stat-mini-num">6</div>
+        <div class="stat-mini-label">Missions</div>
+      </div>
+    </div>
+
+    <div class="section-h">
+      <div class="section-h-title">📋 Bookings & To-Do</div>
+      <div class="section-h-sub">6 done · 5 to do</div>
+    </div>
+
+    <div class="checklist-card" id="checklist">
+      <div class="checklist-item done" data-key="b1" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Centara Grand Mirage<small>Ocean View Family Room · Aug 21 (1 night)</small></div>
+      </div>
+      <div class="checklist-item done" data-key="b2" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Mövenpick Hotel Sukhumvit 15<small>Agoda #1658113935722925 · Aug 22–24 (2 nights)</small></div>
+      </div>
+      <div class="checklist-item done" data-key="b3" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Pattaya Dolphinarium show + swim<small>Stevey + daughter · Aug 22 11am show / 12pm swim</small></div>
+      </div>
+      <div class="checklist-item done" data-key="b4" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Oasis Spa Sukhumvit 31<small>Booking ID 922070 · Aug 23 1:30 PM</small></div>
+      </div>
+      <div class="checklist-item done" data-key="b5" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">U-Young Travel Aug 21<small>BKK → Centara (PREPAID)</small></div>
+      </div>
+      <div class="checklist-item done" data-key="b6" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">U-Young Travel Aug 24<small>Mövenpick → BKK (PREPAID)</small></div>
+      </div>
+      <div class="checklist-item" data-key="b7" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Book U-Young Aug 22 full-day charter<small>~฿3,000 / ~HKD 750 · WhatsApp confirm</small></div>
+      </div>
+      <div class="checklist-item" data-key="b8" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Agoda message to Mövenpick<small>Request high floor, away from elevator</small></div>
+      </div>
+      <div class="checklist-item" data-key="b9" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Buy AXA SmartTraveller Plus Premier<small>Daughter FREE under parent policy</small></div>
+      </div>
+      <div class="checklist-item" data-key="b10" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Thai Airways online check-in<small>Aug 20 outbound · Aug 23 return</small></div>
+      </div>
+      <div class="checklist-item" data-key="b11" onclick="toggleCheck(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-text">Notify credit card company<small>Of travel dates (Aug 21–24)</small></div>
+      </div>
+    </div>
+
+    <div class="section-h">
+      <div class="section-h-title">🏥 Health & Safety</div>
+      <div class="section-h-sub">Quick reference for the trip</div>
+    </div>
+
+    <div class="health-tip">
+      <div class="health-tip-icon">☂️</div>
+      <div><strong>Monsoon season.</strong> Aug is wet — afternoon storms are normal. Plan indoor backups (Day 3 rain list in Cash tab).</div>
+    </div>
+    <div class="health-tip">
+      <div class="health-tip-icon">💊</div>
+      <div><strong>ORS sachets</strong> for daughter in case of dehydration. Pedialyte too. Cheap insurance.</div>
+    </div>
+    <div class="health-tip">
+      <div class="health-tip-icon">🦟</div>
+      <div><strong>DEET 20%+ repellent.</strong> Bangkok has dengue. Apply morning and after pool. SPF 50+ sunscreen.</div>
+    </div>
+    <div class="health-tip">
+      <div class="health-tip-icon">🪪</div>
+      <div><strong>Travel insurance:</strong> AXA SmartTraveller Plus Premier covers daughter free under parent policy.</div>
+    </div>
+    <div class="health-tip">
+      <div class="health-tip-icon">🏨</div>
+      <div><strong>Bell desk:</strong> Both hotels hold luggage pre-checkin / post-checkout. Use freely.</div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FLOATING GLASS BOTTOM NAV -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <nav class="glass-nav">
+    <button class="nav-item active" data-tab="tab-plan" onclick="switchNav('tab-plan', this)">
+      <span class="nav-icon">🗺️</span>
+      <span>Plan</span>
+    </button>
+    <button class="nav-item" data-tab="tab-drivers" onclick="switchNav('tab-drivers', this)">
+      <span class="nav-icon">🚕</span>
+      <span>Drivers</span>
+    </button>
+    <button class="nav-item" data-tab="tab-missions" onclick="switchNav('tab-missions', this)">
+      <span class="nav-icon">✨</span>
+      <span>Missions</span>
+    </button>
+    <button class="nav-item" data-tab="tab-cash" onclick="switchNav('tab-cash', this)">
+      <span class="nav-icon">💵</span>
+      <span>Cash</span>
+    </button>
+    <button class="nav-item" data-tab="tab-info" onclick="switchNav('tab-info', this)">
+      <span class="nav-icon">📋</span>
+      <span>Info</span>
+    </button>
+  </nav>
+
+  <script>
+    // ─── Tab nav ───
+    function switchNav(tabId, btn) {
+      document.querySelectorAll('.tab-view').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    // ─── Day filter (Plan tab) ───
+    function filterDay(dayKey, btn) {
+      document.querySelectorAll('.day-chip').forEach(el => el.classList.remove('active'));
+      btn.classList.add('active');
+      const blocks = document.querySelectorAll('.day-block');
+      blocks.forEach(block => {
+        if (dayKey === 'all' || block.getAttribute('data-day') === dayKey) {
+          block.style.display = 'block';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    }
+
+    // ─── Thai copy ───
+    function copyThai(btn, text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = '✓ Copied';
+          setTimeout(() => btn.textContent = orig, 1500);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); btn.textContent = '✓ Copied'; setTimeout(() => btn.textContent = 'Copy Thai', 1500); } catch(e) {}
+        document.body.removeChild(ta);
+      }
+    }
+
+    // ─── Missions ───
+    (function() {
+      const MKEY = 'bkk-missions-v2';
+      const PKEY = 'bkk-mission-photos-v2';
+      const cards = document.querySelectorAll('.scrapbook-card');
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+
+      let saved = {};
+      try { saved = JSON.parse(localStorage.getItem(MKEY) || '{}'); } catch(e) {}
+      let photos = {};
+      try { photos = JSON.parse(localStorage.getItem(PKEY) || '{}'); } catch(e) {}
+
+      cards.forEach(card => {
+        const id = card.dataset.mission;
+        const cb = card.querySelector('.ios-switch');
+        if (saved[id]) {
+          card.classList.add('done');
+          if (cb) cb.checked = true;
+        }
+        if (photos[id]) {
+          const img = document.getElementById('img-' + id);
+          const zone = document.getElementById('zone-' + id);
+          const btn = card.querySelector('.btn-snap');
+          if (img) {
+            img.src = photos[id];
+            img.style.display = 'block';
+          }
+          if (zone) zone.classList.add('has-photo');
+          if (btn) {
+            btn.classList.add('has-photo');
+            btn.textContent = '✓ Saved';
+          }
+        }
+      });
+      updateProgress();
+
+      window.toggleMission = function(cb) {
+        const card = cb.closest('.scrapbook-card');
+        const id = card.dataset.mission;
+        const willBeDone = cb.checked;
+        card.classList.toggle('done', willBeDone);
+        saved[id] = willBeDone;
+        localStorage.setItem(MKEY, JSON.stringify(saved));
+        updateProgress();
+        if (navigator.vibrate) navigator.vibrate(15);
+      };
+
+      window.savePhoto = function(id, input) {
+        const file = input.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            const maxW = 800;
+            const scale = Math.min(1, maxW / img.width);
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
+            photos[id] = dataUrl;
+            try {
+              localStorage.setItem(PKEY, JSON.stringify(photos));
+            } catch(err) {
+              alert('Storage full — clear some browser data and try again.');
+              return;
+            }
+            const preview = document.getElementById('img-' + id);
+            const zone = document.getElementById('zone-' + id);
+            const btn = document.querySelector(`.scrapbook-card[data-mission="${id}"] .btn-snap`);
+            if (preview) {
+              preview.src = dataUrl;
+              preview.style.display = 'block';
+            }
+            if (zone) zone.classList.add('has-photo');
+            if (btn) {
+              btn.classList.add('has-photo');
+              btn.textContent = '✓ Saved';
+            }
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      };
+
+      function updateProgress() {
+        const done = document.querySelectorAll('.scrapbook-card.done').length;
+        const pct = (done / cards.length) * 100;
+        if (progressFill) progressFill.style.width = pct + '%';
+        if (progressText) progressText.textContent = done + '/' + cards.length;
+      }
+    })();
+
+    // ─── Checklist ───
+    (function() {
+      const KEY = 'bkk-checklist-v2';
+      let saved = {};
+      try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
+
+      // Pre-check items with done styling (they're already marked done in HTML)
+      const items = document.querySelectorAll('.checklist-item');
+      items.forEach(item => {
+        const k = item.dataset.key;
+        if (saved[k] !== undefined) {
+          if (saved[k]) item.classList.add('done');
+          else item.classList.remove('done');
+        }
+        item.addEventListener('click', () => {
+          item.classList.toggle('done');
+          saved[k] = item.classList.contains('done');
+          localStorage.setItem(KEY, JSON.stringify(saved));
+          if (navigator.vibrate) navigator.vibrate(10);
+        });
+      });
+    })();
+
+    // ─── Service worker ───
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
