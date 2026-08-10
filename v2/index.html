@@ -716,6 +716,76 @@
       line-height: 1;
     }
 
+    /* ─── Hero Banner ─── */
+    .hero-banner {
+      position: relative;
+      height: 220px;
+      margin: 0 16px 16px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(135deg, #1C1C1E, #2C2C2E);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.65;
+    }
+    .hero-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.55) 100%);
+    }
+    .hero-banner-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px 18px;
+      color: white;
+    }
+    .hero-banner-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--ios-orange);
+      margin-bottom: 4px;
+    }
+    .hero-banner-title {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .hero-banner-meta {
+      font-size: 0.78rem;
+      font-weight: 500;
+      opacity: 0.92;
+    }
+
+    /* ─── Card Maps Button ─── */
+    .card-maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ios-blue);
+      background: rgba(0,122,255,0.1);
+      padding: 4px 9px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 8px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .card-maps-link:active { opacity: 0.7; }
+    .card-maps-link::before { content: '📍'; font-size: 0.7rem; }
+
     /* ─── Section Header (sub pages) ─── */
     .section-h {
       padding: 16px 0 8px;
@@ -751,6 +821,17 @@
     <span class="pulse-badge" id="pulse-badge">Up Next</span>
   </div>
 
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <img src="img/hero-pattaya.jpg" alt="Thailand beach at sunset">
+    <div class="hero-banner-overlay"></div>
+    <div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">🐢 Daddy & Alicia Trip</div>
+      <div class="hero-banner-title">Bangkok & Pattaya 2026</div>
+      <div class="hero-banner-meta">4 days · dolphins · spa · memories</div>
+    </div>
+  </div>
+
   <!-- ═══════════════════════════════════════════════ -->
   <!-- TAB 1: PLAN -->
   <!-- ═══════════════════════════════════════════════ -->
@@ -778,6 +859,7 @@
             <span class="meta-chip">~120 km</span>
             <span class="meta-chip">📦 Pack from HKG: granola, juice, water bottles, fan</span>
           </div>
+          <a href="https://maps.google.com/?q=Suvarnabhumi+Airport+to+Centara+Grand+Mirage+Pattaya" target="_blank" class="card-maps-link">Open in Maps</a>
         </div>
       </div>
 
@@ -793,6 +875,7 @@
             <span class="meta-chip green">✅ Booked</span>
             <span class="meta-chip">⭐ Lost World</span>
           </div>
+          <a href="https://maps.google.com/?q=Centara+Grand+Mirage+Beach+Resort+Pattaya" target="_blank" class="card-maps-link">Open in Maps</a>
         </div>
       </div>
 
@@ -803,6 +886,7 @@
             <span class="time-pill optional">OPTIONAL</span>
           </div>
           <div class="card-desc"><strong>Option A:</strong> Hotel — Coast Beach Club sunset, in-room dining, or resort restaurant. Recommended Day 1 (she's cooked).<br><br><strong>Option B:</strong> Grab to Terminal 21 Pattaya → Pier 21 food court. Boat noodles (฿60), mango sticky rice, fruit shakes. Airplane display = kid magnet.</div>
+          <a href="https://maps.google.com/?q=Terminal+21+Pattaya" target="_blank" class="card-maps-link">Terminal 21 Pattaya · Maps</a>
         </div>
       </div>
 
@@ -831,11 +915,12 @@
             <span class="meta-chip green">✅ Prepaid</span>
             <span class="meta-chip orange">⭐ The headline</span>
           </div>
+          <a href="https://maps.google.com/?q=Pattaya+Dolphinarium" target="_blank" class="card-maps-link">Open in Maps</a>
         </div>
       </div>
 
       <div class="ios-card">
-        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <img src="img/chocolate.jpg" class="card-hero-img" alt="Chocolate buffet display">
         <div class="card-body">
           <div class="card-header-row">
             <div class="card-title">🍫 Mövenpick Chocolate Hour</div>
@@ -846,6 +931,7 @@
             <span class="meta-chip green">✅ Booked</span>
             <span class="meta-chip">⭐ Daily, free</span>
           </div>
+          <a href="https://maps.google.com/?q=Movenpick+Hotel+Sukhumvit+15+Bangkok" target="_blank" class="card-maps-link">Open in Maps</a>
         </div>
       </div>
 
@@ -856,6 +942,7 @@
             <span class="time-pill optional">OPTIONAL</span>
           </div>
           <div class="card-desc"><strong>Option A · Jodd Fairs 19:00–21:00:</strong> MRT Sukhumvit → Thailand Cultural Centre (2 stops). Volcano pork ribs (฿150), grilled skewers, coconut ice cream, lanterns, kids' carnival zone. <strong>Cash only</strong> — bring ~฿1,500 in small notes.<br><br><strong>Option B · Hotel dinner + early bed</strong> (recommended if she's wrecked from swim + drive).</div>
+          <a href="https://maps.google.com/?q=Jodd+Fairs+Ratchada" target="_blank" class="card-maps-link">Jodd Fairs · Maps</a>
         </div>
       </div>
     </div>
@@ -863,7 +950,7 @@
     <!-- DAY 3 -->
     <div class="day-block" data-day="day3">
       <div class="ios-card">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <img src="img/siam-square.jpg" class="card-hero-img" alt="Siam Square pedestrian street">
         <div class="card-body">
           <div class="card-header-row">
             <div class="card-title">Siam Square pedestrian streets</div>
@@ -875,6 +962,7 @@
             <span class="meta-chip">📦 Day 3 heat kit: hats, water, fan, cooling towel</span>
             <span class="meta-chip">❄️ AC break every 30 min</span>
           </div>
+          <a href="https://maps.google.com/?q=Siam+Square+Bangkok" target="_blank" class="card-maps-link">Siam Square · Maps</a>
         </div>
       </div>
 
@@ -890,6 +978,7 @@
             <span class="meta-chip green">✅ Confirmed (ID 922070)</span>
             <span class="meta-chip">📞 +66 2 262 2122</span>
           </div>
+          <a href="https://maps.google.com/?q=Oasis+Spa+Sukhumvit+31" target="_blank" class="card-maps-link">Open in Maps</a>
         </div>
       </div>
 
@@ -900,6 +989,7 @@
             <span class="time-pill">15:00 – 16:30</span>
           </div>
           <div class="card-desc"><strong>Skip the second pool session</strong> — over-stimulation risk. Room time, cartoons, real nap. Recharge.</div>
+          <a href="https://maps.google.com/?q=Movenpick+Hotel+Sukhumvit+15+Bangkok" target="_blank" class="card-maps-link">Mövenpick · Maps</a>
         </div>
       </div>
 
@@ -915,6 +1005,7 @@
             <span class="meta-chip orange">⭐ Try boat noodles & mango sticky rice</span>
             <span class="meta-chip green">🛍 Souvenirs · until 22:00</span>
           </div>
+          <a href="https://maps.google.com/?q=ICONSIAM+Bangkok" target="_blank" class="card-maps-link">Open in Maps</a>
         </div>
       </div>
     </div>
@@ -922,7 +1013,7 @@
     <!-- DAY 4 -->
     <div class="day-block" data-day="day4">
       <div class="ios-card">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="">
+        <img src="img/moo-ping.jpg" class="card-hero-img" alt="Thai street food moo ping pork skewers">
         <div class="card-body">
           <div class="card-header-row">
             <div class="card-title">🍢 Moo Ping street cart breakfast</div>
@@ -933,6 +1024,7 @@
             <span class="meta-chip">Cash only</span>
             <span class="meta-chip orange">⭐ Closing memory</span>
           </div>
+          <a href="https://maps.google.com/?q=Sukhumvit+Soi+15+Bangkok" target="_blank" class="card-maps-link">Soi 15 · Maps</a>
         </div>
       </div>
 
@@ -943,6 +1035,7 @@
             <span class="time-pill">09:00 – 10:00</span>
           </div>
           <div class="card-desc">Rainforest Rooftop Bar views from Mövenpick's pool. One last splash. Pack at your own pace — bell desk holds luggage.</div>
+          <a href="https://maps.google.com/?q=Movenpick+Hotel+Sukhumvit+15+Bangkok" target="_blank" class="card-maps-link">Mövenpick · Maps</a>
         </div>
       </div>
 
@@ -956,6 +1049,7 @@
           <div class="card-meta">
             <span class="meta-chip green">✅ U-Young prepaid</span>
           </div>
+          <a href="https://maps.google.com/?q=Suvarnabhumi+Airport" target="_blank" class="card-maps-link">BKK Airport · Maps</a>
         </div>
       </div>
 
@@ -966,6 +1060,7 @@
             <span class="time-pill">14:00</span>
           </div>
           <div class="card-desc">She'll probably sleep on the runway. Take the picture on the way home, not the way there.</div>
+          <a href="https://maps.google.com/?q=Suvarnabhumi+Airport" target="_blank" class="card-maps-link">BKK Airport · Maps</a>
         </div>
       </div>
     </div>
