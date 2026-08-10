@@ -1143,6 +1143,138 @@
       color: var(--ink-2);
     }
 
+    /* ─── Cash & Reminders ─── */
+    .cash-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-4);
+      margin-bottom: var(--s-6);
+    }
+    @media (max-width: 720px) {
+      .cash-summary { grid-template-columns: 1fr; }
+    }
+    .cash-total {
+      background: linear-gradient(135deg, var(--accent), #FF8C5A);
+      color: white;
+      border-radius: var(--r-xl);
+      padding: var(--s-6);
+      box-shadow: var(--shadow-md);
+    }
+    .cash-amount {
+      font-family: var(--font-serif);
+      font-size: 56px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .cash-amount-sub {
+      font-size: 14px;
+      opacity: 0.85;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .cash-action {
+      font-size: 13px;
+      margin-top: var(--s-4);
+      padding-top: var(--s-4);
+      border-top: 1px solid rgba(255,255,255,0.25);
+      line-height: 1.5;
+      opacity: 0.92;
+    }
+    .cash-prepaid {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: var(--s-6);
+    }
+    .cash-prepaid-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .cash-prepaid-items {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-2);
+    }
+    .cash-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--s-3);
+      margin-bottom: var(--s-7);
+    }
+    @media (max-width: 900px) { .cash-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .cash-grid { grid-template-columns: 1fr; } }
+    .cash-day {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-md);
+      padding: var(--s-4);
+    }
+    .cash-day-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 6px;
+    }
+    .cash-amount-day {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .cash-day-detail {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--ink-2);
+    }
+
+    .reminder-section {
+      margin: var(--s-6) 0;
+      padding: var(--s-5);
+      background: var(--bg-2);
+      border-radius: var(--r-lg);
+      border-left: 4px solid var(--accent);
+    }
+    .reminder-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: var(--s-3);
+      letter-spacing: -0.01em;
+    }
+    .reminder-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .reminder-list li {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink-2);
+      padding: 6px 0 6px 22px;
+      position: relative;
+    }
+    .reminder-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .reminder-list li strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
     /* ─── SOS ─── */
     .sos {
       background: var(--accent-2);
@@ -1425,7 +1557,7 @@
           </button>
         </div>
         <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
-          <div class="day-summary-text">Land 9:35 BKK · drive to Pattaya · Lost World waterpark · Terminal 21 dinner</div>
+          <div class="day-summary-text">Land 9:35 BKK · drive to Pattaya · Lost World waterpark · dinner (your call: hotel OR Terminal 21)</div>
         </div>
         <div class="day-body">
           <div class="field-note">
@@ -1443,14 +1575,14 @@
             <div class="t-item">
               <div class="t-time">10:30</div>
               <h4 class="t-title">Suvarnabhumi → Pattaya</h4>
-              <p class="t-body">~1.5 hours via motorway. Child car seat pre-installed. Stop at a 7-Eleven after 30 min for snacks, water, a bathroom break.</p>
-              <div class="t-meta"><span class="chip">~120 km</span></div>
+              <p class="t-body">~2 hours via Motorway 7 (Sat monsoon can stretch to 2.5). Child car seat pre-installed. <strong>MANDATORY pit stop at 30 min</strong> at a PTT/7-Eleven — water, snacks, toilet.</p>
+              <div class="t-meta"><span class="chip">~120 km</span><span class="chip-blue">📦 Pack from HKG: granola bars, juice boxes, refillable water bottles, small folding fan</span></div>
             </div>
             <div class="t-item fun">
               <div class="t-time">12:30</div>
               <h4 class="t-title">Check-in: Centara Grand Mirage</h4>
-              <p class="t-body">Ocean View Family Room. The headline here is the Lost World waterpark — lazy river, slides, splash pads, direct beach access. Wong Amat cove.</p>
-              <div class="t-meta"><span class="chip-yellow">⭐ Lost World</span></div>
+              <p class="t-body">Ocean View Family Room. <strong>Official check-in is 15:00</strong> — drop bags at bell desk, use hotel changing rooms while waiting. The headline here is the Lost World waterpark — lazy river, slides, splash pads, direct beach access. Wong Amat cove.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ Lost World</span><span class="chip">Bell desk holds bags</span></div>
             </div>
             <div class="t-item">
               <div class="t-time">13:00 – 17:00</div>
@@ -1464,14 +1596,14 @@
             </div>
             <div class="t-item">
               <div class="t-time">18:00 – 19:30</div>
-              <h4 class="t-title">Terminal 21 Pattaya — dinner</h4>
-              <p class="t-body">5-min Grab. Pier 21 food court for boat noodles (฿60), mango sticky rice, fruit shakes. The airplane display is a kid magnet.</p>
-              <div class="t-meta"><span class="chip-blue">A/C escape</span><span class="chip">Budget ฿300–500</span></div>
+              <h4 class="t-title">🍽️ Dinner — your call (either option)</h4>
+              <p class="t-body"><strong>Option A · Recommended Day 1:</strong> Hotel — Coast Beach Club sunset, in-room dining, or resort restaurant. She's cooked after a 5am wake-up — keep it low-key.<br><br><strong>Option B · If energy is good:</strong> 10-min Grab (~฿150–200 round trip) to <strong>Terminal 21 Pattaya</strong>; <strong>Pier 21 food court</strong> (3rd floor, mall-themed). Boat noodles (฿60), mango sticky rice, fruit shakes. The airplane display is a kid magnet.</p>
+              <div class="t-meta"><span class="chip-blue">A/C escape</span><span class="chip">Budget ฿300–500 if going out</span></div>
             </div>
             <div class="t-item">
-              <div class="t-time">20:30</div>
+              <div class="t-time">20:00</div>
               <h4 class="t-title">Back to hotel — early bed</h4>
-              <p class="t-body">Tomorrow is the big one. Lights out by 20:30 means 7 hours of sleep — enough for a dolphin swim.</p>
+              <p class="t-body">Tomorrow is the big one. Lights out by 20:00 means 7+ hours of sleep — enough for a dolphin swim.</p>
             </div>
           </div>
 
@@ -1497,7 +1629,7 @@
           </button>
         </div>
         <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
-          <div class="day-summary-text">Dolphin show 11am · swim 12pm · drive to Sukhumvit · Chocolate Hour · Jodd Fairs night</div>
+          <div class="day-summary-text">Dolphin show 11am · swim 12pm · drive to Sukhumvit · Chocolate Hour 4pm · Jodd Fairs (your call)</div>
         </div>
         <div class="day-body">
           <div class="field-note">
@@ -1537,32 +1669,38 @@
 
           <div class="timeline">
             <div class="t-item">
-              <div class="t-time">13:00</div>
+              <div class="t-time">13:00 – 14:00</div>
               <h4 class="t-title">Shower &amp; light lunch</h4>
-              <p class="t-body">Quick shower at the facility. Light lunch (she'll be tired). Pack the car by 14:30.</p>
+              <p class="t-body">Quick shower at the facility. Light lunch (she'll be tired). <strong>Depart 14:00 sharp</strong> — earlier than original 14:30 to protect Chocolate Hour arrival.</p>
+              <div class="t-meta"><span class="chip-blue">📦 Pre-packed Day 2 tote in car: swimwear, towels, change of clothes, water bottles, snacks, waterproof phone pouch</span></div>
             </div>
             <div class="t-item">
-              <div class="t-time">14:30 – 17:00</div>
+              <div class="t-time">14:00 – 16:00</div>
               <h4 class="t-title">Pattaya → Bangkok (Highway 7)</h4>
-              <p class="t-body">~2.5 hrs on a Saturday afternoon — budget for traffic. U-Young Travel stays with you all three legs.</p>
+              <p class="t-body">~2 hrs on Motorway 7. U-Young Travel stays with you all three legs. She'll likely nap in the car — perfect.</p>
               <div class="t-meta"><span class="chip">~150 km</span></div>
             </div>
             <div class="t-item">
-              <div class="t-time">15:30</div>
+              <div class="t-time">15:30 – 16:00</div>
               <h4 class="t-title">Check-in: Mövenpick Hotel Sukhumvit 15</h4>
-              <p class="t-body">Sukhumvit Soi 15, 5-min walk to BTS Asok. Rooftop pool with the Rainforest Bar. Free Tuk Tuk shuttle to the BTS every 30 min.</p>
+              <p class="t-body">Sukhumvit Soi 15, 5-min walk to BTS Asok. Rooftop pool with the Rainforest Bar. Free Tuk Tuk shuttle to the BTS every 30 min. Bell desk holds bags if room not ready.</p>
             </div>
             <div class="t-item fun">
               <div class="t-time">16:00 – 17:00</div>
               <h4 class="t-title">🍫 Mövenpick Chocolate Hour</h4>
-              <p class="t-body">Daily at Lelawadee Restaurant — complimentary bite-sized chocolate creations, 60 minutes of sweet. Don't let her overdo it; Jodd Fairs dinner is at 18:30.</p>
+              <p class="t-body"><strong>PRIORITY — do not miss.</strong> Daily at Lelawadee Restaurant — complimentary bite-sized chocolate creations, 60 minutes of sweet. Daughter will be in sugar heaven.</p>
               <div class="t-meta"><span class="chip-yellow">⭐ Daily, free</span></div>
+            </div>
+            <div class="t-item">
+              <div class="t-time">17:00 – 18:30</div>
+              <h4 class="t-title">Rooftop pool, freshen up</h4>
+              <p class="t-body">Quick shower, change, rest. Recharge before the evening decision.</p>
             </div>
             <div class="t-item fun">
               <div class="t-time">18:30 – 21:00</div>
-              <h4 class="t-title">Jodd Fairs Ratchada — night market</h4>
-              <p class="t-body">MRT Sukhumvit → Phetchaburi → Thailand Cultural Centre (2 stops). Volcano pork ribs (Leng Saap), grilled skewers, coconut ice cream, mango sticky rice, lanterns.</p>
-              <div class="t-meta"><span class="chip-yellow">⭐ First Bangkok night</span></div>
+              <h4 class="t-title">🌃 Evening — your call (either option)</h4>
+              <p class="t-body"><strong>Option A · Jodd Fairs 19:00–21:00:</strong> MRT Sukhumvit → Phetchaburi → Thailand Cultural Centre (2 stops). Volcano pork ribs (Leng Saap, ฿150), grilled skewers, coconut ice cream, mango sticky rice, lanterns, kids' carnival zone. <strong>Cash only</strong> — bring ~฿1,500 in small notes.<br><br><strong>Option B · Hotel dinner + early bed</strong> (recommended if she's wrecked from swim + drive). In-room dining or Mövenpick restaurants.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ First Bangkok night (if going)</span></div>
             </div>
             <div class="t-item">
               <div class="t-time">21:30</div>
@@ -1588,7 +1726,7 @@
           </button>
         </div>
         <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
-          <div class="day-summary-text">Cafe breakfast · Siam Square shops · garden spa · ICONSIAM · fountain show 7pm</div>
+          <div class="day-summary-text">Cafe breakfast · Siam Square shops (heat-managed) · garden spa 1:30pm · quiet hotel block · ICONSIAM</div>
         </div>
         <div class="day-body">
           <div class="field-note">
@@ -1606,29 +1744,39 @@
             <div class="t-item major">
               <div class="t-time">10:15 – 12:45</div>
               <h4 class="t-title">🛍 Siam Square outdoor pedestrian streets</h4>
-              <p class="t-body">BTS Asok → Siam (2 stops, direct). Walk Soi 2–5: car-free, clean, kid-safe. Hit <strong>Daddy and the Muscle Academy</strong> (Siam Soi 2) — pastel dresses, hair clips, tote bags. <strong>2nd Floor Photo Booth</strong> for the 90s sticker strip.</p>
-              <div class="t-meta"><span class="chip-yellow">⭐ Kid shops + photo strip</span><span class="chip-blue">Rain backup: EmQuartier</span></div>
+              <p class="t-body">BTS Asok → Siam (2 stops, direct). Walk Soi 2–5: car-free, clean, kid-safe. <strong>Daddy and the Muscle Academy opens ~11am</strong> — use 10:15-11:00 for a snack walk first (coconut slushie, Korean cheese coin pancake). Then hit <strong>Daddy and the Muscle Academy</strong> (Siam Soi 2) — pastel dresses, hair clips, tote bags. <strong>2nd Floor Photo Booth</strong> for the 90s sticker strip.</p>
+              <div class="t-meta"><span class="chip-yellow">⭐ Kid shops + photo strip</span><span class="chip-blue">📦 Day 3 heat kit packed: hats, refillable water bottles, small folding fan, cooling towel</span><span class="chip-blue">❄️ AC break every 30 min — duck into 7-Eleven, Starbucks, Siam Paragon lobby</span></div>
             </div>
             <div class="t-item">
               <div class="t-time">12:45 – 13:15</div>
               <h4 class="t-title">Quick snack + travel to Sukhumvit 31</h4>
-              <p class="t-body">Snack walk in Siam Square (Korean cheese coin pancake / coconut slushie). Then BTS Siam → Asok + short Grab to Sukhumvit 31. Arrive 15 min early.</p>
+              <p class="t-body">Snack walk in Siam Square. Then BTS Siam → Asok + short Grab to Sukhumvit 31. Arrive 15 min early.</p>
             </div>
             <div class="t-item major">
               <div class="t-time">13:30 – 14:30</div>
               <h4 class="t-title">💆 Oasis Spa Sukhumvit 31 · booked 1:30 PM</h4>
-              <p class="t-body">Booking ID 922070. Hidden Lanna-style villa with lotus ponds + secret gardens. Her: Kid First Sensation Massage (60-min organic coconut oil). You: Aromatherapy Hot Oil (60 min). Shared private room. Herbal tea on the wooden walkways after.</p>
+              <p class="t-body">Booking ID 922070. Hidden Lanna-style villa with lotus ponds + secret gardens. Her: Kid First Sensation Massage (60-min organic coconut oil). You: Aromatherapy Hot Oil (60 min). Shared private room. <strong>She'll likely nap during the massage.</strong> Herbal tea on the wooden walkways after.</p>
               <div class="t-meta"><span class="chip-green">✅ Confirmed</span><a href="tel:+6622622122" class="chip-blue">📞 +66 2 262 2122</a></div>
             </div>
+            <div class="t-item fun">
+              <div class="t-time">15:00 – 16:30</div>
+              <h4 class="t-title">🛏️ Quiet hotel block (NEW)</h4>
+              <p class="t-body"><strong>Skip the second pool session</strong> — over-stimulation risk. Room time, cartoons, real nap. She just got pampered + walked all morning. Recharge.</p>
+            </div>
             <div class="t-item">
-              <div class="t-time">15:00 – 17:00</div>
-              <h4 class="t-title">Mövenpick — pool + Chocolate Hour</h4>
-              <p class="t-body">5–7 min Grab back. Rooftop pool or quick shower. Catch the 16:00–17:00 Chocolate Hour — she'll earn it after a real spa session.</p>
+              <div class="t-time">16:30 – 17:30</div>
+              <h4 class="t-title">🍫 Chocolate Hour encore</h4>
+              <p class="t-body">Optional second visit to Lelawadee — same chocolate fountain. If she's still resting, you can grab a plate and bring it back.</p>
             </div>
             <div class="t-item fun">
-              <div class="t-time">17:30 – 19:30</div>
-              <h4 class="t-title">ICONSIAM + SookSiam</h4>
-              <p class="t-body">Taxi straight to the riverfront. SookSiam is the indoor Thai food + craft market on the ground floor — 200+ stalls, all the regions of Thailand in one air-conditioned hall. <strong>Souvenirs happen here.</strong></p>
+              <div class="t-time">17:30 – 18:00</div>
+              <h4 class="t-title">BTS to Saphan Taksin</h4>
+              <p class="t-body">BTS Asok → Saphan Taksin (7 stops, ~20 min). Exit at Sathorn (Saphan Taksin) station. Follow signs to the <strong>free shuttle boat pier</strong>.</p>
+            </div>
+            <div class="t-item fun">
+              <div class="t-time">18:00 – 20:00</div>
+              <h4 class="t-title">ICONSIAM + SookSiam (sunset)</h4>
+              <p class="t-body">Free shuttle boat every 10-15 min, ride ~10 min. Sunset on the river. SookSiam is the indoor Thai food + craft market on the ground floor — 200+ stalls, all the regions of Thailand in one air-conditioned hall. <strong>Souvenirs happen here</strong> (budget ฿1,500–2,000).</p>
               <div class="t-meta"><span class="chip-yellow">⭐ Try boat noodles &amp; mango sticky rice</span><span class="chip-green">🛍 Souvenirs · until 22:00</span></div>
             </div>
             <div class="t-item major">
@@ -1637,9 +1785,9 @@
               <p class="t-body">5-min spectacle — water + lights + music on the Chao Phraya. Front-row riverside promenade. Bring the camera.</p>
             </div>
             <div class="t-item">
-              <div class="t-time">20:30</div>
+              <div class="t-time">20:00</div>
               <h4 class="t-title">Back to hotel — pack</h4>
-              <p class="t-body">Lay out her clothes. One more sleep.</p>
+              <p class="t-body">Boat back to Saphan Taksin → BTS Asok → walk to hotel. <strong>Back by 20:45</strong> for better bedtime. Lay out her clothes. One more sleep.</p>
             </div>
           </div>
         </div>
@@ -1660,24 +1808,25 @@
           </button>
         </div>
         <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
-          <div class="day-summary-text">Slow breakfast · moo ping · one last splash · 2pm flight home</div>
+          <div class="day-summary-text">Moo Ping street cart breakfast · one last splash · flexible checkout · 2pm flight home</div>
         </div>
         <div class="day-body">
           <div class="timeline">
             <div class="t-item">
-              <div class="t-time">08:30 – 10:15</div>
-              <h4 class="t-title">Farewell morning — your call</h4>
-              <p class="t-body"><strong>Option A:</strong> Moo Ping grilled pork skewers + sticky rice from the morning carts on Soi 15 (5 min walk).<br><br><strong>Option B:</strong> Pier 21 food court at Terminal 21 Asok (opens 10:00) — 7-min walk. Mango sticky rice + pad thai before packing.</p>
+              <div class="t-time">08:00 – 09:00</div>
+              <h4 class="t-title">🍢 Street cart breakfast on Soi 15</h4>
+              <p class="t-body">5-min walk from hotel. <strong>Most memorable Thai breakfast of the trip.</strong> Moo Ping grilled pork skewers (฿20 each) + sticky rice + iced Thai tea. ~฿150 total, eat standing at the cart with locals. Daughter will remember this for years.</p>
+              <div class="t-meta"><span class="chip">Cash only</span><span class="chip-yellow">⭐ The closing memory</span></div>
             </div>
             <div class="t-item">
-              <div class="t-time">10:15</div>
+              <div class="t-time">09:00 – 10:00</div>
               <h4 class="t-title">Final rooftop pool splash</h4>
               <p class="t-body">Rainforest Rooftop Bar views from Mövenpick's rooftop pool. One last splash. Pack at your own pace after — bell desk holds luggage.</p>
             </div>
             <div class="t-item major">
-              <div class="t-time">10:45</div>
+              <div class="t-time">10:30 OR 11:00</div>
               <h4 class="t-title">Check out, head to BKK</h4>
-              <p class="t-body">Pick-up by U-Young Travel. ~35–45 min to Suvarnabhumi via Sirat Expressway. ⚠️ Tighter than ideal for 14:00 international — bell desk can hold bags if you need a few extra minutes.</p>
+              <p class="t-body"><strong>Flexible checkout:</strong> 10:30 if morning is going smooth, 11:00 if she's melting. Pick-up by U-Young Travel. ~35–45 min to Suvarnabhumi via Chalong Rat Expressway. Still 2+ hr buffer for 14:00 flight.</p>
             </div>
             <div class="t-item major">
               <div class="t-time">14:00</div>
@@ -1724,12 +1873,110 @@
           </div>
           <div class="stay-body">
             <h3 class="stay-name">Mövenpick Sukhumvit 15</h3>
-            <p class="stay-desc">5★ · rooftop pool + Rainforest Bar · daily Chocolate Hour 16:00–17:00 · 5-min walk to BTS Asok</p>
+            <p class="stay-desc">5★ · rooftop pool + Rainforest Bar · daily Chocolate Hour 16:00–17:00 · 5-min walk to BTS Asok · deposit required at check-in (~฿3,000–5,000 hold)</p>
             <div class="stay-actions">
+              <span class="chip-green">✅ Booked (Agoda #1658113935722925)</span>
               <a href="tel:+6621193100" class="chip-blue">📞 +66 2 119 3100</a>
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Cash & Reminders ─── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Don't Forget</div>
+        <h2 class="section-title">Cash, packs, and <em>small things</em></h2>
+      </div>
+
+      <div class="cash-summary">
+        <div class="cash-total">
+          <div class="cash-amount">~฿13,000</div>
+          <div class="cash-amount-sub">≈ HKD 3,000 · USD 380</div>
+          <div class="cash-action">Withdraw at BKK airport ATM on arrival (best rate). Cap ~20–30k THB per withdrawal — usually 1–2 hits.</div>
+        </div>
+        <div class="cash-prepaid">
+          <div class="cash-prepaid-label">Prepaid (zero cash needed)</div>
+          <div class="cash-prepaid-items">Flights · both hotels · dolphinarium show+swim · U-Young Aug 21 + Aug 24 · Oasis Spa (use card on-site, tip in cash)</div>
+        </div>
+      </div>
+
+      <div class="cash-grid">
+        <div class="cash-day">
+          <div class="cash-day-label">Day 1 · Aug 21</div>
+          <div class="cash-amount-day">~฿1,200–1,800</div>
+          <div class="cash-day-detail">Lunch Coast ฿800–1,000. Optional Pier 21 dinner ฿400. Grab round trip ฿150–200 (if going out). Skip the outing → ฿800.</div>
+        </div>
+        <div class="cash-day">
+          <div class="cash-day-label">Day 2 · Aug 22</div>
+          <div class="cash-amount-day">~฿2,150</div>
+          <div class="cash-day-detail">Dolphinarium PREPAID. Lunch ฿400. Jodd Fairs (if going) ฿1,500 — volcano ribs, mango sticky rice, lanterns. Hotel dinner alternative ฿800.</div>
+        </div>
+        <div class="cash-day">
+          <div class="cash-day-label">Day 3 · Aug 23</div>
+          <div class="cash-amount-day">~฿6,400</div>
+          <div class="cash-day-detail">Kay's ฿700. BTS Asok↔Siam ฿60. Daddy & Muscle Academy ฿1,000. Photo booth ฿200. Snacks/lunch ฿800. Grab×2 ฿200. BTS+boat ฿120. SookSiam souvenirs ฿1,500–2,000. ICONSIAM dinner ฿800. Possible KidZania rain backup ฿1,000.</div>
+        </div>
+        <div class="cash-day">
+          <div class="cash-day-label">Day 4 · Aug 24</div>
+          <div class="cash-amount-day">~฿650</div>
+          <div class="cash-day-detail">Moo Ping breakfast ฿150. Airport lunch (Magic Food Point) ฿500. U-Young PREPAID.</div>
+        </div>
+      </div>
+
+      <div class="reminder-section">
+        <h3 class="reminder-title">🧳 Pack list (from HKG)</h3>
+        <ul class="reminder-list">
+          <li>Granola bars + juice boxes (airport + Day 1 car)</li>
+          <li>Refillable water bottles (one for her, one for you)</li>
+          <li>Small folding fan + cooling towel</li>
+          <li>Hats (Day 3 Siam Square heat)</li>
+          <li>Child paracetamol + <strong>ORS sachets</strong> + child electrolytes (Pedialyte)</li>
+          <li>Anti-nausea (Gravol kids) + bandaids + hand sanitizer</li>
+          <li>DEET 20%+ repellent + SPF 50+ sunscreen</li>
+          <li>Waterproof phone pouch (for dolphinarium swim photos)</li>
+          <li>Beach shoes / water shoes (pool deck gets hot)</li>
+          <li>Rashguards (waterpark + sun protection)</li>
+        </ul>
+      </div>
+
+      <div class="reminder-section">
+        <h3 class="reminder-title">📋 Pre-trip to-dos</h3>
+        <ul class="reminder-list">
+          <li><strong>Book U-Young Aug 22 full-day charter</strong> (~฿3,000 / HKD 750) — only operational loose end</li>
+          <li><strong>Send Agoda message to Mövenpick</strong> requesting high floor, away from elevator</li>
+          <li><strong>Buy AXA SmartTraveller Plus Premier</strong> — daughter FREE under parent policy</li>
+          <li><strong>Thai Airways online check-in</strong> — Aug 20 (outbound) + Aug 23 (return), 24h before</li>
+          <li><strong>Notify credit card company</strong> of travel dates (Aug 21–24)</li>
+          <li><strong>Install apps before flying</strong>: Grab · Bolt · Google Maps (offline Thailand) · Line · Google Translate · Rabbit card</li>
+          <li><strong>Buy Rabbit card</strong> at any BTS station on arrival (฿200 refundable deposit + top up)</li>
+          <li><strong>Print emergency docs</strong>: insurance policy + AXA Thailand hotline</li>
+        </ul>
+      </div>
+
+      <div class="reminder-section">
+        <h3 class="reminder-title">💸 Tipping customs (Thailand is informal)</h3>
+        <ul class="reminder-list">
+          <li><strong>Housekeeping</strong>: ฿20–40/night on the pillow</li>
+          <li><strong>Drivers</strong> (U-Young × 3 legs): ฿100–200/leg at the end of each ride</li>
+          <li><strong>Restaurants</strong>: usually no tip (10% service charge auto-added); round up if you want</li>
+          <li><strong>Spa</strong>: ฿100–200 on top of bill (not auto-included)</li>
+          <li>Total tipping budget: <strong>~฿1,000 across the trip</strong></li>
+        </ul>
+      </div>
+
+      <div class="reminder-section">
+        <h3 class="reminder-title">🌧️ Heavy-rain Day 3 backup list</h3>
+        <ul class="reminder-list">
+          <li><strong>KidZania Bangkok</strong> (Gateway Ekamai, ~25 min from Asok) — 4–14 yr olds, indoor role-play city, ~฿1,000</li>
+          <li><strong>Sea Life Bangkok</strong> (Siam Paragon B1) — ocean tunnel, AC</li>
+          <li><strong>Snow Town</strong> (Gateway Ekamai) — indoor snow play, kid magnet</li>
+          <li><strong>MBK 6F kids' zone</strong> (5-min BTS from Asok) — free indoor play area</li>
+          <li><strong>EmQuartier 3F kids' floor</strong> — backup near Kay's brunch spot</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1796,37 +2043,45 @@
         </div>
         <label class="check-item" data-key="b1">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">Book Pattaya Dolphinarium Half Day Tour on trip.com (refundable)<small>https://www.trip.com/things-to-do/detail/69919260/</small></span>
+          <span class="check-text">✅ Centara Grand Mirage Beach Resort Pattaya<small>Ocean View Family Room · Aug 21 (1 night)</small></span>
         </label>
         <label class="check-item" data-key="b2">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">✅ Dolphinarium 5-yo swim confirmed by venue<small>Line @pty_dolphinarium · done Aug 9</small></span>
+          <span class="check-text">✅ Mövenpick Hotel Sukhumvit 15 Bangkok<small>Agoda #1658113935722925 · 47 Sukhumvit Soi 15 · Aug 22-24 (2 nights)</small></span>
         </label>
         <label class="check-item" data-key="b3">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">✅ Centara Grand Mirage Beach Resort Pattaya<small>Ocean View Family Room · Aug 21 (1 night)</small></span>
+          <span class="check-text">✅ Pattaya Dolphinarium show + swim<small>Stevey + daughter · Aug 22 11am show / 12pm swim</small></span>
         </label>
         <label class="check-item" data-key="b4">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">Book Mövenpick Hotel Sukhumvit 15 Bangkok<small>47 Sukhumvit Soi 15 · Aug 22-24 (2 nights) · request high floor</small></span>
+          <span class="check-text">✅ Oasis Spa Sukhumvit 31 — dad-daughter villa session Aug 23 1:30 PM<small>Booking ID 922070 · +66 2 262 2122 · shared private room</small></span>
         </label>
         <label class="check-item" data-key="b5">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">✅ Oasis Spa Sukhumvit 31 — dad-daughter villa session Aug 23 1:30 PM<small>Booking ID 922070 · +66 2 262 2122 · shared private room</small></span>
+          <span class="check-text">✅ U-Young Travel Aug 21 — BKK → Centara (PREPAID)</small>
         </label>
         <label class="check-item" data-key="b6">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">Confirm U-Young Travel SUV + child car seat for all 3 legs<small>Aug 21 BKK→Pattaya · Aug 22 Pattaya→BKK · Aug 24 hotel→BKK</small></span>
+          <span class="check-text">✅ U-Young Travel Aug 24 — Mövenpick → BKK (PREPAID)</small>
         </label>
         <label class="check-item" data-key="b7">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">Buy AXA SmartTraveller Plus Premier<small>Daughter FREE under parent policy</small></span>
+          <span class="check-text">⏳ Book U-Young Aug 22 full-day charter (Centara → Dolphinarium → Mövenpick)<small>~฿3,000 / ~HKD 750 · WhatsApp confirm</small></span>
         </label>
         <label class="check-item" data-key="b8">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span class="check-text">Thai Airways online check-in (24h before)<small>Aug 20 outbound · Aug 23 return</small></span>
+          <span class="check-text">Agoda message to Mövenpick — request high floor, away from elevator<small>Send via Agoda app message thread</small></span>
         </label>
         <label class="check-item" data-key="b9">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Buy AXA SmartTraveller Plus Premier<small>Daughter FREE under parent policy</small></span>
+        </label>
+        <label class="check-item" data-key="b10">
+          <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <span class="check-text">Thai Airways online check-in (24h before)<small>Aug 20 outbound · Aug 23 return</small></span>
+        </label>
+        <label class="check-item" data-key="b11">
           <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
           <span class="check-text">Notify credit card company of travel dates<small>So charges don't get flagged</small></span>
         </label>
@@ -1966,7 +2221,15 @@
       }
       items.forEach(cb => {
         const k = cb.dataset.key;
-        if (saved[k]) cb.classList.add('done');
+        // Pre-mark items with ✅ in their text as already done (booking already complete)
+        const text = cb.querySelector('.check-text');
+        const isPreChecked = text && text.textContent.includes('✅');
+        if (saved[k] !== undefined) {
+          if (saved[k]) cb.classList.add('done');
+        } else if (isPreChecked) {
+          cb.classList.add('done');
+          saved[k] = true;
+        }
         cb.addEventListener('click', (e) => {
           // Prevent default label behavior
           e.preventDefault();
@@ -1976,6 +2239,8 @@
           updateProgress();
         });
       });
+      // Save any auto-checked items
+      localStorage.setItem(KEY, JSON.stringify(saved));
       updateProgress();
     })();
 
