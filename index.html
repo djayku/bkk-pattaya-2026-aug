@@ -567,26 +567,29 @@
       color: var(--ink-2);
     }
     .mission-photo {
-      margin-top: var(--s-4);
-      padding-top: var(--s-4);
-      border-top: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+      margin-top: var(--s-3);
     }
     .mission-photo-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      font-size: 10px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--ink-2);
-      background: var(--bg-2);
-      border: 1.5px solid var(--border);
-      padding: 7px 14px;
+      color: var(--ink-3);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 4px 9px;
       border-radius: var(--r-pill);
       cursor: pointer;
       transition: all 0.2s var(--ease-out);
       -webkit-tap-highlight-color: transparent;
+      flex-shrink: 0;
+      line-height: 1.2;
     }
     .mission-photo-btn:hover {
       background: var(--accent);
@@ -601,22 +604,27 @@
     .mission-photo-input { display: none; }
     .mission-photo-preview {
       display: none;
-      margin-top: var(--s-3);
-      width: 100%;
-      max-width: 200px;
-      max-height: 200px;
+      width: 48px;
+      height: 48px;
       border-radius: var(--r-md);
       object-fit: cover;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      border: 1.5px solid white;
+      flex-shrink: 0;
     }
     .mission-counter {
       display: inline-block;
-      font-family: var(--font-serif);
-      font-size: 28px;
-      color: var(--accent);
-      font-weight: 600;
-      margin-left: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: var(--r-pill);
+      margin-left: 8px;
+      vertical-align: middle;
     }
 
     /* ─── Thai Driver Card ─── */
@@ -1628,30 +1636,6 @@
       </div>
     </div>
     <div class="hero-scroll">Scroll</div>
-  </section>
-
-  <!-- ─── Stats ─── -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-num">04</div>
-          <div class="stat-label">Days</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num"><em>1</em></div>
-          <div class="stat-label">Dolphin swim</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">01</div>
-          <div class="stat-label">Garden spa</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num"><em>1</em></div>
-          <div class="stat-label">Fountain show</div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ─── Pull quote ─── -->

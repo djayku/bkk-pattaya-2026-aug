@@ -1,7 +1,7 @@
 // Service Worker for BKK & Pattaya Trip PWA
 // Cache-first strategy so the app works offline at airports / spotty signal
 
-const CACHE_NAME = 'bkk-pattaya-2026-v2';
+const CACHE_NAME = 'bkk-pattaya-2026-v3';
 const ASSETS = [
   './',
   './index.html',
