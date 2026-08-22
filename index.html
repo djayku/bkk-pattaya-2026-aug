@@ -1599,12 +1599,62 @@
       transform: translateY(0);
     }
 
+    /* ─── Day 3 iOS Card style ─── */
+    .day-block { display: flex; flex-direction: column; gap: 12px; }
+    .ios-card {
+      background: var(--bg);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .card-hero-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body { padding: 14px 16px 16px; }
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      flex: 1;
+      min-width: 0;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .time-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: rgba(0, 122, 255, 0.1);
+      color: var(--blue);
+      padding: 4px 9px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--ink-2);
+      line-height: 1.45;
+    }
+    .card-desc strong { color: var(--ink); font-weight: 600; }
+
     /* ─── Print ─── */
     @media print {
       .top-bar, .bottom-nav, .day-toggle, .hero-scroll, .check-input { display: none !important; }
       .day-body { display: block !important; }
       .day-card { box-shadow: none; break-inside: avoid; }
       .hero { min-height: 0; padding: 40px 20px; }
+      .ios-card { break-inside: avoid; box-shadow: none; border: 0.5px solid #ddd; }
     }
 
     /* ─── Reduced motion ─── */
@@ -1950,7 +2000,7 @@
           </button>
         </div>
         <div class="day-summary" onclick="toggleDay(this.previousElementSibling)">
-          <div class="day-summary-text">Cafe breakfast · Siam Square shops (heat-managed) · garden spa 1:30pm · quiet hotel block · ICONSIAM</div>
+          <div class="day-summary-text">Breakfast Story pancakes · rooftop swim · Siam Square shops · garden spa 1:30pm · ICONSIAM + fountain</div>
         </div>
         <div class="day-body">
           <div class="field-note">
@@ -1958,60 +2008,58 @@
             <p class="field-note-body">Six small moments, none of them rushed. The photo strip from the booth will end up on the fridge; the spa photo will end up framed.</p>
           </div>
 
-          <div class="timeline">
-            <div class="t-item fun">
-              <div class="t-time">08:30 – 10:00</div>
-              <h4 class="t-title">Cafe breakfast — Kay's or Roast</h4>
-              <p class="t-body">Kay's (Sukhumvit 49) for the indie vibe, or Roast at EmQuartier for the polished brunch. ~5-min taxi from Mövenpick. Fluffy french toast, fruit smoothie bowls. Photo-worthy by default.</p>
-              <div class="t-meta"><span class="chip-yellow">⭐ Photo op</span></div>
+          <div class="day-block" data-day="day3">
+            <div class="ios-card">
+              <div class="card-body">
+                <div class="card-header-row">
+                  <div class="card-title">🥞 Breakfast Story (Asok Soi 19)</div>
+                  <span class="time-pill">07:30–08:30</span>
+                </div>
+                <div class="card-desc">Walk from hotel for giant pancakes, maple syrup, and bottomless coffee.</div>
+              </div>
             </div>
-            <div class="t-item major">
-              <div class="t-time">10:15 – 12:45</div>
-              <h4 class="t-title">🛍 Siam Square outdoor pedestrian streets</h4>
-              <p class="t-body">BTS Asok → Siam (2 stops, direct). Walk Soi 2–5: car-free, clean, kid-safe. <strong>Daddy and the Muscle Academy opens ~11am</strong> — use 10:15-11:00 for a snack walk first (coconut slushie, Korean cheese coin pancake). Then hit <strong>Daddy and the Muscle Academy</strong> (Siam Soi 2) — pastel dresses, hair clips, tote bags. <strong>2nd Floor Photo Booth</strong> for the 90s sticker strip.</p>
-              <div class="t-meta"><span class="chip-yellow">⭐ Kid shops + photo strip</span><span class="chip-blue">📦 Day 3 heat kit packed: hats, refillable water bottles, small folding fan, cooling towel</span><span class="chip-blue">❄️ AC break every 30 min — duck into 7-Eleven, Starbucks, Siam Paragon lobby</span></div>
+
+            <div class="ios-card">
+              <div class="card-body">
+                <div class="card-header-row">
+                  <div class="card-title">🏊 Rooftop Hotel Swim</div>
+                  <span class="time-pill">08:45–10:00</span>
+                </div>
+                <div class="card-desc">Morning pool dip at Mövenpick before the afternoon heat sets in.</div>
+              </div>
             </div>
-            <div class="t-item">
-              <div class="t-time">12:45 – 13:15</div>
-              <h4 class="t-title">Quick snack + travel to Sukhumvit 31</h4>
-              <p class="t-body">Snack walk in Siam Square. Then BTS Siam → Asok + short Grab to Sukhumvit 31. Arrive 15 min early.</p>
+
+            <div class="ios-card">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="Siam Square">
+              <div class="card-body">
+                <div class="card-header-row">
+                  <div class="card-title">🛍️ Siam Square Pedestrian Streets</div>
+                  <span class="time-pill">10:15–12:45</span>
+                </div>
+                <div class="card-desc">Daddy &amp; Muscle Academy, 90s sticker photo strip, and coconut slushies.</div>
+              </div>
             </div>
-            <div class="t-item major">
-              <div class="t-time">13:30 – 14:30</div>
-              <h4 class="t-title">💆 Oasis Spa Sukhumvit 31 · booked 1:30 PM</h4>
-              <p class="t-body">Booking ID 922070. Hidden Lanna-style villa with lotus ponds + secret gardens. Her: Kid First Sensation Massage (60-min organic coconut oil). You: Aromatherapy Hot Oil (60 min). Shared private room. <strong>She'll likely nap during the massage.</strong> Herbal tea on the wooden walkways after.</p>
-              <div class="t-meta"><span class="chip-green">✅ Confirmed</span><a href="tel:+6622622122" class="chip-blue">📞 +66 2 262 2122</a></div>
+
+            <div class="ios-card">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="Oasis Spa">
+              <div class="card-body">
+                <div class="card-header-row">
+                  <div class="card-title">💆‍♀️ Oasis Spa Sukhumvit 31</div>
+                  <span class="time-pill">13:30–14:30</span>
+                </div>
+                <div class="card-desc">Her: Kid-First Coconut Massage (60 min). You: Aromatherapy Hot Oil in private garden villa.</div>
+              </div>
             </div>
-            <div class="t-item fun">
-              <div class="t-time">15:00 – 16:30</div>
-              <h4 class="t-title">🛏️ Quiet hotel block (NEW)</h4>
-              <p class="t-body"><strong>Skip the second pool session</strong> — over-stimulation risk. Room time, cartoons, real nap. She just got pampered + walked all morning. Recharge.</p>
-            </div>
-            <div class="t-item">
-              <div class="t-time">16:30 – 17:30</div>
-              <h4 class="t-title">🍫 Chocolate Hour encore</h4>
-              <p class="t-body">Optional second visit to Lelawadee — same chocolate fountain. If she's still resting, you can grab a plate and bring it back.</p>
-            </div>
-            <div class="t-item fun">
-              <div class="t-time">17:30 – 18:00</div>
-              <h4 class="t-title">BTS to Saphan Taksin</h4>
-              <p class="t-body">BTS Asok → Saphan Taksin (7 stops, ~20 min). Exit at Sathorn (Saphan Taksin) station. Follow signs to the <strong>free shuttle boat pier</strong>.</p>
-            </div>
-            <div class="t-item fun">
-              <div class="t-time">18:00 – 20:00</div>
-              <h4 class="t-title">ICONSIAM + SookSiam (sunset)</h4>
-              <p class="t-body">Free shuttle boat every 10-15 min, ride ~10 min. Sunset on the river. SookSiam is the indoor Thai food + craft market on the ground floor — 200+ stalls, all the regions of Thailand in one air-conditioned hall. <strong>Souvenirs happen here</strong> (budget ฿1,500–2,000).</p>
-              <div class="t-meta"><span class="chip-yellow">⭐ Try boat noodles &amp; mango sticky rice</span><span class="chip-green">🛍 Souvenirs · until 22:00</span></div>
-            </div>
-            <div class="t-item major">
-              <div class="t-time">19:00</div>
-              <h4 class="t-title">🎆 ICONSIAM River Fountain Show</h4>
-              <p class="t-body">5-min spectacle — water + lights + music on the Chao Phraya. Front-row riverside promenade. Bring the camera.</p>
-            </div>
-            <div class="t-item">
-              <div class="t-time">20:00</div>
-              <h4 class="t-title">Back to hotel — pack</h4>
-              <p class="t-body">Boat back to Saphan Taksin → BTS Asok → walk to hotel. <strong>Back by 20:45</strong> for better bedtime. Lay out her clothes. One more sleep.</p>
+
+            <div class="ios-card">
+              <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80" class="card-hero-img" alt="ICONSIAM Fountain Show">
+              <div class="card-body">
+                <div class="card-header-row">
+                  <div class="card-title">⛲ ICONSIAM / Night Market &amp; Dinner</div>
+                  <span class="time-pill">18:00–20:30</span>
+                </div>
+                <div class="card-desc">SookSiam indoor floating market dinner &amp; 7:00 PM Riverfront Fountain Show.</div>
+              </div>
             </div>
           </div>
         </div>
